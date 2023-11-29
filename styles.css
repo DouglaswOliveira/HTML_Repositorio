@@ -1,0 +1,4 @@
+img:hover {
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
