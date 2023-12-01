@@ -3,8 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfólio</title>
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
+            margin: 1;
+            padding: 2;
+            background-color: rgb(253, 253, 253);
+        }
+        header, footer {
+            background-color: #339aee1c;
+            color: #000000;
+            padding: 10px;
+            text-align: center;
+        }
+        .flex-container {
+            display: flex;
+            align-items: center; /* Alinha verticalmente */
+        }
+        .flex-container img {
+            margin-right: 20px; /* Adiciona algum espaço entre a imagem e o texto */
+        }
+        .dialog-box {
+            border: 10x solid #000;
+            padding:50px;
+            border-radius: 50px;
+            box-shadow:50px 5px 50px rgba(0, 0, 0, 0.1);
+        }
+        @media screen and (max-width: 600px) {
+            body {
+                font-size: 18px;
+            }
+            header, main, footer {
+                margin: 10px;
+            }
+    </style>
 </head>
+<body>
+    <header>
+        <h1>Meu Portfólio Acadêmico</h1>
+    </header>
+    <section>
+        <h2>Trabalhos Acadêmicos</h2>
+        <div class="dialog-box">
+            <!-- Insira seus trabalhos acadêmicos aqui -->
+        </div>
+    </section>
+    <section>
+        <h2>Vídeos</h2>
+        <div class="dialog-box">
+            <!-- Insira seus vídeos aqui -->
+        </div>
+    </section>
+    <br>
+<section>
+        <h2>Fotos</h2>
+        <div class="dialog-box">
+            <!-- Insira suas fotos aqui -->
+        </div>
+    </section>
+    <footer>
+        <p>Copyright © 2023 Nome do Autor</p>
+    </footer>
+    
 <body>
     <a href="index.html"><button>Voltar ao Índice</button></a>
 </body>
