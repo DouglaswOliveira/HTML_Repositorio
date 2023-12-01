@@ -23,13 +23,19 @@
             align-items: center; /* Alinha verticalmente */
         }
         .flex-container img {
-            margin-right: 20px; /* Adiciona algum espaço entre a imagem e o texto */
+            margin-right: 50px; /* Adiciona algum espaço entre a imagem e o texto */
         }
         .dialog-box {
             border: 10x solid #000;
-            padding:50px;
-            border-radius: 50px;
-            box-shadow:50px 5px 50px rgba(0, 0, 0, 0.1);
+            padding:5px;
+            border-radius: 35px;
+            box-shadow:35px 5px 35px rgba(0, 0, 0, 0.1);
+        }
+        .dialog-box-small {
+            border: 10x solid #000;
+            padding: 0,1px;
+            border-radius: 35px;
+            box-shadow:15px 1px 15px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -48,10 +54,15 @@
         <img src="fotoperfil2.jpg" alt="FotoPerfil" title="FotoPerfil" width="15%" height="20%">
         <main class="dialog-box">
             <p>Bem-vindo à minha página! Como Cientista de Dados, estou sempre buscando novas maneiras de analisar e interpretar dados complexos. Fique à vontade para explorar e aprender mais sobre o meu trabalho.</p>
-            <p>Ocupação: Cientista de Dados</p>
-            <p>Data do Nascimento: 09/09/1990</p>
         </main>
     </div>
+    <section>
+        <h2>
+        <div class="dialog-box-small">
+            <p>Profissão: Ciêntista de Dados</p>
+            <p>Data de Nascimento: 09/09/1990</p>
+        </div>
+    </section>
     <footer>
         © 2023 Todos os direitos reservados.
     </footer>
