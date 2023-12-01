@@ -20,24 +20,28 @@
         }
         .flex-container {
             display: flex;
+            flex-direction: column;
             align-items: center; /* Alinha verticalmente */
         }
         .flex-container img {
-            margin-right: 50px; /* Adiciona algum espaço entre a imagem e o texto */
+            margin-bottom: 20px; /* Adiciona algum espaço entre a imagem e o texto */
+            width: 100%;
+            max-width: 300px;
         }
         .dialog-box {
-        border: 10x solid #000;
-        padding:5px 30px; /* Adiciona um recuo de 30px no final de cada parágrafo */
-        border-radius: 35px;
-        box-shadow:35px 5px 35px rgba(0, 0, 0, 0.1);
-        text-indent: 30px; /* Adiciona um recuo de 30px na primeira linha de cada parágrafo */
-    }
-    @media screen and (max-width: 600px) {
-        body {
-            font-size: 18px;
+            border: 10x solid #000;
+            padding:5px;
+            border-radius: 35px;
+            box-shadow:35px 5px 35px rgba(0, 0, 0, 0.1);
+            text-indent: 30px; /* 30px na primeira linha de cada parágrafo */
         }
-        header, main, footer {
-            margin: 10px;
+        @media screen and (min-width: 600px) {
+            .flex-container {
+                flex-direction: row;
+            }
+            .flex-container img {
+                margin-right: 50px; /* Adiciona algum espaço entre a imagem e o texto */
+            }
         }
     </style>
 </head>
@@ -53,7 +57,7 @@
         </nav>
     </header>
     <div class="flex-container">
-        <img src="fotoperfil2.jpg" alt="FotoPerfil" title="FotoPerfil" width="15%" height="20%">
+        <img src="fotoperfil2.jpg" alt="FotoPerfil" title="FotoPerfil">
         <main class="dialog-box">
         <p>"Seja bem-vindo à minha página! Como Cientista de Dados, estou constantemente em busca de novas maneiras de analisar e interpretar dados complexos.</p>
         <p>Nesta página, você encontrará informações detalhadas sobre minha carreira e formação acadêmica. Além disso, disponibilizo um portfólio com uma seleção dos meus trabalhos, que demonstram minha experiência prática na área de Ciência de Dados.</p>
