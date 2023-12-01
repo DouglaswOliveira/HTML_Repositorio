@@ -11,7 +11,7 @@
             margin: 1;
             padding: 1;
         }
-        header{
+        header, footer {
             background-color: #339aee1c;
             color: #000000;
             padding: 10px;
@@ -20,15 +20,6 @@
         main {
             margin: 35px;
         }
-        footer {
-            background-color: #339aee1c;
-            color: rgb(10, 10, 10);
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
         @media screen and (max-width: 600px) {
             body {
                 font-size: 18px;
@@ -36,6 +27,10 @@
             header, main, footer {
                 margin: 10px;
             }
+        }
+        footer {
+            position: relative; /* Alterado de 'fixed' para 'relative' */
+        }
     </style>
 </head>
 <body>
