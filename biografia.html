@@ -20,6 +20,9 @@
             width: 200px;
             height: 200px;
             border-radius: 50%;
+            position: fixed;
+            top: 20px;
+            right: 20px;
         }
         .bio-box {
             border: 2px solid #000;
@@ -27,14 +30,12 @@
             border-radius: 10px;
             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
             background-color: #fff;
+            margin-top: 20px;
         }
         .flex-container {
             display: flex;
             align-items: center;
             margin-bottom: 20px;
-        }
-        .flex-container img {
-            margin-right: 20px;
         }
         header, footer {
             background-color: #339aee1c;
@@ -48,6 +49,11 @@
         footer p {
             margin: 0;
         }
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+        }
         @media screen and (max-width: 600px) {
             body {
                 font-size: 18px;
@@ -59,20 +65,17 @@
                 flex-direction: column;
                 align-items: flex-start;
             }
-            .flex-container img {
-                margin-bottom: 10px;
-            }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Biografia</h1>
-        <a href="index.html"><button>Voltar ao Índice</button></a>
+        <a href="index.html" class="back-button"><button>Voltar ao Índice</button></a>
+        <img src="fotoperfil2.jpg" alt="Sua Foto">
     </header>
     <div class="container">
         <div class="flex-container">
-            <img src="fotoperfil2.jpg" alt="Sua Foto">
             <div class="bio-box">
                 <h1>Olá</h1>
                 <p>Meu nome é Douglas Wesley Alves de Oliveira, e ao longo dos anos, construí uma sólida trajetória profissional no setor de segurança, destacando-me como um profissional comprometido e habilidoso. Atualmente, atuo como Vigilante Líder no Grupo Protege, uma empresa líder no segmento de segurança, onde exerço influência sobre os demais vigilantes, visando o atingimento dos objetivos e metas propostos para a equipe que lidero. Estou nesta posição desde janeiro de 2017, acumulando 7 anos e 6 meses de experiência.</p>
