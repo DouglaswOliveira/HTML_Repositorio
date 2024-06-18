@@ -3,76 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portifólio Pessoal</title>
+    <title>Portfólio Pessoal</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
         body {
             font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
-            margin: 1;
-            padding: 2;
+            margin: 0;
+            padding: 0;
             background-color: rgb(253, 253, 253);
         }
-        header, footer {
+        .header {
             background-color: #339aee1c;
-            color: #000000;
+            color: #000;
             padding: 10px;
             text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .header h2 {
+            margin-top: 5px;
+            font-size: 1.2em;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .nav-links a {
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .nav-links button {
+            padding: 10px 20px;
+            background-color: #339aee;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .nav-links button:hover {
+            background-color: #2b85d3;
         }
         .flex-container {
             display: flex;
             flex-direction: column;
             align-items: center; /* Alinha verticalmente */
+            margin-top: 20px;
         }
         .flex-container img {
-            margin-bottom: 20px; /* Adiciona algum espaço entre a imagem e o texto */
             width: 100%;
             max-width: 300px;
+            border-radius: 50%;
+            margin-bottom: 20px; /* Adiciona algum espaço entre a imagem e o texto */
         }
-        .dialog-box {
-            border: 10x solid #000;
-            padding:5px;
-            border-radius: 35px;
-            box-shadow:35px 5px 35px rgba(0, 0, 0, 0.1);
+        .main-content {
+            max-width: 600px;
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #000;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+        .main-content p {
+            margin-bottom: 15px;
             text-indent: 30px; /* 30px na primeira linha de cada parágrafo */
+        }
+        .footer {
+            background-color: #339aee1c;
+            color: #000;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
         @media screen and (min-width: 500px) {
             .flex-container {
                 flex-direction: row;
+                justify-content: center;
             }
             .flex-container img {
                 margin-right: 50px; /* Adiciona algum espaço entre a imagem e o texto */
+                margin-bottom: 0;
             }
         }
     </style>
 </head>
 <body>
-    <header>
+    <header class="header">
         <h1>Douglas Wesley Alves de Oliveira</h1>
-        <h2>Segurança Corporativa/Supervisor de Segurança/Consultor de Segurança/Analista de Segurança/Controle de Acesso/Segurança Patrimonial/Vigilanteh2>
-        <nav>
+        <h2>Segurança Corporativa / Supervisor de Segurança / Consultor de Segurança / Analista de Segurança / Controle de Acesso / Segurança Patrimonial / Vigilante</h2>
+        <div class="nav-links">
             <a href="biografia.html"><button>Biografia</button></a>
             <a href="formação.html"><button>Formação</button></a>
-            <a href="portifolio.html"><button>Portifólio</button></a>
+            <a href="portifolio.html"><button>Portfólio</button></a>
             <a href="contato.html"><button>Contato</button></a>
-        </nav>
+        </div>
     </header>
     <div class="flex-container">
-        <img src="fotoperfil2.jpg" alt="FotoPerfil" title="FotoPerfil">
-        <main class="dialog-box">
-      <p>Seja bem-vindo à minha página! Como Gestor de Segurança Privada, estou constantemente em busca de novas maneiras de implementar e gerenciar soluções de segurança eficazes.</p>
-      <p>Nesta página, você encontrará informações detalhadas sobre minha carreira e formação acadêmica. Além disso, disponibilizo um portfólio com uma seleção dos meus trabalhos, que demonstram minha experiência prática na área de Segurança Privada.</p>
-      <p>Sinta-se à vontade para explorar e aprender mais sobre o meu trabalho. Caso queira entrar em contato comigo, você encontrará as informações necessárias na seção de contato.</p>
-      <p>Agradeço sua visita!</p>
-    </main>
+        <img class="profile-image" src="fotoperfil2.jpg" alt="FotoPerfil" title="FotoPerfil">
+        <main class="main-content">
+            <p>Seja bem-vindo à minha página! Como Gestor de Segurança Privada, estou constantemente em busca de novas maneiras de implementar e gerenciar soluções de segurança eficazes.</p>
+            <p>Nesta página, você encontrará informações detalhadas sobre minha carreira e formação acadêmica. Além disso, disponibilizo um portfólio com uma seleção dos meus trabalhos, que demonstram minha experiência prática na área de Segurança Privada.</p>
+            <p>Sinta-se à vontade para explorar e aprender mais sobre o meu trabalho. Caso queira entrar em contato comigo, você encontrará as informações necessárias na seção de contato.</p>
+            <p>Agradeço sua visita!</p>
+        </main>
     </div>
-    <section>
-        <h2>
-        <div class="dialog-box">
-            <p>Profissão: Gestor de Segurança Empresarial</p>
-            <p>Data de Nascimento: 09/09/1990</p>
-        </div>
+    <section class="dialog-box">
+        <h2>Informações Pessoais</h2>
+        <p>Profissão: Gestor de Segurança Empresarial</p>
+        <p>Data de Nascimento: 09/09/1990</p>
     </section>
-    <footer>
+    <footer class="footer">
         <p>© 2024 Todos os direitos reservados.</p>
     </footer>
 </body>
