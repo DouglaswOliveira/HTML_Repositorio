@@ -1,37 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <title>Biografia</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Douglas Wesley Alves de Oliveira - Biografia</title>
     <style>
         body {
-            font-family: Georgia, 'Times New Roman', Times, serif
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
         }
         .container {
             width: 80%;
             margin: auto;
+            padding: 20px;
         }
         img {
             width: 200px;
             height: 200px;
+            border-radius: 50%;
         }
         .bio-box {
             border: 2px solid #000;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
         }
         .flex-container {
             display: flex;
-            align-items: center; /* Alinha verticalmente */
+            align-items: center;
+            margin-bottom: 20px;
         }
         .flex-container img {
-            margin-right: 20px; /* Adicionar espaço entre a imagem e o texto */
+            margin-right: 20px;
         }
         header, footer {
             background-color: #339aee1c;
-            color: #000000;
+            color: #000;
             padding: 10px;
             text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        footer p {
+            margin: 0;
         }
         @media screen and (max-width: 600px) {
             body {
@@ -40,60 +55,84 @@
             header, main, footer {
                 margin: 10px;
             }
+            .flex-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .flex-container img {
+                margin-bottom: 10px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>BIOGRAFIA</h1>
-                <a href="index.html"><button>Voltar ao Índice</button></a>
+        <h1>Biografia</h1>
+        <a href="index.html"><button>Voltar ao Índice</button></a>
     </header>
     <div class="container">
-        <img src="fotoperfil2.jpg" alt="Sua Foto">
         <div class="flex-container">
+            <img src="fotoperfil2.jpg" alt="Sua Foto">
             <div class="bio-box">
                 <h1>Olá</h1>
-                <p>
-                    <p>Meu nome é Douglas Wesley Alves de Oliveira, e ao longo dos anos, construí uma sólida trajetória profissional no setor de segurança, destacando-me como um profissional comprometido e habilidoso. Atualmente, atuo como Vigilante Líder no Grupo Protege, uma empresa líder no segmento de segurança, onde exerço influência sobre os demais vigilantes, visando o atingimento dos objetivos e metas propostos para a equipe que lidero. Estou nesta posição desde janeiro de 2017, acumulando 7 anos e 6 meses de experiência.</p>
-                    <h3>Experiência Profissional no Grupo Protege:</h3>
-                    <p>Com uma sólida experiência em segurança patrimonial de 12 anos e um interesse emergente por análise de dados.</p>
-                    <h4>Grupo Protege</h4>
-                    <p><strong>Tempo integral · 12 anos 5 meses</strong><br>
-                    <strong>São José do Rio Preto, São Paulo, Brasil</strong></p>
-                    <h4>Vigilante Líder</h4>
-                    <p><strong>Janeiro de 2017 - Presente (7 anos 6 meses)</strong></p>
-                    <ul>
-                      <li>Exerce influência sobre os demais vigilantes, visando o atingimento dos objetivos e metas da equipe.</li>
-                      <li>Responsável pela liderança e supervisão de uma equipe de vigilantes.</li>
-                      <li>Implementação de estratégias para atingir objetivos e metas da equipe.</li>
-                      <li>Habilidades de liderança, comunicação, negociação e solução de problemas.</li>
-                      <li>Competências: Vigilância, APPCC (Análise de Perigos e Pontos Críticos de Controle), Radiocomunicação, Situações de Crise, Gestão de Crises, Liderança, Controle de Acesso, Segurança.</li>
-                    </ul>
-                    <h4>Vigilante de Carro Forte</h4>
-                    <p><strong>Agosto de 2015 - Janeiro de 2017 (1 ano 6 meses)</strong></p>
-                    <ul>
-                      <li>Proteção e defesa do valor transportado.</li>
-                      <li>Competências: Vigilância, Radiocomunicação, Controle de Acesso, Segurança.</li>
-                    </ul>
-                    <h4>Vigilante Segurança de Base</h4>
-                    <p><strong>Junho de 2014 - Agosto de 2015 (1 ano 3 meses)</strong></p>
-                    <ul>
-                      <li>Controle de acesso, vigilância patrimonial, prevenção e combate a incêndios, atividades de inteligência.</li>
-                      <li>Busca promover, manter e garantir a incolumidade física das pessoas e a integridade do patrimônio.</li>
-                      <li>Competências: Vigilância, CFTV (Circuitos Fechados de Televisão), Radiocomunicação, Código Q, Controle de Acesso, Segurança.</li>
-                    </ul>
-                    <h4>Auxiliar de Processamento</h4>
-                    <p><strong>Fevereiro de 2012 - Junho de 2014 (2 anos 5 meses)</strong></p>
-                    <ul>
-                      <li>Lançamento de notas fiscais, registros de passivos.</li>
-                      <li>Competências: Microsoft Excel, Microsoft Windows, Liderança.</li>
-                    </ul>
-                    <h3>Assistente de Informática - Furlan Auto Peças</h3>
-                    <p>Atuando em tempo integral, como técnico de informática durante 3 anos, prestei assistência na administração da rede de computadores e suporte aos usuários nos aspectos de hardware (Impressoras) e software. Minhas competências envolveram Linux, instalação de software, rede de computadores, manutenção de computadores, digitação, Microsoft Office e Microsoft Windows.</p>
-                </p>
+                <p>Meu nome é Douglas Wesley Alves de Oliveira, e ao longo dos anos, construí uma sólida trajetória profissional no setor de segurança, destacando-me como um profissional comprometido e habilidoso. Atualmente, atuo como Vigilante Líder no Grupo Protege, uma empresa líder no segmento de segurança, onde exerço influência sobre os demais vigilantes, visando o atingimento dos objetivos e metas propostos para a equipe que lidero. Estou nesta posição desde janeiro de 2017, acumulando 7 anos e 6 meses de experiência.</p>
+                <h3>Experiência Profissional no Grupo Protege:</h3>
+                <p>Com uma sólida experiência em segurança patrimonial de 12 anos e um interesse emergente por análise de dados.</p>
+                <h4>Grupo Protege</h4>
+                <p><strong>Tempo integral · 12 anos 5 meses</strong><br>
+                <strong>São José do Rio Preto, São Paulo, Brasil</strong></p>
+                <h4>Vigilante Líder</h4>
+                <p><strong>Janeiro de 2017 - Presente (7 anos 6 meses)</strong></p>
+                <ul>
+                  <li>Exerce influência sobre os demais vigilantes, visando o atingimento dos objetivos e metas da equipe.</li>
+                  <li>Responsável pela liderança e supervisão de uma equipe de vigilantes.</li>
+                  <li>Implementação de estratégias para atingir objetivos e metas da equipe.</li>
+                  <li>Habilidades de liderança, comunicação, negociação e solução de problemas.</li>
+                  <li>Competências: Vigilância, APPCC (Análise de Perigos e Pontos Críticos de Controle), Radiocomunicação, Situações de Crise, Gestão de Crises, Liderança, Controle de Acesso, Segurança.</li>
+                </ul>
+                <h4>Vigilante de Carro Forte</h4>
+                <p><strong>Agosto de 2015 - Janeiro de 2017 (1 ano 6 meses)</strong></p>
+                <ul>
+                  <li>Proteção e defesa do valor transportado.</li>
+                  <li>Competências: Vigilância, Radiocomunicação, Controle de Acesso, Segurança.</li>
+                </ul>
+                <h4>Vigilante Segurança de Base</h4>
+                <p><strong>Junho de 2014 - Agosto de 2015 (1 ano 3 meses)</strong></p>
+                <ul>
+                  <li>Controle de acesso, vigilância patrimonial, prevenção e combate a incêndios, atividades de inteligência.</li>
+                  <li>Busca promover, manter e garantir a incolumidade física das pessoas e a integridade do patrimônio.</li>
+                  <li>Competências: Vigilância, CFTV (Circuitos Fechados de Televisão), Radiocomunicação, Código Q, Controle de Acesso, Segurança.</li>
+                </ul>
+                <h4>Auxiliar de Processamento</h4>
+                <p><strong>Fevereiro de 2012 - Junho de 2014 (2 anos 5 meses)</strong></p>
+                <ul>
+                  <li>Lançamento de notas fiscais, registros de passivos.</li>
+                  <li>Competências: Microsoft Excel, Microsoft Windows, Liderança.</li>
+                </ul>
+                <h3>Assistente de Informática - Furlan Auto Peças</h3>
+                <p>Atuando em tempo integral, como técnico de informática durante 3 anos, prestei assistência na administração da rede de computadores e suporte aos usuários nos aspectos de hardware (Impressoras) e software. Minhas competências envolveram Linux, instalação de software, rede de computadores, manutenção de computadores, digitação, Microsoft Office e Microsoft Windows.</p>
+                <h3>Formação Acadêmica</h3>
+                <p><strong>Faculdade Uninter Educacional</strong><br>
+                Gestor de Segurança Privada</p>
+                <h3>Competências</h3>
+                <ul>
+                    <li><strong>Segurança Patrimonial:</strong> Experiência sólida como vigilante de banco e vigilante patrimonial.</li>
+                    <li><strong>Liderança:</strong> Capacidade de liderar equipes e atingir metas organizacionais.</li>
+                    <li><strong>Análise de Dados:</strong> Interesse e habilidades emergentes em ciência de dados, com foco em tomada de decisões baseadas em dados, identificação de tendências e otimização de processos.</li>
+                    <li><strong>Informática:</strong> Administração de redes, suporte técnico, conhecimento em sistemas operacionais e software de escritório.</li>
+                </ul>
+                <h3>Qualidades Pessoais</h3>
+                <ul>
+                    <li>Proatividade e comprometimento.</li>
+                    <li>Grande senso de responsabilidade.</li>
+                    <li>Facilidade para trabalhar em equipe.</li>
+                    <li>Excelentes habilidades de comunicação, negociação e liderança.</li>
+                </ul>
+                <p>Estou ansioso para contribuir para o sucesso da sua organização e estou disponível para discutir minhas qualificações em mais detalhes.</p>
+                <p><strong>Atenciosamente,</strong></p>
+                <p><strong>Douglas Wesley Alves de Oliveira</strong></p>
             </div>
         </div>
-        <br>
     </div>
     <footer>
         <p>© 2023 Todos os direitos reservados.</p>
