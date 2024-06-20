@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio de Publicações em Gestão de Segurança Privada</title>
+    <title>Meu Portfólio Acadêmico</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Georgia, 'Times New Roman', Times, serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
@@ -17,7 +17,7 @@
             padding: 10px;
             text-align: center;
             border-bottom: 2px solid #339aee;
-            position: relative;
+            position: relative; /* Para posicionar corretamente o botão */
         }
         header h1 {
             margin: 0;
@@ -40,7 +40,19 @@
         .back-button button:hover {
             background-color: #2073b5;
         }
-        .publication {
+        .flex-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .flex-container img {
+            width: 150px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 50%;
+        }
+        .dialog-box {
             border: 2px solid #000;
             padding: 20px;
             border-radius: 10px;
@@ -48,11 +60,11 @@
             background-color: #fff;
             margin-bottom: 20px;
         }
-        .publication h2 {
+        .dialog-box h2 {
             font-size: 24px;
             margin-top: 0;
         }
-        .publication p {
+        .dialog-box p {
             font-size: 16px;
             line-height: 1.6;
             margin-bottom: 10px;
@@ -80,7 +92,11 @@
                 position: static;
                 margin-bottom: 10px;
             }
-            .publication {
+            .flex-container img {
+                margin-bottom: 20px;
+                margin-right: 0;
+            }
+            .dialog-box {
                 margin: 0 10px 20px 10px;
                 width: calc(100% - 20px);
             }
@@ -92,29 +108,62 @@
         <div class="back-button">
             <a href="index.html"><button>Voltar ao Índice</button></a>
         </div>
-        <h1>Portfólio de Publicações em Gestão de Segurança Privada</h1>
+        <h1>Meu Portfólio Acadêmico</h1>
     </header>
     <section>
-        <div class="publication">
-            <h2>Título da Publicação 1</h2>
-            <p>Descrição da publicação, objetivos abordados e principais conclusões. Inclua detalhes sobre o contexto da segurança privada.</p>
-            <p>Autores: Nome dos Autores</p>
-            <p>Revista/Conferência: Nome da Revista ou Conferência</p>
-            <p>Ano de Publicação: 20XX</p>
-            <a href="link-para-publicacao1.pdf" target="_blank">Ver Publicação</a>
+        <h2>Trabalhos Acadêmicos - Meus Primeiros Passos</h2>
+        <div class="dialog-box">
+            <h2>SQL e Primeiros Códigos</h2>
+            <p>Minha experiência com SQL começou com a aprendizagem dos fundamentos da linguagem de consulta estruturada. Aprendi a criar, manipular e consultar bancos de dados usando comandos SQL.</p>
+            <h2>Python e Primeiros Comandos</h2>
+            <p>Aprendi Python, uma linguagem de programação de alto nível conhecida por sua simplicidade e eficiência. Comecei com os comandos básicos e explorei bibliotecas como NumPy e Pandas.</p>
+            <h2>Treinamento de Perceptron e Estudo de Machine Learning</h2>
+            <p>Estudei o Perceptron e outros algoritmos de Machine Learning, aprendendo sobre redes neurais e pré-processamento de dados.</p>
+            <h2>Trabalho em HTML e CSS</h2>
+            <p>Desenvolvi habilidades em HTML e CSS para criar páginas web estáticas e estilizá-las de forma atraente e funcional.</p>
         </div>
-        <div class="publication">
-            <h2>Título da Publicação 2</h2>
-            <p>Descrição da publicação, objetivos abordados e principais conclusões. Destaque as contribuições para a gestão de segurança privada.</p>
-            <p>Autores: Nome dos Autores</p>
-            <p>Revista/Conferência: Nome da Revista ou Conferência</p>
-            <p>Ano de Publicação: 20XX</p>
-            <a href="link-para-publicacao2.pdf" target="_blank">Ver Publicação</a>
+    </section>
+    <section>
+        <h2>Trabalhos Acadêmicos - Modelos em Vídeos</h2>
+        <div class="flex-container">
+            <div class="dialog-box">
+                <p>Trabalho Realizado de Analise</p>
+            </div>
+            <video width="320" height="240" controls>
+                <source src="trabalho1.mp4" type="video/mp4">
+                Seu navegador não suporta a tag de vídeo.
+            </video>
         </div>
-        <!-- Adicione mais publicações conforme necessário -->
+    </section>
+    <section>
+        <h2>Trabalhos Acadêmicos - Modelos em Fotos</h2>
+        <div class="flex-container">
+            <img src="Trabalho de python Analise de Crime.png" alt="Trabalho de python Analise de Crime" style="width: 150px; height: 150px;">
+            <div class="dialog-box">
+                <p>Trabalho de python Analise de Crime</p>
+            </div>
+        </div>
+        <div class="flex-container">
+            <img src="trabalhomachinelearning.jpg" alt="Treinamento de perceptron" style="width: 150px; height: 150px;">
+            <div class="dialog-box">
+                <p>Machine Learning com Treinamento de perceptron</p>
+            </div>
+        </div>
+        <div class="flex-container">
+            <img src="trabalho de python Cadastro de Cliente.jpg" alt="Cadastro de Cliente" style="width: 150px; height: 150px;">
+            <div class="dialog-box">
+                <p>Trabalho em Python de Cadastro de Clientes</p>
+            </div>
+        </div>
+        <div class="flex-container">
+            <img src="trabalho de HTML Tabelas.png" alt="Tabelas" style="width: 150px; height: 150px;">
+            <div class="dialog-box">
+                <p>Trabalho de HTML Tabelas</p>
+            </div>
+        </div>
     </section>
     <footer>
-        <p>© 2024 Todos os direitos reservados - Seu Nome.</p>
+        <p>© 2023 Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
