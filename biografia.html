@@ -50,9 +50,21 @@
             margin: 0;
         }
         .back-button {
-            position: fixed;
+            position: absolute;
             top: 20px;
             left: 20px;
+        }
+        .back-button button {
+            background-color: #339aee; /* Cor de fundo azul */
+            color: #fff; /* Cor do texto branco */
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .back-button button:hover {
+            background-color: #2073b5; /* Cor de fundo azul mais escura no hover */
         }
         @media screen and (max-width: 600px) {
             body {
@@ -61,17 +73,25 @@
             header, main, footer {
                 margin: 10px;
             }
-            .flex-container {
-                flex-direction: column;
-                align-items: flex-start;
+            img {
+                position: relative;
+                margin-top: 20px;
+                right: auto;
+                width: 100%;
+                max-width: 200px;
+                height: auto;
+            }
+            .back-button {
+                position: static;
+                margin-bottom: 10px;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Biografia</h1>
         <a href="index.html" class="back-button"><button>Voltar ao Índice</button></a>
+        <h1>Biografia</h1>
         <img src="fotoperfil2.jpg" alt="Sua Foto">
     </header>
     <div class="container">
@@ -132,14 +152,4 @@
                     <li>Facilidade para trabalhar em equipe.</li>
                     <li>Excelentes habilidades de comunicação, negociação e liderança.</li>
                 </ul>
-                <p>Estou ansioso para contribuir para o sucesso da sua organização e estou disponível para discutir minhas qualificações em mais detalhes.</p>
-                <p><strong>Atenciosamente,</strong></p>
-                <p><strong>Douglas Wesley Alves de Oliveira</strong></p>
-            </div>
-        </div>
-    </div>
-    <footer>
-           <p>© 2024 Todos os direitos reservados.</p>
-    </footer>
-</body>
-</html>
+                <p>Estou ansioso para contribuir para o
