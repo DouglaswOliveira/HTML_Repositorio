@@ -79,6 +79,16 @@
             bottom: 0;
             width: 100%;
         }
+        .nav-links a.current {
+            position: relative;
+        }
+        .nav-links a.current::before {
+            content: '\2605'; /* Código Unicode para uma estrela */
+            position: absolute;
+            top: -10px;
+            left: -25px;
+            font-size: 1.5em;
+        }
         @media screen and (min-width: 500px) {
             .flex-container {
                 flex-direction: row;
@@ -100,6 +110,8 @@
             <a href="formação.html"><button>Formação</button></a>
             <a href="portifolio.html"><button>Portfólio</button></a>
             <a href="contato.html"><button>Contato</button></a>
+            <a href="portifolioacademico.html" class="current"><button>Portfólio Acadêmico</button></a>
+            <a href="portifolioseg.html"><button>Portfólio de Segurança</button></a>
         </div>
     </header>
     <div class="flex-container">
