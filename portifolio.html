@@ -1,57 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio</title>
+    <title>Meu Portfólio Acadêmico</title>
     <style>
         body {
-            font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
-            margin: 1;
-            padding: 1;
-            background-color: rgb(253, 253, 253);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
         }
-        header, footer {
+        header {
             background-color: #339aee1c;
-            color: #000000;
+            color: #000;
             padding: 10px;
             text-align: center;
+            border-bottom: 2px solid #339aee;
         }
         .flex-container {
             display: flex;
-            align-items: center; /* Alinha verticalmente */
-            justify-content: space-between; /* Isso adiciona espaço entre o vídeo e a caixa de diálogo */
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
         }
         .flex-container img {
-            margin-right: 20px; /* Adiciona algum espaço entre a imagem e o texto */
+            width: 150px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 50%;
         }
         .dialog-box {
-            border: 10x solid #000;
-            padding:50px;
-            border-radius: 50px;
-            box-shadow:50px 5px 50px rgba(0, 0, 0, 0.1);
+            border: 2px solid #000;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+        .dialog-box h2 {
+            font-size: 24px;
+            margin-top: 0;
+        }
+        .dialog-box p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: #339aee1c;
+            color: #000;
+            padding: 10px;
+            text-align: center;
+            clear: both;
+            margin-top: 20px;
+        }
+        footer p {
+            margin: 0;
+        }
+        @media screen and (max-width: 600px) {
+            body {
+                font-size: 18px;
+            }
+            header, .flex-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .flex-container img {
+                margin-bottom: 20px;
+                margin-right: 0;
+            }
+            .dialog-box {
+                margin: 0 10px 20px 10px;
+                width: calc(100% - 20px);
+            }
         }
     </style>
 </head>
 <body>
     <header>
+        <a href="index.html"><button>Voltar ao Índice</button></a>
         <h1>Meu Portfólio Acadêmico</h1>
     </header>
     <section>
-        <h2>Trabalhos Acadêmicos obtive meu primeiros passos</h2>
+        <h2>Trabalhos Acadêmicos - Meus Primeiros Passos</h2>
         <div class="dialog-box">
             <h2>SQL e Primeiros Códigos</h2>
-            <p>Minha experiência com SQL começou com a aprendizagem dos fundamentos da linguagem de consulta estruturada. Aprendi a criar, manipular e consultar bancos de dados usando comandos SQL. Isso me permitiu entender como os dados são armazenados e gerenciados em um ambiente de banco de dados.</p>
+            <p>Minha experiência com SQL começou com a aprendizagem dos fundamentos da linguagem de consulta estruturada. Aprendi a criar, manipular e consultar bancos de dados usando comandos SQL.</p>
             <h2>Python e Primeiros Comandos</h2>
-            <p>Aprendi Python, uma linguagem de programação de alto nível conhecida por sua simplicidade e eficiência. Comecei com os comandos básicos, como operações matemáticas, controle de fluxo e manipulação de strings. À medida que avançava, comecei a explorar bibliotecas Python mais complexas, como NumPy e Pandas, que são essenciais para a análise de dados.</p>
+            <p>Aprendi Python, uma linguagem de programação de alto nível conhecida por sua simplicidade e eficiência. Comecei com os comandos básicos e explorei bibliotecas como NumPy e Pandas.</p>
             <h2>Treinamento de Perceptron e Estudo de Machine Learning</h2>
-            <p>Em seguida, mergulhei no campo do Machine Learning, onde treinei meu primeiro modelo de Perceptron. O estudo do Perceptron me permitiu entender os fundamentos das redes neurais e como elas podem ser usadas para resolver problemas complexos. Também explorei outros algoritmos de Machine Learning e técnicas de pré-processamento de dados.</p>
+            <p>Estudei o Perceptron e outros algoritmos de Machine Learning, aprendendo sobre redes neurais e pré-processamento de dados.</p>
             <h2>Trabalho em HTML e CSS</h2>
-            <p>Finalmente, desenvolvi habilidades em desenvolvimento web, aprendendo HTML e CSS. Aprendi a criar páginas web estáticas usando HTML e a estilizá-las usando CSS. Isso me deu uma compreensão sólida de como os sites são construídos e como eles podem ser projetados para serem visualmente atraentes e fáceis de usar.</p>
+            <p>Desenvolvi habilidades em HTML e CSS para criar páginas web estáticas e estilizá-las de forma atraente e funcional.</p>
         </div>
     </section>
     <section>
-        <h2>Trabalhos Acadêmicos Modelo em Vídeos</h2>
+        <h2>Trabalhos Acadêmicos - Modelos em Vídeos</h2>
         <div class="flex-container">
             <div class="dialog-box">
                 <p>Trabalho Realizado de Analise</p>
@@ -63,37 +108,34 @@
         </div>
     </section>
     <section>
-        <h2>Trabalhos Acadêmicos Modole em Fotos</h2>
+        <h2>Trabalhos Acadêmicos - Modelos em Fotos</h2>
         <div class="flex-container">
-            <img src="Trabalho de python Analise de Crime.png" alt="Trabalho de python Analise de Crime"style="width: 60%; height: auto;">
-        </div>
-        <div class="dialog-box">
-            <p>Trabalho de python Analise de Crime</p>
-        </div>
-        <div class="flex-container">
-            <img src="trabalhomachinelearning.jpg" alt="Treinamento de perceptron"style="width: 60%; height: auto;">
-        </div>
-        <div class="dialog-box">
-            <p>Marchine learning com Treinamento de perceptron</p>
-        </div>
-            <div class="flex-container">
-            <img src="trabalho de python Cadastro de Cliente.jpg" alt="Cadastro de Cliente"style="width: 60%; height: auto;">
-        </div>
-        <div class="dialog-box">
-            <p>Trabalho em Python de Cadastro de Clientes</p>
+            <img src="Trabalho de python Analise de Crime.png" alt="Trabalho de python Analise de Crime" style="width: 150px; height: 150px;">
+            <div class="dialog-box">
+                <p>Trabalho de python Analise de Crime</p>
+            </div>
         </div>
         <div class="flex-container">
-            <img src="trabalho de HTML Tabelas.png" alt="Tabelas"style="width: 60%; height: auto;">
+            <img src="trabalhomachinelearning.jpg" alt="Treinamento de perceptron" style="width: 150px; height: 150px;">
+            <div class="dialog-box">
+                <p>Machine Learning com Treinamento de perceptron</p>
+            </div>
         </div>
-        <div class="dialog-box">
-            <p>Trabalho de HTML Tabelas</p>
+        <div class="flex-container">
+            <img src="trabalho de python Cadastro de Cliente.jpg" alt="Cadastro de Cliente" style="width: 150px; height: 150px;">
+            <div class="dialog-box">
+                <p>Trabalho em Python de Cadastro de Clientes</p>
+            </div>
+        </div>
+        <div class="flex-container">
+            <img src="trabalho de HTML Tabelas.png" alt="Tabelas" style="width: 150px; height: 150px;">
+            <div class="dialog-box">
+                <p>Trabalho de HTML Tabelas</p>
+            </div>
         </div>
     </section>
     <footer>
         <p>© 2023 Todos os direitos reservados.</p>
     </footer>
-    
-<body>
-    <a href="index.html"><button>Voltar ao Índice</button></a>
 </body>
 </html>
