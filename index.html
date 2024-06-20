@@ -33,6 +33,7 @@
         .nav-links a {
             margin: 0 10px;
             text-decoration: none;
+            position: relative;
         }
         .nav-links button {
             padding: 10px 20px;
@@ -41,9 +42,17 @@
             border: none;
             cursor: pointer;
             border-radius: 5px;
+            position: relative;
         }
         .nav-links button:hover {
             background-color: #2b85d3;
+        }
+        .nav-links a.current::before {
+            content: '\2605'; /* Código Unicode para uma estrela */
+            position: absolute;
+            top: -10px;
+            left: -20px;
+            font-size: 1.2em;
         }
         .flex-container {
             display: flex;
@@ -78,16 +87,6 @@
             position: fixed;
             bottom: 0;
             width: 100%;
-        }
-        .nav-links a.current {
-            position: relative;
-        }
-        .nav-links a.current::before {
-            content: '\2605'; /* Código Unicode para uma estrela */
-            position: absolute;
-            top: -10px;
-            left: -25px;
-            font-size: 1.5em;
         }
         @media screen and (min-width: 500px) {
             .flex-container {
