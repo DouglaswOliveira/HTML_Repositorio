@@ -61,18 +61,11 @@
         .social-links a {
             text-decoration: none;
             margin: 0 10px;
-            text-align: center;
-            color: #000;
         }
         .social-links a img {
             width: 40px;
             height: 40px;
             border-radius: 50%;
-        }
-        .social-links a.email-link {
-            display: block;
-            text-align: center;
-            margin-top: 5px;
         }
         @media screen and (max-width: 600px) {
             body {
@@ -107,22 +100,18 @@
                 <input type="email" id="email" name="email" required><br><br>
                 <label for="mensagem">Mensagem:</label><br>
                 <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br><br>
+                <!-- Campo oculto para o seu e-mail -->
+                <input type="hidden" id="meu-email" name="meu-email" value="douglas.wesley025@gmail.com">
                 <input type="submit" value="Enviar">
             </form>
         </div>
         <div class="social-links">
-            <a href="https://www.linkedin.com/in/douglas-w-a-d-5568991bb/" target="_blank">
-                <img src="linkedin.png" alt="LinkedIn"><br>
-                Douglas
-            </a>
-            <a href="mailto:douglas.wesley025@gmail.com" class="email-link">
-                <img src="instagram.png" alt="Instagram"><br>
-                Douglas
-            </a>
+            <a href="https://www.linkedin.com/in/douglas-w-a-d-5568991bb/" target="_blank"><img src="linkedin.png" alt="LinkedIn"></a>
+            <a href="https://www.instagram.com/douglaswesley_oliveira/" target="_blank"><img src="instagram.png" alt="Instagram"></a>
         </div>
     </div>
     <footer>
-        <p>© 2024 Todos os direitos reservados.</p>
+        <p>© 2024 Todos os direitos reservados. Contato: <a href="mailto:douglas.wesley025@gmail.com">douglas.wesley025@gmail.com</a></p>
     </footer>
 </body>
 </html>
