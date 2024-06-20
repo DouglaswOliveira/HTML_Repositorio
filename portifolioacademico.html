@@ -3,10 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio Acadêmico</title>
+    <title>Meu Portfólio</title>
     <style>
-        /* Estilos CSS aqui */
-        /* Mantenha estilos básicos como antes, mas com ajustes para melhor legibilidade e organização */
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #339aee1c;
+            color: #000;
+            padding: 10px;
+            text-align: center;
+            border-bottom: 2px solid #339aee;
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .back-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 20px;
+        }
+        .back-button button {
+            background-color: #339aee;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .back-button button:hover {
+            background-color: #2073b5;
+        }
+        .flex-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .flex-container img {
+            width: 150px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 50%;
+        }
+        .dialog-box {
+            border: 2px solid #000;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+        .dialog-box h2 {
+            font-size: 24px;
+            margin-top: 0;
+        }
+        .dialog-box p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: #339aee1c;
+            color: #000;
+            padding: 10px;
+            text-align: center;
+            clear: both;
+            margin-top: 20px;
+        }
+        footer p {
+            margin: 0;
+        }
+        @media screen and (max-width: 600px) {
+            body {
+                font-size: 18px;
+            }
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+            .back-button {
+                position: static;
+                margin-bottom: 10px;
+            }
+            .flex-container img {
+                margin-bottom: 20px;
+                margin-right: 0;
+            }
+            .dialog-box {
+                margin: 0 10px 20px 10px;
+                width: calc(100% - 20px);
+            }
+        }
     </style>
 </head>
 <body>
@@ -14,47 +108,46 @@
         <div class="back-button">
             <a href="index.html"><button>Voltar ao Índice</button></a>
         </div>
-        <h1>Portfólio Acadêmico - Seu Nome</h1>
+        <h1>Meu Portfólio</h1>
     </header>
     <section>
-        <h2>Projetos de Programação e Análise de Dados</h2>
+        <h2>Portfólio de Segurança</h2>
+        <div class="dialog-box">
+            <h2>Segurança da Informação</h2>
+            <p>Projetos e estudos relacionados à segurança da informação, incluindo análise de vulnerabilidades e implementação de medidas de proteção.</p>
+        </div>
+    </section>
+    <section>
+        <h2>Portfólio de Gestão de Segurança</h2>
         <div class="flex-container">
-            <!-- Exemplo de projeto -->
+            <img src="gestao-seguranca.jpg" alt="Gestão de Segurança" style="width: 150px; height: 150px;">
             <div class="dialog-box">
-                <h2>Python e Análise de Dados</h2>
-                <p>Descrição detalhada do projeto, incluindo objetivos, métodos, e resultados.</p>
-                <p>Habilidades: Python, Pandas, Visualização de Dados</p>
-                <a href="link-para-relatorio.pdf" target="_blank">Ver Relatório Completo</a>
+                <p>Gestão estratégica de segurança, abordando políticas, auditorias e planos de contingência.</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h2>Portfólio Acadêmico</h2>
+        <div class="flex-container">
+            <div class="dialog-box">
+                <h2>Trabalho em HTML e CSS</h2>
+                <p>Desenvolvimento de páginas web estáticas com foco em usabilidade e design responsivo.</p>
             </div>
             <video width="320" height="240" controls>
                 <source src="trabalho1.mp4" type="video/mp4">
                 Seu navegador não suporta a tag de vídeo.
             </video>
         </div>
-    </section>
-    <section>
-        <h2>Projetos de Machine Learning</h2>
         <div class="flex-container">
-            <!-- Exemplo de projeto -->
+            <img src="trabalho-python.png" alt="Trabalho em Python" style="width: 150px; height: 150px;">
             <div class="dialog-box">
-                <h2>Treinamento de Perceptron e Machine Learning</h2>
-                <p>Descrição detalhada do projeto, incluindo técnicas de ML aplicadas e resultados obtidos.</p>
-                <p>Habilidades: Machine Learning, Scikit-Learn, TensorFlow</p>
-                <a href="link-para-relatorio.pdf" target="_blank">Ver Relatório Completo</a>
+                <h2>Análise de Crime em Python</h2>
+                <p>Análise de dados criminais utilizando Python e bibliotecas como Pandas e Matplotlib.</p>
             </div>
-            <img src="trabalhomachinelearning.jpg" alt="Treinamento de perceptron" style="width: 150px; height: 150px;">
-        </div>
-    </section>
-    <!-- Outras seções de projetos -->
-    <section>
-        <h2>Experiência Acadêmica e Formação</h2>
-        <div class="dialog-box">
-            <p>Detalhes sobre sua formação acadêmica, cursos relevantes, e experiências educacionais.</p>
-            <p>Inclua informações adicionais que sejam relevantes para seu portfólio acadêmico.</p>
         </div>
     </section>
     <footer>
-        <p>© 2024 Todos os direitos reservados - Seu Nome.</p>
+        <p>© 2023 Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
