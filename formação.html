@@ -2,6 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minha Página de Formação</title>
     <style>
         body {
@@ -93,20 +94,43 @@
             body {
                 font-size: 18px;
             }
-            header, main, footer {
-                margin: 10px;
+            .container {
+                width: 100%; /* Ajusta a largura para preencher toda a largura disponível */
+                padding: 10px; /* Reduz um pouco o padding para economizar espaço */
+            }
+            header {
+                padding: 5px; /* Reduz o padding do header para economizar espaço */
             }
             img {
                 position: relative;
                 margin-top: 20px;
                 right: auto;
                 width: 100%;
-                max-width: 200px;
+                max-width: 150px; /* Reduz um pouco o tamanho máximo da imagem */
                 height: auto;
+                border-radius: 50%;
             }
             .back-button {
-                position: static;
-                margin-bottom: 10px;
+                position: static; /* Altera para posição estática para que o botão fique no fluxo do documento */
+                margin-bottom: 10px; /* Adiciona margem inferior para separar do conteúdo */
+                text-align: center; /* Centraliza o botão */
+            }
+            .back-button button {
+                padding: 8px 16px; /* Reduz um pouco o padding do botão para economizar espaço */
+                font-size: 14px; /* Reduz o tamanho da fonte do botão */
+            }
+            .bio-box {
+                padding: 10px; /* Reduz o padding da caixa de biografia */
+                margin-top: 10px; /* Reduz a margem superior da caixa de biografia */
+            }
+            .bio-box h1 {
+                font-size: 20px; /* Reduz o tamanho da fonte do título da caixa de biografia */
+            }
+            .bio-box h3, .bio-box h4 {
+                font-size: 16px; /* Reduz o tamanho da fonte dos subtítulos da caixa de biografia */
+            }
+            .bio-box p {
+                font-size: 14px; /* Reduz o tamanho da fonte do texto da caixa de biografia */
             }
         }
     </style>
