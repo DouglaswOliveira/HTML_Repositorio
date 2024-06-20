@@ -3,107 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <title>Minha Página de Formação</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
         body {
-            font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
-            background-color: #ffffff;
-            margin: 2px;
-            padding: 2px;
-            position: relative; /* Adicionado para posicionar corretamente o botão */
-        }
-        header, footer {
-            background-color: #f0f8ff;
-            color: #000000;
-            padding: 20px;
-            text-align: center;
-            border-radius: 8px;
-        }
-        main {
-            margin: 15px;
-        }
-        section {
-            margin-bottom: 20px;
-        }
-        h2 {
-            color: #2e8b57;
-            padding-bottom: 5px;
-        }
-        ul {
-            list-style-type: none;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
         }
-        li {
-            background: #e0ffff;
-            margin: 5px 0;
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #339aee1c;
+            color: #000;
             padding: 10px;
-            border-radius: 5px;
+            text-align: center;
+            border-bottom: 2px solid #339aee;
+            position: relative;
         }
-        @media screen and (max-width: 1080px) {
-            body {
-                font-size: 32px; 
-            }
-            header, main, footer {
-                margin: 5px;
-            }
+        header h1 {
+            margin: 0;
+            padding-top: 20px; /* Ajuste para alinhar com a imagem */
         }
-        footer {
-            position: relative; 
-        }
-        a.button-link {
+        .back-button {
             position: absolute;
-            top: 10px;
-            left: 10px;
-            padding: 10px 20px;
-            background-color: #2e8b57;
-            color: white;
+            top: 20px;
+            left: 20px;
+        }
+        .back-button button {
+            background-color: #339aee; /* Cor de fundo azul */
+            color: #fff; /* Cor do texto branco */
             border: none;
+            padding: 10px 20px;
+            font-size: 16px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
-            text-decoration: none; /* Remover sublinhado */
         }
-        a.button-link:hover {
-            background-color: #3cb371;
+        .back-button button:hover {
+            background-color: #2073b5; /* Cor de fundo azul mais escura no hover */
+        }
+        img {
+            width: 150px; /* Reduzi um pouco o tamanho da imagem para ficar mais próximo do exemplo */
+            height: 150px;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .bio-box {
+            border: 2px solid #000;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            margin-top: 20px;
+        }
+        .bio-box h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .bio-box h3, .bio-box h4 {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .bio-box p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .bio-box ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        footer {
+            background-color: #339aee1c;
+            color: #000;
+            padding: 10px;
+            text-align: center;
+            clear: both;
+            position: relative;
+            margin-top: 20px;
+        }
+        footer p {
+            margin: 0;
+        }
+        @media screen and (max-width: 600px) {
+            body {
+                font-size: 18px;
+            }
+            header, main, footer {
+                margin: 10px;
+            }
+            img {
+                position: relative;
+                margin-top: 20px;
+                right: auto;
+                width: 100%;
+                max-width: 200px;
+                height: auto;
+            }
+            .back-button {
+                position: static;
+                margin-bottom: 10px;
+            }
         }
     </style>
 </head>
 <body>
-    <a href="index.html" class="back-button"><button>Voltar ao Índice</button></a>
     <header>
-        <h1>Bem-vindo à Minha Página de Formação</h1>
+        <a href="index.html" class="back-button"><button>Voltar ao Índice</button></a>
+        <h1>Minha Página de Formação</h1>
+        <img src="fotoperfil2.jpg" alt="Minha Foto">
     </header>
-    <main>
-        <section>
-            <h2>Escolaridade</h2>
+    <div class="container">
+        <div class="bio-box">
+            <h1>Escolaridade</h1>
             <ul>
                 <li>Ensino Fundamental: EE Profª Alzira Valle Rollemberg, 1998-2005</li>
                 <li>Ensino Médio: EE Profª Alzira Valle Rollemberg, 2006-2008</li>
             </ul>
-        </section>
-        <section>
-            <h2>Graduações</h2>
+        </div>
+        <div class="bio-box">
+            <h1>Graduações</h1>
             <ul>
                 <li>Graduação em Gestão de Segurança Privada, UNINTER, 2021-2022</li>
                 <li>Graduação em Ciência de Dados, UNINTER, 2023-2025</li>
             </ul>
-        </section>
-        <section>
-            <h2>Cursos</h2>
+        </div>
+        <div class="bio-box">
+            <h1>Cursos</h1>
             <ul>
                 <li>Datilografia, 2006</li>
                 <li>Informática - Windows, Word, Excel, PowerPoint, Internet, 2006</li>
                 <li>Manutenção de Microcomputadores, 2007</li>
                 <li>Vigilante, carro forte, supervisor de segurança</li>
             </ul>
-        </section>
-        <section>
-            <h2>Idiomas</h2>
+        </div>
+        <div class="bio-box">
+            <h1>Idiomas</h1>
             <ul>
                 <li>Inglês, Básico - 2022</li>
             </ul>
-        </section>
-    </main>
+        </div>
+    </div>
     <footer>
         <p>© 2023 Todos os direitos reservados.</p>
     </footer>
