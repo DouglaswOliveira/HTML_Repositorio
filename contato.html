@@ -1,72 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato</title>
+    <title>Contato - Douglas Wesley Alves de Oliveira</title>
     <style>
         body {
-            font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
-            margin: 1;
-            padding: 2;
-            background-color: rgb(253, 253, 253);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+        .contact-box {
+            border: 2px solid #000;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            margin-top: 20px;
+        }
+        .flex-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
         }
         header, footer {
             background-color: #339aee1c;
-            color: #000000;
+            color: #000;
             padding: 10px;
             text-align: center;
         }
-        .center {
-            display: flex;
-            justify-content: center;
-            align-items: center; /* formulario no centro*/
-            height: 90vh;
+        header h1 {
+            margin: 0;
         }
-        form {/* dentro no formulario*/
-            border: 2px solid #000;
-            padding: 35px;
-            width: 50%; 
+        footer p {
+            margin: 0;
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .back-button button {
+            background-color: #339aee; /* Cor de fundo azul */
+            color: #fff; /* Cor do texto branco */
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .back-button button:hover {
+            background-color: #2073b5; /* Cor de fundo azul mais escura no hover */
         }
         @media screen and (max-width: 600px) {
-            form {
+            body {
+                font-size: 18px;
+            }
+            header, main, footer {
+                margin: 10px;
+            }
+            img {
+                position: relative;
+                margin-top: 20px;
+                right: auto;
                 width: 100%;
+                max-width: 200px;
+                height: auto;
+            }
+            .back-button {
+                position: static;
+                margin-bottom: 10px;
             }
         }
     </style>
 </head>
 <body>
     <header>
+        <a href="index.html" class="back-button"><button>Voltar ao Índice</button></a>
         <h1>Contato</h1>
+        <img src="fotoperfil2.jpg" alt="Sua Foto">
     </header>
-    <div class="center"> 
-        <form action="" method="">
-        <h1>Entre em contato comigo pelo formulário abaixo</h1>
-            <table>
-                <tr>
-                    <th><label for="Nome"> Nome:</label></th>
-                    <td><input type="text" name="nome" id="nome"></td>
-                </tr>
-                <tr>
-                    <th><label for="email">E-mail:</label></th>
-                    <td><input type="email" name="email" id="email"></td>
-                </tr>
-                <tr>
-                    <th><label for="msg">Digite sua Mensagem:</label>
-                    </th>
-                    <td><textarea name="msg" rows="5" cols="30">Digite sua Mensagem</textarea></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td> <button>Enviar</button> <br>
-                        <br>
-                </tr>
-            </table>
-        </form>
+    <div class="container">
+        <div class="flex-container">
+            <div class="contact-box">
+                <h2>Entre em Contato</h2>
+                <form action="#" method="POST">
+                    <label for="nome">Nome:</label><br>
+                    <input type="text" id="nome" name="nome" required><br><br>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required><br><br>
+                    <label for="mensagem">Mensagem:</label><br>
+                    <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br><br>
+                    <input type="submit" value="Enviar">
+                </form>
+            </div>
+        </div>
     </div>
     <footer>
-        <p>© 2023 Todos os direitos reservados.</p>
+        <p>© 2024 Todos os direitos reservados.</p>
     </footer>
-    <a href="index.html"><button>Voltar ao Índice</button></a>
 </body>
 </html>
