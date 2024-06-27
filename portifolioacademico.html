@@ -17,7 +17,7 @@
             padding: 10px;
             text-align: center;
             border-bottom: 2px solid #339aee;
-            position: relative; /* Para posicionar corretamente o botão */
+            position: relative;
         }
         header h1 {
             margin: 0;
@@ -51,6 +51,7 @@
             height: auto;
             margin-right: 20px;
             border-radius: 50%;
+            cursor: pointer;
         }
         .dialog-box {
             border: 2px solid #000;
@@ -101,6 +102,33 @@
                 width: calc(100% - 20px);
             }
         }
+        .fullscreen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .fullscreen img, .fullscreen video {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .fullscreen .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 50%;
+        }
     </style>
 </head>
 <body>
@@ -129,7 +157,7 @@
             <div class="dialog-box">
                 <p>Trabalho Realizado de Analise</p>
             </div>
-            <video width="320" height="240" controls>
+            <video width="320" height="240" controls class="clickable">
                 <source src="trabalho1.mp4" type="video/mp4">
                 Seu navegador não suporta a tag de vídeo.
             </video>
@@ -138,32 +166,62 @@
     <section>
         <h2>Trabalhos Acadêmicos - Modelos em Fotos</h2>
         <div class="flex-container">
-            <img src="Trabalho de python Analise de Crime.png" alt="Trabalho de python Analise de Crime" style="width: 150px; height: 150px;">
+            <img src="Trabalho de python Analise de Crime.png" alt="Trabalho de python Analise de Crime" style="width: 150px; height: 150px;" class="clickable">
             <div class="dialog-box">
                 <p>Trabalho de python Analise de Crime</p>
             </div>
         </div>
         <div class="flex-container">
-            <img src="trabalhomachinelearning.jpg" alt="Treinamento de perceptron" style="width: 150px; height: 150px;">
+            <img src="trabalhomachinelearning.jpg" alt="Treinamento de perceptron" style="width: 150px; height: 150px;" class="clickable">
             <div class="dialog-box">
                 <p>Machine Learning com Treinamento de perceptron</p>
             </div>
         </div>
         <div class="flex-container">
-            <img src="trabalho de python Cadastro de Cliente.jpg" alt="Cadastro de Cliente" style="width: 150px; height: 150px;">
+            <img src="trabalho de python Cadastro de Cliente.jpg" alt="Cadastro de Cliente" style="width: 150px; height: 150px;" class="clickable">
             <div class="dialog-box">
                 <p>Trabalho em Python de Cadastro de Clientes</p>
             </div>
         </div>
         <div class="flex-container">
-            <img src="trabalho de HTML Tabelas.png" alt="Tabelas" style="width: 150px; height: 150px;">
+            <img src="trabalho de HTML Tabelas.png" alt="Tabelas" style="width: 150px; height: 150px;" class="clickable">
             <div class="dialog-box">
                 <p>Trabalho de HTML Tabelas</p>
             </div>
         </div>
     </section>
+    <div class="fullscreen" id="fullscreen">
+        <button class="close-btn" onclick="closeFullscreen()">X</button>
+        <img id="fullscreen-img" src="" alt="">
+        <video id="fullscreen-video" controls></video>
+    </div>
     <footer>
         <p>© Todos os direitos reservados.</p>
     </footer>
+    <script>
+        document.querySelectorAll('.clickable').forEach(item => {
+            item.addEventListener('click', event => {
+                const fullscreenElement = document.getElementById('fullscreen');
+                const fullscreenImg = document.getElementById('fullscreen-img');
+                const fullscreenVideo = document.getElementById('fullscreen-video');
+                if (event.target.tagName === 'IMG') {
+                    fullscreenVideo.style.display = 'none';
+                    fullscreenImg.src = event.target.src;
+                    fullscreenImg.style.display = 'block';
+                } else if (event.target.tagName === 'VIDEO') {
+                    fullscreenImg.style.display = 'none';
+                    fullscreenVideo.src = event.target.querySelector('source').src;
+                    fullscreenVideo.style.display = 'block';
+                }
+                fullscreenElement.style.display = 'flex';
+            });
+        });
+
+        function closeFullscreen() {
+            document.getElementById('fullscreen').style.display = 'none';
+            document.getElementById('fullscreen-img').src = '';
+            document.getElementById('fullscreen-video').src = '';
+        }
+    </script>
 </body>
 </html>
