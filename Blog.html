@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Douglas Wesley Alves de Oliveira - Biografia</title>
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+        .bio-box {
+            border: 2px solid #000;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            margin-top: 20px;
+        }
+        .flex-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        header, footer {
+            background-color: #339aee1c;
+            color: #000;
+            padding: 10px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        footer p {
+            margin: 0;
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .back-button button {
+            background-color: #339aee; /* Cor de fundo azul */
+            color: #fff; /* Cor do texto branco */
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .back-button button:hover {
+            background-color: #2073b5; /* Cor de fundo azul mais escura no hover */
+        }
+        .links-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .links-container a {
+            margin: 0 10px;
+            padding: 10px 20px;
+            background-color: #339aee;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .links-container a:hover {
+            background-color: #2073b5;
+        }
+        @media screen and (max-width: 600px) {
+            body {
+                font-size: 18px;
+            }
+            header, main, footer {
+                margin: 10px;
+            }
+            img {
+                position: relative;
+                margin-top: 20px;
+                right: auto;
+                width: 100%;
+                max-width: 200px;
+                height: auto;
+            }
+            .back-button {
+                position: static;
+                margin-bottom: 10px;
+            }
+            .links-container {
+                flex-direction: column;
+            }
+            .links-container a {
+                margin-bottom: 10px;
+            }
+        }
+        h3, h4, p, ul, li {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        h3 {
+            font-size: 24px;
+        }
+        h4 {
+            font-size: 20px;
+        }
+        p, li {
+            font-size: 18px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li::before {
+            content: "• ";
+            color: #000;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back-button"><button>Voltar ao Índice</button></a>
+        <h1>Biografia</h1>
+        <img src="fotoperfil2.jpg" alt="Sua Foto">
+    </header>
+    <div class="container">
+        <div class="flex-container">
+            <div class="bio-box">
+                <h3>Olá</h3>
+                <p>Meu nome é Douglas Wesley Alves de Oliveira, e ao longo dos anos, construí uma sólida trajetória profissional no setor de segurança, destacando-me como um profissional comprometido e habilidoso. Atualmente, atuo como Vigilante Líder no Grupo Protege, uma empresa líder no segmento de segurança, onde exerço influência sobre os demais vigilantes, visando o atingimento dos objetivos e metas propostos para a equipe que lidero. Estou nesta posição desde fevereiro de 2012, acumulando 12 anos e 4 meses de experiência.</p>
+                
+                <div class="links-container">
+                    <a href="#analise-dados">Análise de Dados</a>
+                    <a href="#seguranca-patrimonial">Segurança Patrimonial</a>
+                    <a href="#gestao-seguranca">Gestão em Segurança Patrimonial</a>
+                </div>
+                
+                <h3 id="analise-dados">Análise de Dados</h3>
+                <p>Possuo habilidades básicas em Python, MySQL e Power BI, permitindo-me realizar análises de dados eficazes e auxiliar na tomada de decisões informadas.</p>
+                
+                <h3 id="seguranca-patrimonial">Segurança Patrimonial</h3>
+                <p>Tenho uma experiência sólida como vigilante de banco, vigilante patrimonial e escolta armada, garantindo a proteção e a segurança de pessoas e bens patrimoniais.</p>
+                
+                <h3 id="gestao-seguranca">Gestão em Segurança Patrimonial</h3>
+                <p>Com experiência em gestão empresarial, estratégias de gestão e otimização de processos, consigo liderar equipes de segurança para atingir metas organizacionais e garantir a eficiência operacional.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>© 2024 Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
