@@ -127,15 +127,23 @@ footer p {
 
 }
 .social-links {
-    display: flex;
-    justify-content: flex-start; /* padrão para desktop */
-    gap: 20px; /* espaço entre os ícones */
+    display: flex;           /* Organiza os links em linha */
+    justify-content: flex-start; /* No desktop, fica à esquerda */
+    gap: 20px;               /* Espaço entre os ícones */
+    flex-wrap: wrap;         /* Permite quebrar linha se necessário */
 }
 
-/* Responsivo para telas pequenas */
+/* Responsivo para celular */
 @media screen and (max-width: 768px) {
     .social-links {
-        justify-content: center; /* centraliza os links no celular */
+        justify-content: center; /* centraliza horizontalmente */
+    }
+
+    .social-links a img {
+        width: 50px;  /* aumenta ou diminui o tamanho dos ícones no celular */
+        height: 50px;
     }
 }
+
+
 
