@@ -26,13 +26,13 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: radial-gradient(circle at top, var(--bg-secondary), var(--bg-main));
             color: var(--text-main);
-            padding-bottom: 80px;
+            padding-bottom: 100px;
         }
 
         /* ===== HEADER ===== */
         header {
             background: linear-gradient(135deg, var(--bg-main), var(--bg-secondary));
-            padding: 25px;
+            padding: 30px;
             text-align: center;
             border-bottom: 1px solid var(--border);
             position: relative;
@@ -40,7 +40,7 @@
 
         header h1 {
             color: var(--primary);
-            font-size: 1.8rem;
+            font-size: 2rem;
             letter-spacing: 1px;
         }
 
@@ -64,20 +64,20 @@
         .back-button button:hover {
             background: var(--primary);
             color: var(--bg-main);
-            box-shadow: 0 0 10px rgba(100, 255, 218, 0.6);
+            box-shadow: 0 0 12px rgba(100, 255, 218, 0.7);
         }
 
         /* ===== SEÇÕES ===== */
         section {
             max-width: 1100px;
-            margin: 40px auto;
+            margin: 50px auto;
             padding: 0 20px;
         }
 
         section h2 {
             color: var(--primary);
-            margin-bottom: 20px;
-            font-size: 1.4rem;
+            margin-bottom: 25px;
+            font-size: 1.6rem;
         }
 
         /* ===== CARD ===== */
@@ -86,37 +86,37 @@
             border: 1px solid var(--border);
             border-radius: 14px;
             padding: 25px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-            margin-bottom: 25px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+            margin-bottom: 30px;
         }
 
         .dialog-box h3 {
             color: var(--primary);
-            margin-bottom: 10px;
-            font-size: 1.1rem;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
         }
 
         .dialog-box p {
             color: var(--text-muted);
             line-height: 1.6;
-            font-size: 0.95rem;
+            font-size: 0.96rem;
         }
 
         /* ===== FLEX ===== */
         .flex-container {
             display: flex;
             align-items: center;
-            gap: 25px;
-            margin-bottom: 30px;
+            gap: 30px;
+            margin-bottom: 35px;
         }
 
         .flex-container img,
         .flex-container video {
-            width: 160px;
+            width: 180px;
             border-radius: 12px;
             border: 2px solid var(--primary);
             cursor: pointer;
-            box-shadow: 0 0 20px rgba(100, 255, 218, 0.25);
+            box-shadow: 0 0 22px rgba(100, 255, 218, 0.35);
         }
 
         video {
@@ -128,7 +128,7 @@
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(2, 12, 27, 0.95);
+            background: rgba(2, 12, 27, 0.96);
             justify-content: center;
             align-items: center;
             z-index: 1000;
@@ -179,6 +179,12 @@
                 transform: none;
                 margin-bottom: 15px;
             }
+
+            .flex-container img,
+            .flex-container video {
+                width: 100%;
+                max-width: 300px;
+            }
         }
     </style>
 </head>
@@ -193,20 +199,23 @@
 </header>
 
 <section>
-    <h2>Primeiros Estudos e Tecnologias</h2>
+    <h2>Estudos e Tecnologias</h2>
 
     <div class="dialog-box">
-        <h3>SQL e Banco de Dados</h3>
-        <p>Fundamentos de criação, manipulação e consulta de dados utilizando SQL.</p>
+        <h3>SQL & Banco de Dados</h3>
+        <p>Fundamentos de criação, manipulação e consulta de dados com SQL. Experiência em SELECT, JOIN, GROUP BY, controle de acesso e princípios básicos de segurança de dados.</p>
 
-        <h3>Python e Análise de Dados</h3>
-        <p>Desenvolvimento com Python, explorando bibliotecas como NumPy e Pandas.</p>
+        <h3>Python & Análise de Dados</h3>
+        <p>Desenvolvimento em Python com foco em análise de dados, automação e exploração de bibliotecas como NumPy e Pandas. Aplicação em projetos de análise e segurança de dados.</p>
 
         <h3>Machine Learning</h3>
-        <p>Estudos sobre Perceptron, redes neurais e pré-processamento de dados.</p>
+        <p>Estudos sobre Perceptron, redes neurais básicas e pré-processamento de dados, com aplicação em detecção de padrões e identificação de anomalias.</p>
 
         <h3>HTML & CSS</h3>
-        <p>Criação de páginas web estáticas com foco em estrutura e design.</p>
+        <p>Criação de páginas web estáticas e responsivas, com boas práticas de design, organização de conteúdo e introdução a segurança em aplicações web.</p>
+
+        <h3>Cyber Security & Cloud Security (Base)</h3>
+        <p>Conhecimentos iniciais em segurança da informação, integrando conceitos de confidencialidade, integridade e disponibilidade. Estudo de proteção de dados, ambientes em nuvem e boas práticas de segurança digital.</p>
     </div>
 </section>
 
@@ -218,7 +227,7 @@
             <source src="trabalho1.mp4" type="video/mp4">
         </video>
         <div class="dialog-box">
-            <p>Análise prática aplicada em projeto acadêmico.</p>
+            <p>Projeto acadêmico de análise de dados com apresentação em vídeo, demonstrando aplicação prática das tecnologias estudadas.</p>
         </div>
     </div>
 </section>
@@ -229,28 +238,28 @@
     <div class="flex-container">
         <img src="Trabalho de python Analise de Crime.png" class="clickable">
         <div class="dialog-box">
-            <p>Análise de crimes utilizando Python.</p>
+            <p>Análise de crimes utilizando Python com exploração de dados e visualização de resultados.</p>
         </div>
     </div>
 
     <div class="flex-container">
         <img src="trabalhomachinelearning.jpg" class="clickable">
         <div class="dialog-box">
-            <p>Machine Learning com treinamento de Perceptron.</p>
+            <p>Machine Learning aplicado em projeto de Perceptron para classificação e detecção de padrões.</p>
         </div>
     </div>
 
     <div class="flex-container">
         <img src="trabalho de python Cadastro de Cliente.jpg" class="clickable">
         <div class="dialog-box">
-            <p>Sistema de cadastro de clientes em Python.</p>
+            <p>Sistema de cadastro de clientes desenvolvido em Python, com armazenamento e manipulação de dados.</p>
         </div>
     </div>
 
     <div class="flex-container">
         <img src="trabalho de HTML Tabelas.png" class="clickable">
         <div class="dialog-box">
-            <p>Estruturação de tabelas com HTML.</p>
+            <p>Estruturação e estilização de tabelas utilizando HTML e CSS, com foco em layout e organização de informações.</p>
         </div>
     </div>
 </section>
