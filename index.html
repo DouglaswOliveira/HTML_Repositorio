@@ -4,111 +4,157 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio Profissional</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+
     <style>
         body {
-            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: rgb(253, 253, 253);
+            background: radial-gradient(circle at top, #0a192f, #020c1b);
+            color: #e6f1ff;
         }
+
+        /* ===== HEADER ===== */
         .header {
-            background-color: #339aee1c;
-            color: #000;
-            padding: 10px;
+            background: linear-gradient(135deg, #020c1b, #0a192f);
+            padding: 20px;
             text-align: center;
+            border-bottom: 1px solid #112240;
         }
+
         .header h1 {
             margin: 0;
-            font-size: 1.5em;
+            font-size: 1.6em;
+            color: #64ffda;
         }
+
         .header h2 {
-            margin-top: 5px;
+            margin-top: 8px;
             font-size: 1em;
+            font-weight: 400;
+            color: #ccd6f6;
         }
+
+        /* ===== NAV ===== */
         .nav-links {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 20px;
+            margin-top: 15px;
         }
+
         .nav-links a {
-            margin: 5px 0;
+            margin: 6px 0;
             text-decoration: none;
             width: 100%;
             text-align: center;
         }
+
         .nav-links button {
             width: 80%;
             padding: 10px;
-            background-color: #339aee;
-            color: #fff;
-            border: none;
+            background: transparent;
+            color: #64ffda;
+            border: 1px solid #64ffda;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
         }
+
         .nav-links button:hover {
-            background-color: #2b85d3;
+            background-color: #64ffda;
+            color: #020c1b;
+            box-shadow: 0 0 10px #64ffda;
         }
+
+        /* ===== CONTEÚDO ===== */
         .flex-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 20px;
+            margin-top: 40px;
+            padding-bottom: 80px;
         }
+
         .flex-container img {
-            width: 80%;
-            max-width: 300px;
+            width: 200px;
             border-radius: 50%;
-            margin-bottom: 20px;
+            border: 2px solid #64ffda;
+            box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+            margin-bottom: 30px;
         }
+
         .main-content {
             width: 90%;
-            max-width: 600px;
+            max-width: 650px;
+            padding: 25px;
+            border-radius: 12px;
+            background: rgba(10, 25, 47, 0.85);
+            border: 1px solid #112240;
+            box-shadow: 0 0 25px rgba(100, 255, 218, 0.15);
             text-align: center;
-            padding: 20px;
-            border: 2px solid #000;
-            border-radius: 10px;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-            margin-bottom: 20px;
         }
+
         .main-content p {
             margin-bottom: 15px;
-            text-indent: 30px;
+            line-height: 1.6;
+            color: #ccd6f6;
         }
+
+        /* ===== INFO BOX ===== */
+        .dialog-box {
+            width: 90%;
+            max-width: 650px;
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 10px;
+            background: #020c1b;
+            border-left: 4px solid #64ffda;
+        }
+
+        .dialog-box h2 {
+            margin-top: 0;
+            color: #64ffda;
+            font-size: 1.2em;
+        }
+
+        /* ===== FOOTER ===== */
         .footer {
-            background-color: #339aee1c;
-            color: #000;
-            padding: 10px;
+            background-color: #020c1b;
             text-align: center;
-            width: 100%;
+            padding: 10px;
+            font-size: 0.8em;
+            border-top: 1px solid #112240;
             position: fixed;
             bottom: 0;
+            width: 100%;
         }
-        @media screen and (min-width: 500px) {
+
+        /* ===== RESPONSIVO ===== */
+        @media screen and (min-width: 600px) {
             .nav-links {
                 flex-direction: row;
                 justify-content: center;
             }
+
             .nav-links a {
-                margin: 0 10px;
+                margin: 0 8px;
                 width: auto;
             }
+
             .nav-links button {
                 width: auto;
             }
+
             .flex-container {
                 flex-direction: row;
                 justify-content: center;
-            }
-            .flex-container img {
-                margin-right: 50px;
-                margin-bottom: 0;
+                gap: 40px;
             }
         }
     </style>
 </head>
+
 <body>
 
 <header class="header">
@@ -121,34 +167,32 @@
     <div class="nav-links">
         <a href="biografia.html"><button>Biografia</button></a>
         <a href="formação.html"><button>Formação</button></a>
-        <a href="Blog.html"><button>Blog</button></a>
         <a href="portifolioacademico.html"><button>Portfólio Acadêmico</button></a>
         <a href="contato.html"><button>Contato</button></a>
     </div>
 </header>
 
 <div class="flex-container">
-    <img class="profile-image" src="fotoperfil2.jpg" alt="Foto de Perfil" title="Foto de Perfil">
+    <img src="fotoperfil2.jpg" alt="Foto de Perfil">
 
     <main class="main-content">
         <p>
-            Seja bem-vindo! Sou profissional com sólida experiência em Gestão de Segurança Privada,
-            atuando na proteção patrimonial, controle de acesso, supervisão de equipes e mitigação de riscos.
+            Profissional com sólida experiência em Gestão de Segurança Privada, atuando na proteção patrimonial,
+            controle de acesso, supervisão de equipes e mitigação de riscos.
         </p>
 
         <p>
-            Atualmente, estou em transição de carreira para as áreas de Cyber Security e Cloud Security,
-            buscando unir minha vivência prática em segurança física com os conceitos modernos de
-            segurança da informação, proteção de dados e ambientes em nuvem.
+            Em transição estratégica para Cyber Security e Cloud Security, conectando conceitos de segurança física
+            aos pilares da segurança da informação, proteção de dados e ambientes em nuvem.
         </p>
 
         <p>
-            Neste portfólio você encontrará minha trajetória profissional, formação acadêmica,
-            estudos técnicos e projetos voltados tanto à segurança corporativa quanto à segurança cibernética.
+            Este portfólio reúne minha trajetória profissional, formação acadêmica e projetos técnicos voltados
+            à segurança corporativa e cibernética.
         </p>
 
         <p>
-            Fique à vontade para explorar o conteúdo e entrar em contato.
+            Explore o conteúdo e fique à vontade para entrar em contato.
         </p>
     </main>
 </div>
@@ -161,7 +205,7 @@
 </section>
 
 <footer class="footer">
-    <p></p>
+    <p>© 2025 • Portfólio Profissional</p>
 </footer>
 
 </body>
