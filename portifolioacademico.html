@@ -1,227 +1,297 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio Acadêmico</title>
+    <title>Portfólio Acadêmico | Douglas W. Oliveira</title>
+
     <style>
-        body {
-            font-family: Georgia, 'Times New Roman', Times, serif;
+        :root {
+            --bg-main: #020c1b;
+            --bg-secondary: #0a192f;
+            --primary: #64ffda;
+            --text-main: #e6f1ff;
+            --text-muted: #8892b0;
+            --border: #112240;
+            --glass: rgba(10, 25, 47, 0.88);
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
         }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: radial-gradient(circle at top, var(--bg-secondary), var(--bg-main));
+            color: var(--text-main);
+            padding-bottom: 80px;
+        }
+
+        /* ===== HEADER ===== */
         header {
-            background-color: #339aee1c;
-            color: #000;
-            padding: 10px;
+            background: linear-gradient(135deg, var(--bg-main), var(--bg-secondary));
+            padding: 25px;
             text-align: center;
-            border-bottom: 2px solid #339aee;
+            border-bottom: 1px solid var(--border);
             position: relative;
         }
+
         header h1 {
-            margin: 0;
+            color: var(--primary);
+            font-size: 1.8rem;
+            letter-spacing: 1px;
         }
+
         .back-button {
             position: absolute;
+            left: 20px;
             top: 50%;
             transform: translateY(-50%);
-            left: 20px;
         }
+
         .back-button button {
-            background-color: #339aee;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 8px 14px;
+            border-radius: 6px;
             cursor: pointer;
+            transition: all 0.3s ease;
         }
+
         .back-button button:hover {
-            background-color: #2073b5;
+            background: var(--primary);
+            color: var(--bg-main);
+            box-shadow: 0 0 10px rgba(100, 255, 218, 0.6);
         }
+
+        /* ===== SEÇÕES ===== */
+        section {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        /* ===== CARD ===== */
+        .dialog-box {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            margin-bottom: 25px;
+        }
+
+        .dialog-box h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .dialog-box p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* ===== FLEX ===== */
         .flex-container {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            margin-bottom: 20px;
+            gap: 25px;
+            margin-bottom: 30px;
         }
-        .flex-container img {
-            width: 150px;
-            height: auto;
-            margin-right: 20px;
-            border-radius: 50%;
+
+        .flex-container img,
+        .flex-container video {
+            width: 160px;
+            border-radius: 12px;
+            border: 2px solid var(--primary);
             cursor: pointer;
+            box-shadow: 0 0 20px rgba(100, 255, 218, 0.25);
         }
-        .dialog-box {
-            border: 2px solid #000;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-            margin-bottom: 20px;
+
+        video {
+            background: #000;
         }
-        .dialog-box h2 {
-            font-size: 24px;
-            margin-top: 0;
-        }
-        .dialog-box p {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 10px;
-        }
-        footer {
-            background-color: #339aee1c;
-            color: #000;
-            padding: 10px;
-            text-align: center;
-            clear: both;
-            margin-top: 20px;
-        }
-        footer p {
-            margin: 0;
-        }
-        @media screen and (max-width: 600px) {
-            body {
-                font-size: 18px;
-            }
-            header {
-                flex-direction: column;
-                align-items: center;
-            }
-            .back-button {
-                position: static;
-                margin-bottom: 10px;
-            }
-            .flex-container img {
-                margin-bottom: 20px;
-                margin-right: 0;
-            }
-            .dialog-box {
-                margin: 0 10px 20px 10px;
-                width: calc(100% - 20px);
-            }
-        }
+
+        /* ===== FULLSCREEN ===== */
         .fullscreen {
             display: none;
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
+            inset: 0;
+            background: rgba(2, 12, 27, 0.95);
             justify-content: center;
             align-items: center;
             z-index: 1000;
         }
-        .fullscreen img, .fullscreen video {
+
+        .fullscreen img,
+        .fullscreen video {
             max-width: 90%;
             max-height: 90%;
+            border-radius: 12px;
         }
-        .fullscreen .close-btn {
+
+        .close-btn {
             position: absolute;
             top: 20px;
             right: 20px;
-            background-color: #fff;
+            background: var(--primary);
             border: none;
-            padding: 10px;
-            cursor: pointer;
+            color: var(--bg-main);
             font-size: 18px;
+            padding: 8px 12px;
             border-radius: 50%;
+            cursor: pointer;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: var(--bg-main);
+            border-top: 1px solid var(--border);
+            text-align: center;
+            padding: 12px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 768px) {
+            .flex-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .back-button {
+                position: static;
+                transform: none;
+                margin-bottom: 15px;
+            }
         }
     </style>
 </head>
-<body>
-    <header>
-        <div class="back-button">
-            <a href="index.html"><button>Voltar ao Índice</button></a>
-        </div>
-        <h1>Meu Portfólio Acadêmico</h1>
-    </header>
-    <section>
-        <h2>Trabalhos Acadêmicos - Meus Primeiros Passos</h2>
-        <div class="dialog-box">
-            <h2>SQL e Primeiros Códigos</h2>
-            <p>Minha experiência com SQL começou com a aprendizagem dos fundamentos da linguagem de consulta estruturada. Aprendi a criar, manipular e consultar bancos de dados usando comandos SQL.</p>
-            <h2>Python e Primeiros Comandos</h2>
-            <p>Aprendi Python, uma linguagem de programação de alto nível conhecida por sua simplicidade e eficiência. Comecei com os comandos básicos e explorei bibliotecas como NumPy e Pandas.</p>
-            <h2>Treinamento de Perceptron e Estudo de Machine Learning</h2>
-            <p>Estudei o Perceptron e outros algoritmos de Machine Learning, aprendendo sobre redes neurais e pré-processamento de dados em Excel.</p>
-            <h2>Trabalho em HTML e CSS</h2>
-            <p>Desenvolvi habilidades em HTML e CSS para criar páginas web estáticas e estilizá-las de forma atraente e funcional.</p>
-        </div>
-    </section>
-    <section>
-        <h2>Trabalhos Acadêmicos - Modelos em Vídeos</h2>
-        <div class="flex-container">
-            <div class="dialog-box">
-                <p>Trabalho Realizado de Analise</p>
-            </div>
-            <video width="320" height="240" controls class="clickable">
-                <source src="trabalho1.mp4" type="video/mp4">
-                Seu navegador não suporta a tag de vídeo.
-            </video>
-        </div>
-    </section>
-    <section>
-        <h2>Trabalhos Acadêmicos - Modelos em Fotos</h2>
-        <div class="flex-container">
-            <img src="Trabalho de python Analise de Crime.png" alt="Trabalho de python Analise de Crime" style="width: 150px; height: 150px;" class="clickable">
-            <div class="dialog-box">
-                <p>Trabalho de python Analise de Crime</p>
-            </div>
-        </div>
-        <div class="flex-container">
-            <img src="trabalhomachinelearning.jpg" alt="Treinamento de perceptron" style="width: 150px; height: 150px;" class="clickable">
-            <div class="dialog-box">
-                <p>Machine Learning com Treinamento de perceptron</p>
-            </div>
-        </div>
-        <div class="flex-container">
-            <img src="trabalho de python Cadastro de Cliente.jpg" alt="Cadastro de Cliente" style="width: 150px; height: 150px;" class="clickable">
-            <div class="dialog-box">
-                <p>Trabalho em Python de Cadastro de Clientes</p>
-            </div>
-        </div>
-        <div class="flex-container">
-            <img src="trabalho de HTML Tabelas.png" alt="Tabelas" style="width: 150px; height: 150px;" class="clickable">
-            <div class="dialog-box">
-                <p>Trabalho de HTML Tabelas</p>
-            </div>
-        </div>
-    </section>
-    <div class="fullscreen" id="fullscreen">
-        <button class="close-btn" onclick="closeFullscreen()">X</button>
-        <img id="fullscreen-img" src="" alt="">
-        <video id="fullscreen-video" controls></video>
-    </div>
-    <footer>
-        <p>© Todos os direitos reservados.</p>
-    </footer>
-    <script>
-        document.querySelectorAll('.clickable').forEach(item => {
-            item.addEventListener('click', event => {
-                const fullscreenElement = document.getElementById('fullscreen');
-                const fullscreenImg = document.getElementById('fullscreen-img');
-                const fullscreenVideo = document.getElementById('fullscreen-video');
-                if (event.target.tagName === 'IMG') {
-                    fullscreenVideo.style.display = 'none';
-                    fullscreenImg.src = event.target.src;
-                    fullscreenImg.style.display = 'block';
-                } else if (event.target.tagName === 'VIDEO') {
-                    fullscreenImg.style.display = 'none';
-                    fullscreenVideo.src = event.target.querySelector('source').src;
-                    fullscreenVideo.style.display = 'block';
-                }
-                fullscreenElement.style.display = 'flex';
-            });
-        });
 
-        function closeFullscreen() {
-            document.getElementById('fullscreen').style.display = 'none';
-            document.getElementById('fullscreen-img').src = '';
-            document.getElementById('fullscreen-video').src = '';
-        }
-    </script>
+<body>
+
+<header>
+    <div class="back-button">
+        <a href="index.html"><button>← Voltar</button></a>
+    </div>
+    <h1>Portfólio Acadêmico</h1>
+</header>
+
+<section>
+    <h2>Primeiros Estudos e Tecnologias</h2>
+
+    <div class="dialog-box">
+        <h3>SQL e Banco de Dados</h3>
+        <p>Fundamentos de criação, manipulação e consulta de dados utilizando SQL.</p>
+
+        <h3>Python e Análise de Dados</h3>
+        <p>Desenvolvimento com Python, explorando bibliotecas como NumPy e Pandas.</p>
+
+        <h3>Machine Learning</h3>
+        <p>Estudos sobre Perceptron, redes neurais e pré-processamento de dados.</p>
+
+        <h3>HTML & CSS</h3>
+        <p>Criação de páginas web estáticas com foco em estrutura e design.</p>
+    </div>
+</section>
+
+<section>
+    <h2>Projetos em Vídeo</h2>
+
+    <div class="flex-container">
+        <video controls class="clickable">
+            <source src="trabalho1.mp4" type="video/mp4">
+        </video>
+        <div class="dialog-box">
+            <p>Análise prática aplicada em projeto acadêmico.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Projetos em Imagens</h2>
+
+    <div class="flex-container">
+        <img src="Trabalho de python Analise de Crime.png" class="clickable">
+        <div class="dialog-box">
+            <p>Análise de crimes utilizando Python.</p>
+        </div>
+    </div>
+
+    <div class="flex-container">
+        <img src="trabalhomachinelearning.jpg" class="clickable">
+        <div class="dialog-box">
+            <p>Machine Learning com treinamento de Perceptron.</p>
+        </div>
+    </div>
+
+    <div class="flex-container">
+        <img src="trabalho de python Cadastro de Cliente.jpg" class="clickable">
+        <div class="dialog-box">
+            <p>Sistema de cadastro de clientes em Python.</p>
+        </div>
+    </div>
+
+    <div class="flex-container">
+        <img src="trabalho de HTML Tabelas.png" class="clickable">
+        <div class="dialog-box">
+            <p>Estruturação de tabelas com HTML.</p>
+        </div>
+    </div>
+</section>
+
+<div class="fullscreen" id="fullscreen">
+    <button class="close-btn" onclick="closeFullscreen()">✕</button>
+    <img id="fullscreen-img">
+    <video id="fullscreen-video" controls></video>
+</div>
+
+<footer>
+    © 2025 • Portfólio Acadêmico
+</footer>
+
+<script>
+    document.querySelectorAll('.clickable').forEach(item => {
+        item.addEventListener('click', e => {
+            const fs = document.getElementById('fullscreen');
+            const img = document.getElementById('fullscreen-img');
+            const video = document.getElementById('fullscreen-video');
+
+            if (e.target.tagName === 'IMG') {
+                video.style.display = 'none';
+                img.src = e.target.src;
+                img.style.display = 'block';
+            } else {
+                img.style.display = 'none';
+                video.src = e.target.querySelector('source').src;
+                video.style.display = 'block';
+            }
+
+            fs.style.display = 'flex';
+        });
+    });
+
+    function closeFullscreen() {
+        document.getElementById('fullscreen').style.display = 'none';
+        document.getElementById('fullscreen-img').src = '';
+        document.getElementById('fullscreen-video').src = '';
+    }
+</script>
+
 </body>
 </html>
