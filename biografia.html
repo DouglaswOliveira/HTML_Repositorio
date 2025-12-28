@@ -5,183 +5,197 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Douglas Wesley Alves de Oliveira - Biografia</title>
     <style>
-        body {
-            font-family: Georgia, 'Times New Roman', Times, serif;
+        :root {
+            --bg-main: #020c1b;
+            --bg-secondary: #0a192f;
+            --primary: #64ffda;
+            --text-main: #e6f1ff;
+            --text-muted: #8892b0;
+            --border: #112240;
+            --glass: rgba(10, 25, 47, 0.88);
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
         }
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: radial-gradient(circle at top, var(--bg-secondary), var(--bg-main));
+            color: var(--text-main);
+            padding-bottom: 100px;
         }
-        img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            position: fixed;
-            top: 20px;
-            right: 20px;
-        }
-        .bio-box {
-            border: 2px solid #000;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-            margin-top: 20px;
-        }
-        .flex-container {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
+
         header, footer {
-            background-color: #339aee1c;
-            color: #000;
-            padding: 10px;
+            background: linear-gradient(135deg, var(--bg-main), var(--bg-secondary));
             text-align: center;
-            margin-bottom: 20px; /* Adicionado para espaço entre cabeçalho e conteúdo */
-            position: relative; /* Adicionado para ajustar o z-index */
+            padding: 25px 20px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
         }
+
         header h1 {
-            margin: 0;
-            padding-top: 20px; /* Ajuste para alinhar com a imagem */
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
         }
+
         .back-button {
             position: absolute;
-            top: 20px;
+            top: 25px;
             left: 20px;
         }
+
         .back-button button {
-            background-color: #339aee; /* Cor de fundo azul */
-            color: #fff; /* Cor do texto branco */
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 8px 14px;
+            border-radius: 6px;
             cursor: pointer;
+            transition: all 0.3s ease;
         }
+
         .back-button button:hover {
-            background-color: #2073b5; /* Cor de fundo azul mais escura no hover */
+            background: var(--primary);
+            color: var(--bg-main);
+            box-shadow: 0 0 10px rgba(100, 255, 218, 0.6);
         }
-        @media screen and (max-width: 600px) {
-            body {
-                font-size: 18px;
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .bio-box {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 25px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        .bio-box h3, .bio-box h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .bio-box p, .bio-box li {
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .bio-box ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        img.profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            float: right;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background: var(--bg-main);
+            border-top: 1px solid var(--border);
+            text-align: center;
+            padding: 12px;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            img.profile-pic {
+                float: none;
+                display: block;
+                margin: 20px auto;
             }
-            header, main, footer {
-                margin: 10px;
-            }
-            img {
-                position: relative;
-                margin-top: 20px;
-                right: auto;
-                width: 100%;
-                max-width: 200px;
-                height: auto;
-            }
+
             .back-button {
                 position: static;
-                margin-bottom: 10px;
+                margin-bottom: 15px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <a href="index.html" class="back-button"><button>Voltar ao Índice</button></a>
-        <h1>Douglas Wesley Alves de Oliveira - Biografia</h1>
-        <img src="fotoperfil2.jpg" alt="Sua Foto">
-    </header>
-    <div class="container">
-        <div class="flex-container">
-            <div class="bio-box">
-                <h3>Olá</h3>
-                <p>Meu nome é Douglas Wesley Alves de Oliveira, e ao longo dos anos, construí uma sólida trajetória profissional no setor de segurança, destacando-me como um profissional comprometido e habilidoso. Atualmente, atuo como Vigilante Líder no Grupo Protege, uma empresa líder no segmento de segurança, onde exerço influência sobre os demais vigilantes, visando o atingimento dos objetivos e metas propostos para a equipe que lidero. Estou nesta posição desde Fevereiro de 2017, acumulando 12 anos e 4 meses de experiência.</p>
-                
-                <h3>Competências</h3>
-                <ul>
-                    <li><strong>Gestão Empresarial:</strong> Conceito em estratégias de gestão, otimização de processos e eficiência operacional.</li>
-                    <li><strong>Segurança Patrimonial:</strong> Experiência sólida como vigilante de banco, vigilante patrimonial, Escolta armada.</li>
-                    <li><strong>Liderança:</strong> Capacidade de liderar equipes e atingir metas organizacionais.</li>
-                    <li><strong>Informática:</strong> Administração de redes, suporte técnico, conhecimento em sistemas operacionais e software de escritório.</li>
-                    <li><strong>Conceito em Análise de Dados:</strong> Habilidades básicas em Python, MySQL e Power BI.</li>
-                </ul>
-                
-                <h3>Qualidades Pessoais</h3>
-                <ul>
-                    <li>Proatividade e comprometimento.</li>
-                    <li>Grande senso de responsabilidade.</li>
-                    <li>Facilidade para trabalhar em equipe.</li>
-                    <li>Excelentes habilidades de comunicação, negociação e liderança.</li>
-                </ul>
-                
-                <h3>Experiência Profissional no Grupo Protege:</h3>
-                <p>Com 12 anos de sólida experiência em segurança patrimonial e um interesse crescente na gestão de segurança privada.</p>
-                
-                <h4>Grupo Protege</h4>
-                <p><strong>Tempo integral · 12 anos 5 meses</strong><br>
-                <strong>São José do Rio Preto, São Paulo, Brasil</strong></p>
-                
-                <h4>Vigilante Líder</h4>
-                <p><strong>Janeiro de 2017 - Presente (7 anos 6 meses)</strong></p>
-                <ul>
-                    <li>Exerce influência sobre os demais vigilantes, visando o atingimento dos objetivos e metas da equipe.</li>
-                    <li>Responsável pela liderança e supervisão de uma equipe de vigilantes.</li>
-                    <li>Implementação de estratégias para atingir objetivos e metas da equipe.</li>
-                    <li>Habilidades de liderança, comunicação, negociação e solução de problemas.</li>
-                    <li>Competências: Vigilância, APPCC (Análise de Perigos e Pontos Críticos de Controle), Radiocomunicação, Situações de Crise, Gestão de Crises, Liderança, Controle de Acesso, Segurança.</li>
-                </ul>
-                
-                <h4>Vigilante de Carro Forte</h4>
-                <p><strong>Agosto de 2015 - Janeiro de 2017 (1 ano 6 meses)</strong></p>
-                <ul>
-                    <li>Proteção e defesa do valor transportado.</li>
-                    <li>Competências: Vigilância, Radiocomunicação, Controle de Acesso, Segurança.</li>
-                </ul>
-                
-                <h4>Vigilante Segurança de Base</h4>
-                <p><strong>Junho de 2014 - Agosto de 2015 (1 ano 3 meses)</strong></p>
-                <ul>
-                    <li>Controle de acesso, vigilância patrimonial, prevenção e combate a incêndios, atividades de inteligência.</li>
-                    <li>Busca promover, manter e garantir a incolumidade física das pessoas e a integridade do patrimônio.</li>
-                    <li>Competências: Vigilância, CFTV (Circuitos Fechados de Televisão), Radiocomunicação, Código Q, Controle de Acesso, Segurança.</li>
-                </ul>
-                
-                <h4>Auxiliar de Processamento</h4>
-                <p><strong>Fevereiro de 2012 - Junho de 2014 (2 anos 5 meses)</strong></p>
-                <ul>
-                    <li>Lançamento de notas fiscais, registros de passivos.</li>
-                    <li>Competências: Microsoft Excel, Microsoft Windows, Liderança.</li>
-                </ul>
-                
-                <h4>Assistente de Informática - Furlan Auto Peças</h4>
-                <p><strong>Janeiro de 2010 - Janeiro de 2012 (2 anos)</strong></p>
-                <ul>
-                    <li>Prestar assistência na administração da rede de computadores e suporte aos usuários nos aspectos de hardware e software.</li>
-                    <li>Realização de manutenção de computadores.</li>
-                    <li>Competências: Microsoft Windows, Microsoft Office, Redes, Hardware, Software, Suporte Técnico.</li>
-                </ul>
-                
-                <h4>Estoquista</h4>
-                <p><strong>Estágio</strong><br>
-                Setor de Expedição.</p>
-                <ul>
-                    <li>Organização de estoque.</li>
-                    <li>Recebimento e expedição de mercadorias.</li>
-                    <li>Controle de inventário.</li>
-                </ul>
-                
-                <p>Estou ansioso para contribuir para o sucesso da sua organização e estou disponível para discutir minhas qualificações em mais detalhes.</p>
-                
-                <p><strong>Atenciosamente,</strong><br>
-                <strong>Douglas Wesley Alves de Oliveira</strong></p>
-            </div>
-        </div>
+<header>
+    <a href="index.html" class="back-button"><button>← Voltar ao Índice</button></a>
+    <h1>Douglas Wesley Alves de Oliveira - Biografia</h1>
+</header>
+
+<div class="container">
+    <div class="bio-box">
+        <img src="fotoperfil2.jpg" alt="Foto de Douglas" class="profile-pic">
+        
+        <h3>Olá</h3>
+        <p>Meu nome é Douglas Wesley Alves de Oliveira, com sólida trajetória profissional no setor de segurança. Atualmente atuo como Vigilante Líder no Grupo Protege, liderando equipes e implementando estratégias para atingir objetivos. Com experiência de mais de 12 anos, possuo habilidades em segurança patrimonial, liderança e tecnologia aplicada à segurança.</p>
+
+        <h3>Competências</h3>
+        <ul>
+            <li><strong>Gestão de Segurança:</strong> Estratégias de liderança, supervisão de equipes e otimização de processos.</li>
+            <li><strong>Segurança Patrimonial:</strong> Experiência em vigilância, escolta armada e proteção de valores.</li>
+            <li><strong>Informática & Análise de Dados:</strong> Python, MySQL, Power BI, análise de dados aplicada à segurança.</li>
+            <li><strong>Cyber Security:</strong> Fundamentos de segurança digital, proteção de dados e boas práticas de TI.</li>
+            <li><strong>Comunicação e Liderança:</strong> Negociação, solução de problemas e motivação de equipes.</li>
+        </ul>
+
+        <h3>Qualidades Pessoais</h3>
+        <ul>
+            <li>Proatividade, comprometimento e grande senso de responsabilidade.</li>
+            <li>Capacidade de trabalhar em equipe e liderar projetos.</li>
+            <li>Facilidade em aprendizagem de novas tecnologias e ferramentas digitais.</li>
+        </ul>
+
+        <h3>Experiência Profissional</h3>
+
+        <h4>Grupo Protege - Vigilante Líder</h4>
+        <p><strong>Janeiro de 2017 - Presente (7 anos 6 meses)</strong></p>
+        <ul>
+            <li>Liderança e supervisão de equipes de vigilantes.</li>
+            <li>Implementação de estratégias para atingir metas da equipe.</li>
+            <li>Controle de acesso, situações de crise e gestão de segurança patrimonial.</li>
+        </ul>
+
+        <h4>Vigilante de Carro Forte</h4>
+        <p><strong>Agosto de 2015 - Janeiro de 2017 (1 ano 6 meses)</strong></p>
+        <ul>
+            <li>Proteção e transporte seguro de valores.</li>
+        </ul>
+
+        <h4>Vigilante Segurança de Base</h4>
+        <p><strong>Junho de 2014 - Agosto de 2015 (1 ano 3 meses)</strong></p>
+        <ul>
+            <li>Controle de acesso, vigilância patrimonial e CFTV.</li>
+        </ul>
+
+        <h4>Auxiliar de Processamento</h4>
+        <p><strong>Fevereiro de 2012 - Junho de 2014 (2 anos 5 meses)</strong></p>
+        <ul>
+            <li>Lançamento de notas fiscais, registros e controle de dados administrativos.</li>
+        </ul>
+
+        <h4>Assistente de Informática - Furlan Auto Peças</h4>
+        <p><strong>Janeiro de 2010 - Janeiro de 2012 (2 anos)</strong></p>
+        <ul>
+            <li>Suporte técnico, manutenção de computadores e administração de redes.</li>
+        </ul>
+
+        <p>Estou disponível para contribuir com organizações que busquem unir gestão de segurança, análise de dados e fundamentos de Cyber Security.</p>
+        <p><strong>Atenciosamente,</strong><br>Douglas Wesley Alves de Oliveira</p>
     </div>
-    <footer>
-        <p>© 2024 Todos os direitos reservados.</p>
-    </footer>
+</div>
+
+<footer>
+    © 2025 Todos os direitos reservados.
+</footer>
 </body>
 </html>
