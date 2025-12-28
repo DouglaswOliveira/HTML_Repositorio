@@ -126,3 +126,16 @@ footer p {
     color: background-color;
 
 }
+.social-links {
+    display: flex;
+    justify-content: flex-start; /* padrão para desktop */
+    gap: 20px; /* espaço entre os ícones */
+}
+
+/* Responsivo para telas pequenas */
+@media screen and (max-width: 768px) {
+    .social-links {
+        justify-content: center; /* centraliza os links no celular */
+    }
+}
+
