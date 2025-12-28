@@ -5,113 +5,200 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato - Douglas Wesley Alves de Oliveira</title>
     <style>
-        body {
-            font-family: Georgia, 'Times New Roman', Times, serif;
+        :root {
+            --bg-main: #020c1b;
+            --bg-secondary: #0a192f;
+            --primary: #64ffda;
+            --text-main: #e6f1ff;
+            --text-muted: #8892b0;
+            --border: #112240;
+            --glass: rgba(10, 25, 47, 0.88);
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
         }
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: radial-gradient(circle at top, var(--bg-secondary), var(--bg-main));
+            color: var(--text-main);
+            padding-bottom: 80px;
         }
-        .contact-box {
-            border: 2px solid #000;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-            margin-top: 20px;
-        }
+
         header, footer {
-            background-color: #339aee1c;
-            color: #000;
-            padding: 10px;
+            background: linear-gradient(135deg, var(--bg-main), var(--bg-secondary));
             text-align: center;
+            padding: 25px 20px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
         }
-        header h1 {
-            margin: 0;
+
+        header h1, footer p {
+            color: var(--primary);
         }
-        footer p {
-            margin: 0;
-        }
+
         .back-button {
             position: absolute;
-            top: 20px;
+            top: 25px;
             left: 20px;
         }
+
         .back-button button {
-            background-color: #339aee; /* Cor de fundo azul */
-            color: #fff; /* Cor do texto branco */
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 8px 14px;
+            border-radius: 6px;
             cursor: pointer;
+            transition: all 0.3s ease;
         }
+
         .back-button button:hover {
-            background-color: #2073b5; /* Cor de fundo azul mais escura no hover */
+            background: var(--primary);
+            color: var(--bg-main);
+            box-shadow: 0 0 10px rgba(100, 255, 218, 0.6);
         }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .contact-box {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 30px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        .contact-box h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--text-main);
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            font-size: 1rem;
+            transition: border 0.3s ease;
+        }
+
+        form input:focus, form textarea:focus {
+            border: 1px solid var(--primary);
+            outline: none;
+        }
+
+        form input[type="submit"] {
+            background: var(--primary);
+            color: var(--bg-main);
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        form input[type="submit"]:hover {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            box-shadow: 0 0 10px rgba(100, 255, 218, 0.6);
+        }
+
         .social-links {
             display: flex;
             justify-content: center;
-            margin-top: 20px;
+            margin-top: 25px;
+            gap: 15px;
         }
-        .social-links a {
-            text-decoration: none;
-            margin: 0 10px;
-        }
+
         .social-links a img {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
+            border: 2px solid var(--primary);
+            transition: all 0.3s ease;
         }
-        @media screen and (max-width: 600px) {
-            body {
-                font-size: 18px;
-            }
-            header, main, footer {
-                margin: 10px;
-            }
+
+        .social-links a img:hover {
+            box-shadow: 0 0 15px rgba(100, 255, 218, 0.6);
+            transform: scale(1.1);
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
             .back-button {
                 position: static;
-                margin-bottom: 10px;
+                margin-bottom: 15px;
             }
+
             .social-links {
                 flex-direction: column;
-                align-items: center;
+                gap: 10px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <a href="index.html" class="back-button"><button>Voltar ao Índice</button></a>
-        <h1>Contato</h1>
-    </header>
-    <div class="container">
-        <div class="contact-box">
-            <h2>Entre em Contato</h2>
-            <form action="#" method="POST">
-                <label for="nome">Nome:</label><br>
-                <input type="text" id="nome" name="nome" required><br><br>
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
-                <label for="mensagem">Mensagem:</label><br>
-                <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br><br>
-                <!-- Campo oculto para o seu e-mail -->
-                <input type="hidden" id="meu-email" name="meu-email" value="douglas.wesley025@gmail.com">
-                <input type="submit" value="Enviar">
-            </form>
-        </div>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/douglas-w-a-d-5568991bb/" target="_blank"><img src="linkedin.png" alt="LinkedIn"></a>
-            <a href="https://www.instagram.com/douglaswesley_oliveira/" target="_blank"><img src="instagram.png" alt="Instagram"></a>
-        </div>
+
+<header>
+    <a href="index.html" class="back-button"><button>← Voltar ao Índice</button></a>
+    <h1>Contato</h1>
+</header>
+
+<div class="container">
+    <div class="contact-box">
+        <h2>Entre em Contato</h2>
+        <form action="#" method="POST">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+            <!-- Campo oculto para o seu e-mail -->
+            <input type="hidden" id="meu-email" name="meu-email" value="douglas.wesley025@gmail.com">
+
+            <input type="submit" value="Enviar">
+        </form>
     </div>
-    <footer>
-        <p>© Todos os direitos reservados. Contato: <a href="mailto:douglas.wesley025@gmail.com">douglas.wesley025@gmail.com</a></p>
-    </footer>
+
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/douglas-w-a-d-5568991bb/" target="_blank">
+            <img src="linkedin.png" alt="LinkedIn">
+        </a>
+        <a href="https://www.instagram.com/douglaswesley_oliveira/" target="_blank">
+            <img src="instagram.png" alt="Instagram">
+        </a>
+    </div>
+</div>
+
+<footer>
+    <p>© 2025 Todos os direitos reservados. Contato: <a href="mailto:douglas.wesley025@gmail.com" style="color: var(--primary);">douglas.wesley025@gmail.com</a></p>
+</footer>
+
 </body>
 </html>
