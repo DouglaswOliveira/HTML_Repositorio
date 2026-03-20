@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Douglas W. Oliveira | Especialista em Segurança Privada</title>
+<title>Douglas W. Oliveira | Portfólio de Habilidades em Segurança Privada</title>
 
 <style>
 /* ===== VARIÁVEIS ===== */
@@ -125,9 +125,9 @@ footer { text-align:center; padding:30px 20px; background: var(--bg-dark); color
     <h1>Douglas W. Oliveira</h1>
     <nav>
         <button onclick="document.getElementById('sobre').scrollIntoView({behavior:'smooth'})">Sobre</button>
+        <button onclick="document.getElementById('habilidades').scrollIntoView({behavior:'smooth'})">Habilidades</button>
         <button onclick="document.getElementById('experiencia').scrollIntoView({behavior:'smooth'})">Experiência</button>
-        <button onclick="document.getElementById('servicos').scrollIntoView({behavior:'smooth'})">Serviços</button>
-        <button onclick="document.getElementById('diferenciais').scrollIntoView({behavior:'smooth'})">Diferenciais</button>
+        <button onclick="document.getElementById('certificacoes').scrollIntoView({behavior:'smooth'})">Formação & Certificações</button>
         <button onclick="document.getElementById('depoimentos').scrollIntoView({behavior:'smooth'})">Depoimentos</button>
         <button onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Contato</button>
     </nav>
@@ -135,54 +135,36 @@ footer { text-align:center; padding:30px 20px; background: var(--bg-dark); color
 
 <div class="hero" id="sobre">
     <img src="fotoperfil2.jpg" alt="Douglas W. Oliveira">
-    <h2>Especialista em Gestão de Segurança Privada</h2>
-    <p>Transformando a segurança de empresas com gestão eficiente, supervisão operacional e inteligência em segurança corporativa.</p>
+    <h2>Especialista em Segurança Privada</h2>
+    <p>Portfólio de habilidades, experiência e competências em gestão de segurança corporativa e operacional.</p>
 </div>
+
+<section id="habilidades">
+    <h2>Habilidades e Especialidades</h2>
+    <div class="cards-container">
+        <div class="card"><h3>Supervisão Operacional</h3><p>Liderança e coordenação de equipes de vigilância em diferentes operações.</p></div>
+        <div class="card"><h3>Mapeamento de Vulnerabilidades</h3><p>Identificação de riscos e pontos críticos em empresas e operações.</p></div>
+        <div class="card"><h3>Gestão de Sistemas de Segurança</h3><p>Controle de CFTV, alarmes, portaria e acesso inteligente.</p></div>
+        <div class="card"><h3>Planos de Contingência</h3><p>Estratégias de emergência e proteção de patrimônio.</p></div>
+        <div class="card"><h3>Análise de Dados</h3><p>Uso de informações e indicadores para otimizar processos e decisões de segurança.</p></div>
+    </div>
+</section>
 
 <section id="experiencia">
     <h2>Experiência Profissional</h2>
     <div class="info-item highlight">
         <span class="info-label">Grupo Protege</span>
         <span class="info-value">
-            Vigilante Líder (2017 - Presente): Liderança de equipes, supervisão operacional e controle de acesso.<br>
+            Vigilante Líder (2017 - Presente): Supervisão e gestão operacional.<br>
             Vigilante de Carro Forte (2015 - 2017): Transporte seguro de valores.<br>
             Vigilante de Base (2014 - 2015): Segurança patrimonial e análise de riscos.<br>
-            Auxiliar de Processamento (2012 - 2014): Suporte administrativo financeiro.
+            Auxiliar de Processamento (2012 - 2014): Suporte administrativo.
         </span>
     </div>
 </section>
 
-<section id="servicos">
-    <h2>Serviços & Especialidades</h2>
-    <div class="cards-container">
-        <div class="card"><h3>Consultoria Corporativa</h3><p>Planejamento de segurança empresarial, protocolos internos e gestão de riscos.</p></div>
-        <div class="card"><h3>Treinamento de Equipes</h3><p>Capacitação de supervisores e equipes em operações de segurança.</p></div>
-        <div class="card"><h3>Mapeamento de Vulnerabilidades</h3><p>Avaliação de riscos e identificação de pontos críticos de segurança.</p></div>
-        <div class="card"><h3>Gestão de Sistemas</h3><p>Monitoramento, CFTV, alarmes e controle de acesso inteligente.</p></div>
-        <div class="card"><h3>Planos de Contingência</h3><p>Estratégias para emergências, evacuação e proteção de patrimônio.</p></div>
-    </div>
-</section>
-
-<section id="diferenciais">
-    <h2>Diferenciais</h2>
-    <div class="cards-container">
-        <div class="card"><h3>Experiência Comprovada</h3><p>Mais de 10 anos de atuação em segurança privada, com resultados concretos.</p></div>
-        <div class="card"><h3>Credenciamento Legal</h3><p>Registro na Polícia Federal e certificações reconhecidas pelo setor.</p></div>
-        <div class="card"><h3>Tecnologia e Dados</h3><p>Uso de análise de dados para otimizar processos e reduzir incidentes.</p></div>
-        <div class="card"><h3>Resultados Eficientes</h3><p>Redução de riscos, aumento de produtividade e segurança de equipes e patrimônio.</p></div>
-    </div>
-</section>
-
-<section id="depoimentos">
-    <h2>Depoimentos & Cases de Sucesso</h2>
-    <div class="testimonials-container">
-        <div class="testimonial">"O trabalho do Douglas elevou o padrão de segurança em nossa empresa. Sua metodologia e liderança são excepcionais." – Empresa XYZ</div>
-        <div class="testimonial">"Profissional competente, sempre disponível e atento aos detalhes críticos de segurança." – Cliente ABC</div>
-    </div>
-</section>
-
-<section id="contato">
-    <h2>Formação, Certificações & Contato</h2>
+<section id="certificacoes">
+    <h2>Formação & Certificações</h2>
     <div class="info-item highlight">
         <span class="info-label">Formação Acadêmica</span>
         <span class="info-value">
@@ -192,8 +174,20 @@ footer { text-align:center; padding:30px 20px; background: var(--bg-dark); color
     </div>
     <div class="info-item">
         <span class="info-label">Certificações</span>
-        <span class="info-value">Vigilante Patrimonial, Carro Forte, Supervisor de Vigilantes, Armamento/Tiro, Extensão em Transporte de Valores.</span>
+        <span class="info-value">Vigilante Patrimonial, Carro Forte, Supervisor de Vigilantes, Armamento/Tiro, Transporte de Valores.</span>
     </div>
+</section>
+
+<section id="depoimentos">
+    <h2>Depoimentos</h2>
+    <div class="testimonials-container">
+        <div class="testimonial">"Douglas demonstra liderança excepcional e grande conhecimento em segurança corporativa." – Empresa XYZ</div>
+        <div class="testimonial">"Profissional competente e confiável, sempre atento aos detalhes críticos de segurança." – Cliente ABC</div>
+    </div>
+</section>
+
+<section id="contato">
+    <h2>Contato</h2>
     <div class="info-item">
         <span class="info-label">Localização</span>
         <span class="info-value">São José do Rio Preto • SP • Brasil</span>
@@ -205,7 +199,7 @@ footer { text-align:center; padding:30px 20px; background: var(--bg-dark); color
 </section>
 
 <footer>
-    <p>© 2026 • Especialista em Segurança Privada | Douglas W. Oliveira</p>
+    <p>© 2026 • Portfólio de Habilidades | Douglas W. Oliveira</p>
 </footer>
 
 </body>
