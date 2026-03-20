@@ -6,51 +6,61 @@
 <title>Douglas W. Oliveira | Especialista em Segurança Privada</title>
 
 <style>
+/* ===== VARIÁVEIS ===== */
 :root {
-    --bg-main: #020c1b;
-    --bg-secondary: #0a192f;
-    --primary: #64ffda;
-    --text-main: #e6f1ff;
-    --text-muted: #8892b0;
-    --border: #112240;
-    --glass: rgba(10, 25, 47, 0.88);
+    --bg-light: #f8f9fa;
+    --bg-dark: #0a192f;
+    --primary: #339aee;
+    --primary-soft: rgba(51, 154, 238, 0.15);
+    --text-main: #111;
+    --text-muted: #555;
+    --border: #dcdcdc;
+    --glass: rgba(255, 255, 255, 0.08);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* ===== RESET BÁSICO ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+/* ===== BODY ===== */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, var(--bg-secondary), var(--bg-main));
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    background-color: #ffffff;
     color: var(--text-main);
     line-height: 1.6;
-    scroll-behavior: smooth;
-    padding-bottom: 90px;
+    padding-bottom: 100px; /* espaço para footer fixo */
 }
 
+/* ===== HEADER ===== */
 header {
+    background: linear-gradient(135deg, #ffffff, var(--primary-soft));
+    padding: 30px 20px;
     text-align: center;
-    padding: 40px 20px;
     border-bottom: 1px solid var(--border);
 }
 
 header h1 {
-    color: var(--primary);
-    font-size: 2rem;
-    margin-bottom: 10px;
+    color: #000;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
 }
 
 header h2 {
-    color: var(--text-muted);
-    font-weight: 400;
     font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-muted);
 }
 
+/* ===== NAV LINKS ===== */
 nav {
     margin-top: 20px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
-    flex-wrap: wrap;
 }
 
 nav button {
@@ -65,68 +75,73 @@ nav button {
 
 nav button:hover {
     background: var(--primary);
-    color: var(--bg-main);
+    color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 0 15px rgba(100,255,218,0.6);
+    box-shadow: 0 0 12px rgba(51,154,238,0.5);
 }
 
-.container {
-    max-width: 1100px;
-    margin: 50px auto;
-    padding: 0 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-.profile-section {
+/* ===== FLEX CONTAINER ===== */
+.flex-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
+    margin: 30px auto;
+    max-width: 1100px;
+    padding: 0 20px;
 }
 
-.profile-section img {
+/* ===== PERFIL ===== */
+.flex-container img {
     width: 220px;
     border-radius: 50%;
-    border: 3px solid var(--primary);
-    box-shadow: 0 0 25px rgba(100,255,218,0.35);
+    border: 2px solid var(--primary);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
-.profile-section p {
+/* Texto do perfil */
+.flex-container p {
     max-width: 700px;
-    text-align: center;
     background: var(--glass);
     padding: 20px;
-    border-radius: 14px;
+    border-radius: 12px;
     border: 1px solid var(--border);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    text-align: center;
 }
 
+/* ===== SECTIONS ===== */
+section {
+    margin: 30px auto;
+    max-width: 900px;
+    padding: 20px;
+}
+
+/* ===== DIALOG BOX ===== */
 .dialog-box {
-    background: linear-gradient(135deg, var(--bg-main), var(--bg-secondary));
-    padding: 30px;
-    border-radius: 14px;
+    background: var(--bg-light);
+    padding: 25px;
+    border-radius: 12px;
     border: 1px solid var(--border);
-    box-shadow: 0 10px 35px rgba(0,0,0,0.6);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 .dialog-box h2 {
-    color: var(--primary);
     text-align: center;
+    color: var(--primary);
     font-size: 1.3rem;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .info-item {
-    margin-bottom: 18px;
-    padding-left: 14px;
+    margin-bottom: 16px;
+    padding-left: 12px;
     border-left: 3px solid var(--border);
 }
 
 .info-item.highlight {
     border-left: 3px solid var(--primary);
-    background: rgba(100,255,218,0.06);
+    background: rgba(51,154,238,0.08);
     padding: 16px;
     border-radius: 8px;
 }
@@ -144,9 +159,9 @@ nav button:hover {
     line-height: 1.5;
 }
 
+/* ===== VIDEO SECTION ===== */
 .video-section {
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
     gap: 20px;
@@ -158,34 +173,63 @@ nav button:hover {
     height: 405px;
     border-radius: 12px;
     border: none;
-    box-shadow: 0 10px 35px rgba(0,0,0,0.6);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
+/* ===== FOOTER ===== */
 footer {
+    background-color: var(--primary-soft);
+    padding: 20px;
     text-align: center;
-    padding: 12px;
-    background: var(--bg-main);
-    border-top: 1px solid var(--border);
-    font-size: 0.75rem;
-    color: var(--text-muted);
     position: fixed;
+    left: 0;
     bottom: 0;
     width: 100%;
 }
 
-@media (min-width: 768px) {
-    .profile-section {
+footer p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* ===== SOCIAL LINKS ===== */
+.social-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+@media screen and (max-width: 768px) {
+    .social-links {
+        justify-content: center;
+    }
+    .social-links a img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* ===== RESPONSIVO FLEX ===== */
+@media screen and (min-width: 400px) {
+    .flex-container {
         flex-direction: row;
         align-items: flex-start;
-        gap: 40px;
+        justify-content: center;
     }
+    .flex-container img {
+        margin-right: 40px;
+    }
+}
 
-    .profile-section p {
+@media screen and (min-width: 1024px) {
+    .flex-container p {
         text-align: left;
     }
 }
 </style>
 </head>
+
 <body>
 
 <header>
@@ -200,68 +244,63 @@ footer {
     </nav>
 </header>
 
-<div class="container">
-
-    <section class="profile-section" id="sobre">
-        <img src="fotoperfil2.jpg" alt="Foto Douglas W. Oliveira">
-        <p>
-            Olá! Sou Douglas W. Oliveira, especialista em Gestão de Segurança Privada com mais de 10 anos de experiência em supervisão operacional, proteção de pessoas e patrimônio, gestão de riscos corporativos e inteligência em segurança. 
-            Meu objetivo é compartilhar conhecimento por meio de cursos e treinamentos profissionais na área.
-        </p>
-    </section>
-
-    <section class="dialog-box" id="experiencia">
-        <h2>Experiência Profissional</h2>
-        <div class="info-item highlight">
-            <span class="info-label">Grupo Protege</span>
-            <span class="info-value">
-                Vigilante Líder (2017 - Presente): Liderança de equipes, supervisão operacional e controle de acesso.<br>
-                Vigilante de Carro Forte (2015 - 2017): Transporte seguro de valores.<br>
-                Vigilante de Base (2014 - 2015): Segurança patrimonial e análise de riscos.<br>
-                Auxiliar de Processamento (2012 - 2014): Suporte administrativo financeiro.
-            </span>
-        </div>
-    </section>
-
-    <section class="dialog-box" id="curso">
-        <h2>Curso Futuro: Formação em Gestão de Segurança Privada</h2>
-        <div class="video-section">
-            <iframe src="https://www.youtube.com/embed/SEU_VIDEO_AQUI" title="Vídeo de Apresentação do Curso" allowfullscreen></iframe>
-            <p>Em breve, apresentarei meu curso completo de Gestão de Segurança Privada, com módulos de supervisão operacional, análise de riscos e inteligência corporativa.</p>
-        </div>
-    </section>
-
-    <section class="dialog-box" id="contato">
-        <h2>Formação & Certificações</h2>
-        <div class="info-item highlight">
-            <span class="info-label">Formação Acadêmica</span>
-            <span class="info-value">
-                Tecnologia em Gestão de Segurança Privada – UNINTER (2020-2022)<br>
-                Tecnologia em Ciência de Dados – UNINTER (2021)
-            </span>
-        </div>
-        <div class="info-item">
-            <span class="info-label">Certificações</span>
-            <span class="info-value">
-                Vigilante Patrimonial, Carro Forte, Supervisor de Vigilantes, Armamento/Tiro, Extensão em Transporte de Valores.
-            </span>
-        </div>
-        <div class="info-item">
-            <span class="info-label">Localização</span>
-            <span class="info-value">São José do Rio Preto • SP • Brasil</span>
-        </div>
-        <div class="info-item">
-            <span class="info-label">LinkedIn</span>
-            <span class="info-value">
-                <a href="https://www.linkedin.com/in/douglas-w-oliveira/" target="_blank" style="color: var(--primary); text-decoration: underline;">Douglas W. Oliveira</a>
-            </span>
-        </div>
-    </section>
-
+<div class="flex-container" id="sobre">
+    <img src="fotoperfil2.jpg" alt="Douglas W. Oliveira">
+    <p>
+        Olá! Sou Douglas W. Oliveira, especialista em Gestão de Segurança Privada com mais de 10 anos de experiência em supervisão operacional, proteção de pessoas e patrimônio, gestão de riscos corporativos e inteligência em segurança. 
+        Meu objetivo é compartilhar conhecimento através de cursos e treinamentos profissionais na área de segurança privada.
+    </p>
 </div>
 
+<section class="dialog-box" id="experiencia">
+    <h2>Experiência Profissional</h2>
+    <div class="info-item highlight">
+        <span class="info-label">Grupo Protege</span>
+        <span class="info-value">
+            Vigilante Líder (2017 - Presente): Liderança de equipes, supervisão operacional e controle de acesso.<br>
+            Vigilante de Carro Forte (2015 - 2017): Transporte seguro de valores.<br>
+            Vigilante de Base (2014 - 2015): Segurança patrimonial e análise de riscos.<br>
+            Auxiliar de Processamento (2012 - 2014): Suporte administrativo financeiro.
+        </span>
+    </div>
+</section>
+
+<section class="dialog-box" id="curso">
+    <h2>Curso Futuro: Formação em Gestão de Segurança Privada</h2>
+    <div class="video-section">
+        <iframe src="https://www.youtube.com/embed/SEU_VIDEO_AQUI" title="Vídeo de Apresentação do Curso" allowfullscreen></iframe>
+        <p>Em breve, apresentarei meu curso completo de Gestão de Segurança Privada, com módulos de supervisão operacional, análise de riscos e inteligência corporativa.</p>
+    </div>
+</section>
+
+<section class="dialog-box" id="contato">
+    <h2>Formação & Certificações</h2>
+    <div class="info-item highlight">
+        <span class="info-label">Formação Acadêmica</span>
+        <span class="info-value">
+            Tecnologia em Gestão de Segurança Privada – UNINTER (2020-2022)<br>
+            Tecnologia em Ciência de Dados – UNINTER (2021)
+        </span>
+    </div>
+    <div class="info-item">
+        <span class="info-label">Certificações</span>
+        <span class="info-value">
+            Vigilante Patrimonial, Carro Forte, Supervisor de Vigilantes, Armamento/Tiro, Extensão em Transporte de Valores.
+        </span>
+    </div>
+    <div class="info-item">
+        <span class="info-label">Localização</span>
+        <span class="info-value">São José do Rio Preto • SP • Brasil</span>
+    </div>
+    <div class="info-item social-links">
+        <a href="https://www.linkedin.com/in/douglas-w-oliveira/" target="_blank">
+            <img src="linkedin-icon.png" alt="LinkedIn">
+        </a>
+    </div>
+</section>
+
 <footer>
-    © 2026 • Especialista em Segurança Privada | Douglas W. Oliveira
+    <p>© 2026 • Especialista em Segurança Privada | Douglas W. Oliveira</p>
 </footer>
 
 </body>
