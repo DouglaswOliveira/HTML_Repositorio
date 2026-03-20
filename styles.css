@@ -4,13 +4,14 @@
     --bg-dark: #0d1321;              /* Fundo escuro para destaques */
     --primary: #0b1f3f;              /* Azul escuro corporativo */
     --primary-dark: #08172a;
-    --primary-soft: rgba(11,31,63,0.1); 
+    --primary-soft: rgba(11,31,63,0.15); 
     --accent: #d19a3d;               /* Dourado/cobre para detalhes */
     --text-dark: #111827;            /* Texto escuro sobre fundos claros */
     --text-main: #f4f4f4;            /* Texto claro sobre fundos escuros */
     --text-muted: #c1c1c1;           /* Texto secundário */
     --border: #2c2f3a;               
-    --glass: rgba(255,255,255,0.05); 
+    --glass-dark: rgba(11,31,63,0.6); /* vidro escuro para cards/testimonials */
+    --glass-light: rgba(255,255,255,0.08); /* vidro claro para seções claras */
     --glass-blur: blur(12px);
 }
 
@@ -23,6 +24,7 @@ body {
     background: var(--bg-light); 
     scroll-behavior: smooth; 
 }
+a { text-decoration:none; color:inherit; }
 
 /* ===== HEADER ===== */
 header {
@@ -62,32 +64,34 @@ nav button:hover {
 
 /* ===== SECTIONS ===== */
 section { 
-    padding:80px 20px; max-width:1100px; margin:0 auto; 
+    padding:80px 20px; max-width:1100px; margin:25px auto; 
     color: var(--text-dark); 
     transition: all 0.3s ease;
+    border-radius:16px; 
 }
-section h2 { font-size:2rem; text-align:center; color: var(--accent); margin-bottom:50px; letter-spacing:0.5px; }
 
-/* Alterna cor de fundo e estilo entre seções */
+/* Alterna cores de fundo e texto */
+section:nth-child(odd) { 
+    background: var(--glass-light); 
+    backdrop-filter: var(--glass-blur); 
+    box-shadow:0 10px 25px rgba(0,0,0,0.15); 
+    color: var(--text-dark); 
+}
 section:nth-child(even) { 
     background: #1f2533; 
-    border-radius:14px; 
-    margin:25px auto; 
     box-shadow:0 10px 25px rgba(0,0,0,0.25); 
     color: var(--text-main); 
 }
-section:nth-child(odd) { 
-    background: var(--glass); 
-    backdrop-filter: var(--glass-blur); 
-    border-radius:14px; 
-    margin:25px auto; 
-    box-shadow:0 10px 25px rgba(0,0,0,0.15); 
-}
+
+/* ===== TITULOS ===== */
+section h2 { font-size:2rem; text-align:center; color: var(--accent); margin-bottom:50px; letter-spacing:0.5px; }
 
 /* ===== CARDS ===== */
 .cards-container { display:flex; flex-wrap:wrap; gap:28px; justify-content:center; }
 .card {
-    background:#2c3345; border-radius:16px; padding:28px;
+    background: var(--glass-dark);
+    backdrop-filter: var(--glass-blur);
+    border-radius:16px; padding:28px;
     box-shadow:0 14px 30px rgba(0,0,0,0.3); transition: transform 0.3s, box-shadow 0.3s;
     max-width:280px; text-align:center; color: var(--text-main);
 }
@@ -98,14 +102,14 @@ section:nth-child(odd) {
 /* ===== TESTIMONIALS ===== */
 .testimonials-container { display:flex; overflow-x:auto; gap:22px; padding-bottom:15px; scroll-behavior:smooth; }
 .testimonial {
-    min-width:320px; background:#2c3345; border-radius:16px; padding:26px;
+    min-width:320px; background: var(--glass-dark); border-radius:16px; padding:26px;
     box-shadow:0 14px 30px rgba(0,0,0,0.3); flex-shrink:0;
     font-style:italic; color: var(--text-main);
 }
 
 /* ===== INFO BOX ===== */
-.info-item { margin-bottom:18px; padding-left:16px; border-left:3px solid var(--border); color: var(--text-main); }
-.info-item.highlight { border-left:3px solid var(--accent); background:var(--primary-soft); padding:20px; border-radius:12px; }
+.info-item { margin-bottom:18px; padding-left:16px; border-left:3px solid var(--border); color: var(--text-dark); }
+.info-item.highlight { border-left:3px solid var(--accent); background: var(--primary-soft); padding:20px; border-radius:12px; color: var(--text-dark); }
 .info-label { display:block; font-size:0.85rem; text-transform:uppercase; color: var(--text-muted); margin-bottom:6px; }
 .info-value { font-size:1rem; line-height:1.6; }
 
