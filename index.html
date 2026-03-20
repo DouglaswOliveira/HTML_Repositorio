@@ -14,11 +14,12 @@
     --primary-dark: #08172a;
     --primary-soft: rgba(11,31,63,0.15);
     --accent: #d19a3d;
-    --text-main: #f4f4f4;
-    --text-dark: #111827;
+    --text-main: #f4f4f4;   /* Texto claro */
+    --text-dark: #111827;   /* Texto escuro */
     --text-muted: #c1c1c1;
     --border: #2c2f3a;
-    --glass: rgba(255,255,255,0.05);
+    --glass-light: rgba(255,255,255,0.08);
+    --glass-dark: rgba(11,31,63,0.6);
     --glass-blur: blur(12px);
 }
 
@@ -59,48 +60,55 @@ nav button:hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .hero img:hover { transform: scale(1.05); box-shadow:0 16px 40px rgba(0,0,0,0.45); }
-.hero h2 { font-size:2.2rem; margin-bottom:12px; font-weight:700; letter-spacing:1px; }
-.hero p { max-width:720px; font-size:1.15rem; line-height:1.7; }
+.hero h2, .hero p { color: var(--text-main); }
 
 /* ===== SECTIONS ===== */
 section { 
-    padding:80px 20px; max-width:1100px; margin:0 auto;
-    color: var(--text-dark);
-    background: var(--glass); 
-    backdrop-filter: var(--glass-blur);
-    border-radius:16px;
-    box-shadow:0 8px 30px rgba(0,0,0,0.2);
-    margin-bottom:40px;
+    padding:80px 20px; max-width:1100px; margin:25px auto; border-radius:16px; transition: all 0.3s ease;
+}
+section:nth-child(odd) { 
+    background: var(--glass-light); 
+    backdrop-filter: var(--glass-blur); 
+    box-shadow:0 10px 25px rgba(0,0,0,0.15); 
+    color: var(--text-dark); 
+}
+section:nth-child(even) { 
+    background: var(--glass-dark); 
+    backdrop-filter: var(--glass-blur); 
+    box-shadow:0 10px 25px rgba(0,0,0,0.3); 
+    color: var(--text-main); 
 }
 section h2 { font-size:2rem; text-align:center; color: var(--accent); margin-bottom:50px; letter-spacing:0.5px; }
 
 /* ===== CARDS ===== */
 .cards-container { display:flex; flex-wrap:wrap; gap:28px; justify-content:center; }
 .card {
-    background: var(--glass);
+    background: var(--glass-dark);
     backdrop-filter: var(--glass-blur);
     border-radius:16px; padding:28px;
-    box-shadow:0 14px 30px rgba(0,0,0,0.25);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow:0 14px 30px rgba(0,0,0,0.3); transition: transform 0.3s, box-shadow 0.3s;
     max-width:280px; text-align:center; color: var(--text-main);
 }
-.card:hover { transform: translateY(-10px); box-shadow:0 20px 50px rgba(0,0,0,0.35); }
 .card h3 { color: var(--accent); margin-bottom:14px; font-size:1.2rem; font-weight:600; }
-.card p { font-size:1rem; }
+.card p { font-size:1rem; line-height:1.5; }
+.card:hover { transform: translateY(-10px); box-shadow:0 20px 50px rgba(0,0,0,0.45); }
 
 /* ===== TESTIMONIALS ===== */
 .testimonials-container { display:flex; overflow-x:auto; gap:22px; padding-bottom:15px; scroll-behavior:smooth; }
 .testimonial {
-    min-width:320px; background: var(--glass); border-radius:16px; padding:26px;
-    box-shadow:0 14px 30px rgba(0,0,0,0.25); flex-shrink:0;
+    min-width:320px; background: var(--glass-dark); border-radius:16px; padding:26px;
+    box-shadow:0 14px 30px rgba(0,0,0,0.3); flex-shrink:0;
     font-style:italic; color: var(--text-main);
 }
 
 /* ===== INFO BOX ===== */
-.info-item { margin-bottom:18px; padding-left:16px; border-left:3px solid var(--border); color: var(--text-dark); }
-.info-item.highlight { border-left:3px solid var(--accent); background: var(--primary-soft); padding:20px; border-radius:12px; color: var(--text-dark); }
-.info-label { display:block; font-size:0.85rem; text-transform:uppercase; color: var(--text-muted); margin-bottom:6px; }
-.info-value { font-size:1rem; line-height:1.6; }
+.info-item { margin-bottom:18px; padding-left:16px; border-left:3px solid var(--border); }
+.info-item.highlight { border-left:3px solid var(--accent); background: var(--primary-soft); padding:20px; border-radius:12px; }
+.info-item span { display:block; }
+.info-item .info-label { font-size:0.85rem; text-transform:uppercase; color: var(--text-muted); margin-bottom:6px; }
+.info-item .info-value { font-size:1rem; line-height:1.6; }
+.info-item.highlight .info-label, .info-item.highlight .info-value { color: var(--text-dark); }
+.info-item:not(.highlight) .info-label, .info-item:not(.highlight) .info-value { color: var(--text-dark); }
 
 /* ===== SOCIAL ===== */
 .social-links { display:flex; gap:22px; margin-top:20px; justify-content:center; }
