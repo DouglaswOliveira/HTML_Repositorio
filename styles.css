@@ -16,7 +16,7 @@ header {
 
 header h1 { 
     font-family: 'Segoe Script', 'Brush Script MT', cursive;
-    font-size: 1.6rem; /* Tamanho reduzido para mobile */
+    font-size: 1.9rem; /* Tamanho reduzido para mobile */
     color: var(--accent); 
     text-align: center;
     line-height: 1.2;
