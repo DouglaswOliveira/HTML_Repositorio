@@ -142,12 +142,9 @@ header h1 {
         font-size:0.9rem;
     }
 }
-/* Ajuste para o header fixo */
-body {
-    padding-top: 90px; /* espaço igual ou maior que a altura do header */
+.hero {
+    padding: 140px 15px 80px; /* desktop */
 }
-
-/* No mobile, se o header ficar menor */
 @media(max-width:480px){
-    body { padding-top: 120px; } /* garante que a hero não fique por baixo do header */
+    .hero { padding: 100px 10px 60px; } /* mobile */
 }
