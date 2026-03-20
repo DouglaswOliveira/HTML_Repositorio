@@ -54,7 +54,6 @@ header h2 {
     color: var(--text-muted);
 }
 
-/* ===== NAV LINKS ===== */
 nav {
     margin-top: 20px;
     display: flex;
@@ -99,7 +98,6 @@ nav button:hover {
     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
-/* Texto do perfil */
 .flex-container p {
     max-width: 700px;
     background: var(--glass);
@@ -117,7 +115,6 @@ section {
     padding: 20px;
 }
 
-/* ===== DIALOG BOX ===== */
 .dialog-box {
     background: var(--bg-light);
     padding: 25px;
@@ -176,6 +173,50 @@ section {
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
+/* ===== SERVICES & DIFFERENTIALS ===== */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background: var(--glass);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    max-width: 260px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+.card h3 {
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: var(--text-main);
+}
+
+/* ===== TESTIMONIALS ===== */
+.testimonial {
+    background: var(--glass);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    margin-bottom: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
 /* ===== FOOTER ===== */
 footer {
     background-color: var(--primary-soft);
@@ -210,7 +251,6 @@ footer p {
     }
 }
 
-/* ===== RESPONSIVO FLEX ===== */
 @media screen and (min-width: 400px) {
     .flex-container {
         flex-direction: row;
@@ -239,7 +279,9 @@ footer p {
     <nav>
         <button onclick="document.getElementById('sobre').scrollIntoView({behavior:'smooth'})">Sobre</button>
         <button onclick="document.getElementById('experiencia').scrollIntoView({behavior:'smooth'})">Experiência</button>
-        <button onclick="document.getElementById('curso').scrollIntoView({behavior:'smooth'})">Curso Futuro</button>
+        <button onclick="document.getElementById('servicos').scrollIntoView({behavior:'smooth'})">Serviços</button>
+        <button onclick="document.getElementById('diferenciais').scrollIntoView({behavior:'smooth'})">Diferenciais</button>
+        <button onclick="document.getElementById('depoimentos').scrollIntoView({behavior:'smooth'})">Depoimentos</button>
         <button onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Contato</button>
     </nav>
 </header>
@@ -265,16 +307,66 @@ footer p {
     </div>
 </section>
 
-<section class="dialog-box" id="curso">
-    <h2>Curso Futuro: Formação em Gestão de Segurança Privada</h2>
-    <div class="video-section">
-        <iframe src="https://www.youtube.com/embed/SEU_VIDEO_AQUI" title="Vídeo de Apresentação do Curso" allowfullscreen></iframe>
-        <p>Em breve, apresentarei meu curso completo de Gestão de Segurança Privada, com módulos de supervisão operacional, análise de riscos e inteligência corporativa.</p>
+<section class="dialog-box" id="servicos">
+    <h2>Serviços & Especialidades</h2>
+    <div class="cards-container">
+        <div class="card">
+            <h3>Consultoria Corporativa</h3>
+            <p>Planejamento de segurança empresarial, protocolos internos e gestão de riscos.</p>
+        </div>
+        <div class="card">
+            <h3>Treinamento de Equipes</h3>
+            <p>Capacitação de supervisores e equipes em operações de segurança.</p>
+        </div>
+        <div class="card">
+            <h3>Mapeamento de Vulnerabilidades</h3>
+            <p>Avaliação de riscos e identificação de pontos críticos de segurança.</p>
+        </div>
+        <div class="card">
+            <h3>Gestão de Sistemas</h3>
+            <p>Monitoramento, CFTV, alarmes e controle de acesso inteligente.</p>
+        </div>
+        <div class="card">
+            <h3>Planos de Contingência</h3>
+            <p>Estratégias para emergências, evacuação e proteção de patrimônio.</p>
+        </div>
+    </div>
+</section>
+
+<section class="dialog-box" id="diferenciais">
+    <h2>Diferenciais</h2>
+    <div class="cards-container">
+        <div class="card">
+            <h3>Experiência Comprovada</h3>
+            <p>Mais de 10 anos de atuação em segurança privada, com resultados concretos.</p>
+        </div>
+        <div class="card">
+            <h3>Credenciamento Legal</h3>
+            <p>Registro na Polícia Federal e certificações reconhecidas pelo setor.</p>
+        </div>
+        <div class="card">
+            <h3>Tecnologia e Dados</h3>
+            <p>Uso de análise de dados para otimizar processos e reduzir incidentes.</p>
+        </div>
+        <div class="card">
+            <h3>Resultados Eficientes</h3>
+            <p>Redução de riscos, aumento de produtividade e segurança de equipes e patrimônio.</p>
+        </div>
+    </div>
+</section>
+
+<section class="dialog-box" id="depoimentos">
+    <h2>Depoimentos & Cases de Sucesso</h2>
+    <div class="testimonial">
+        <p>"O trabalho do Douglas elevou o padrão de segurança em nossa empresa. Sua metodologia e liderança são excepcionais." – Empresa XYZ</p>
+    </div>
+    <div class="testimonial">
+        <p>"Profissional competente, sempre disponível e atento aos detalhes críticos de segurança." – Cliente ABC</p>
     </div>
 </section>
 
 <section class="dialog-box" id="contato">
-    <h2>Formação & Certificações</h2>
+    <h2>Formação, Certificações & Contato</h2>
     <div class="info-item highlight">
         <span class="info-label">Formação Acadêmica</span>
         <span class="info-value">
@@ -295,6 +387,9 @@ footer p {
     <div class="info-item social-links">
         <a href="https://www.linkedin.com/in/douglas-w-oliveira/" target="_blank">
             <img src="linkedin-icon.png" alt="LinkedIn">
+        </a>
+        <a href="https://wa.me/559999999999" target="_blank">
+            <img src="whatsapp-icon.png" alt="WhatsApp">
         </a>
     </div>
 </section>
