@@ -17,12 +17,12 @@ header {
 }
 
 /* ===== NOME ===== */
-header h1 { 
-    font-family: 'Segoe Script', 'Brush Script MT', cursive;
-    font-size: 1.6rem; 
-    color: var(--accent); 
-    text-align: center;
-    line-height: 1.2;
+header h1 {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--accent);
 }
 
 /* ===== MENU ===== */
