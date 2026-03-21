@@ -3,206 +3,252 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Douglas W. Oliveira | Portfólio de Habilidades em Segurança Privada</title>
+<title>Douglas W. Oliveira | Gestor de Segurança Privada</title>
 
 <style>
+
 /* ===== VARIÁVEIS ===== */
 :root {
     --bg-dark: #0d1321;
     --bg-light: #f4f6f8;
     --primary: #0b1f3f;
-    --primary-dark: #08172a;
-    --primary-soft: rgba(11,31,63,0.15);
     --accent: #d19a3d;
     --text-main: #f4f4f4;
     --text-dark: #111827;
-    --text-muted: #c1c1c1;
-    --border: #2c2f3a;
-    --glass-light: rgba(255,255,255,0.08);
-    --glass-dark: rgba(11,31,63,0.6);
-    --glass-blur: blur(12px);
 }
 
 /* ===== RESET ===== */
 * { margin:0; padding:0; box-sizing:border-box; }
-body { 
-    font-family: 'Segoe UI', Roboto, Arial, sans-serif; 
-    line-height:1.6; 
-    color: var(--text-dark); 
-    background: var(--bg-light); 
-    scroll-behavior: smooth; 
-    /* Padding dinâmico para não cobrir o conteúdo */
-    padding-top: 180px; 
-}
-@media(min-width: 768px) {
-    body { padding-top: 100px; }
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg-light);
+    padding-top: 120px;
 }
 
-a { text-decoration:none; color:inherit; }
-
-/* ===== HEADER RESPONSIVO ===== */
+/* ===== HEADER ===== */
 header {
-    position: fixed; top:0; left:0; width:100%;
-    background: var(--bg-dark); padding: 15px 20px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.5); z-index:1000;
-    display:flex; 
-    flex-direction: column; /* Empilha no mobile */
-    align-items:center;
-    gap: 15px;
+    position: fixed;
+    top:0;
+    width:100%;
+    background: var(--bg-dark);
+    padding: 15px;
+    text-align:center;
+    z-index:1000;
 }
 
-header h1 { 
-    font-family: 'Segoe Script', 'Brush Script MT', cursive;
-    font-size: 1.6rem; 
-    color: var(--accent); 
-    font-weight:700; 
-    text-align: center;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+header h1 {
+    color: var(--accent);
 }
 
-@media(min-width: 768px) {
-    header { flex-direction: row; justify-content: space-between; padding: 20px 40px; }
-    header h1 { font-size: 2.2rem; }
+nav {
+    margin-top:10px;
 }
 
-nav { display:flex; gap:8px; flex-wrap:wrap; justify-content: center; }
 nav button {
-    border:1px solid var(--accent); background:transparent; color: var(--accent);
-    padding:6px 12px; border-radius:10px; cursor:pointer; font-weight:600;
-    font-size: 0.85rem;
-    transition: all 0.35s ease;
-}
-@media(min-width: 768px) {
-    nav { gap: 15px; }
-    nav button { padding: 10px 22px; font-size: 1rem; }
+    margin:5px;
+    padding:8px 12px;
+    border:1px solid var(--accent);
+    background:none;
+    color: var(--accent);
+    border-radius:8px;
+    cursor:pointer;
 }
 
 nav button:hover {
-    background: var(--accent); color: var(--bg-dark); transform: translateY(-3px); 
-    box-shadow:0 0 15px rgba(209,154,61,0.5);
+    background: var(--accent);
+    color: black;
 }
 
 /* ===== HERO ===== */
 .hero {
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    text-align:center; padding: 40px 15px;
-    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-    color: var(--text-main);
+    text-align:center;
+    padding:40px 20px;
+    background: linear-gradient(135deg, #08172a, #0b1f3f);
+    color:white;
 }
+
 .hero img {
-    width:180px; height: 180px; object-fit: cover; border-radius:50%; border:4px solid var(--accent);
-    box-shadow:0 12px 28px rgba(0,0,0,0.3); margin-bottom:25px;
+    width:150px;
+    border-radius:50%;
+    border:4px solid var(--accent);
+    margin-bottom:20px;
 }
 
-/* ===== SECTIONS & SCROLL ADJUSTMENT ===== */
-section { 
-    padding:60px 20px; max-width:1100px; margin:20px auto; border-radius:16px; 
-    /* Evita que o menu fixo cubra o título ao navegar */
-    scroll-margin-top: 190px; 
-}
-@media(min-width: 768px) {
-    section { scroll-margin-top: 110px; }
+.hero h2 {
+    font-size:2rem;
 }
 
-section[data-bg="dark"] { background: var(--glass-dark); backdrop-filter: var(--glass-blur); color: var(--text-main); box-shadow:0 10px 25px rgba(0,0,0,0.3);}
-section[data-bg="light"] { background: var(--glass-light); backdrop-filter: var(--glass-blur); color: var(--text-dark); box-shadow:0 10px 25px rgba(0,0,0,0.15); }
+.hero a {
+    display:inline-block;
+    margin-top:15px;
+    background: var(--accent);
+    color:black;
+    padding:10px 20px;
+    border-radius:8px;
+    font-weight:bold;
+}
 
-section h2 { font-size:1.8rem; text-align:center; color: var(--accent); margin-bottom:40px; }
+/* ===== SECTION ===== */
+section {
+    padding:50px 20px;
+    max-width:1000px;
+    margin:auto;
+}
+
+h2 {
+    text-align:center;
+    margin-bottom:30px;
+    color: var(--primary);
+}
 
 /* ===== CARDS ===== */
-.cards-container { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
-.card {
-    background: var(--glass-dark); border-radius:16px; padding:20px;
-    box-shadow:0 14px 30px rgba(0,0,0,0.3); max-width:280px; text-align:center; color: var(--text-main);
+.cards {
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
 }
-.card h3 { color: var(--accent); margin-bottom:10px; font-size:1.1rem; }
 
-/* ===== INFO BOX ===== */
-.info-item { margin-bottom:18px; padding-left:16px; border-left:3px solid var(--border); }
-.info-item.highlight { border-left:3px solid var(--accent); background: var(--primary-soft); padding:20px; border-radius:12px; }
-.info-item .info-label { font-size:0.85rem; text-transform:uppercase; color: var(--text-muted); margin-bottom:6px; }
-.info-item .info-value { font-size:1rem; }
+.card {
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    width:250px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    text-align:center;
+    transition:0.3s;
+}
 
-/* ===== SOCIAL ===== */
-.social-links { display:flex; gap:22px; margin-top:20px; justify-content:center; }
-.social-links a img { width:45px; height:45px; transition: transform 0.3s ease; }
-.social-links a img:hover { transform: scale(1.15); }
+.card:hover {
+    transform: translateY(-5px);
+}
 
-/* ===== FOOTER ===== */
-footer { text-align:center; padding:30px 20px; background: var(--bg-dark); color: var(--text-muted); font-size: 0.9rem; }
+/* ===== EXPERIÊNCIA ===== */
+.box {
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ===== CONTATO ===== */
+.contato {
+    text-align:center;
+}
+
+/* ===== WHATSAPP ===== */
+.whatsapp {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    padding:15px;
+    border-radius:50px;
+    font-weight:bold;
+    text-decoration:none;
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- WHATSAPP -->
+<a href="https://wa.me/5517982073231" target="_blank" class="whatsapp">
+💬 WhatsApp
+</a>
+
+<!-- HEADER -->
 <header>
     <h1>Douglas W. Oliveira</h1>
     <nav>
-        <button onclick="document.getElementById('sobre').scrollIntoView({behavior:'smooth'})">Sobre</button>
-        <button onclick="document.getElementById('habilidades').scrollIntoView({behavior:'smooth'})">Habilidades</button>
-        <button onclick="document.getElementById('experiencia').scrollIntoView({behavior:'smooth'})">Experiência</button>
-        <button onclick="document.getElementById('certificacoes').scrollIntoView({behavior:'smooth'})">Formação</button>
-        <button onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Contato</button>
+        <button onclick="scrollToSection('sobre')">Sobre</button>
+        <button onclick="scrollToSection('servicos')">Serviços</button>
+        <button onclick="scrollToSection('experiencia')">Experiência</button>
+        <button onclick="scrollToSection('contato')">Contato</button>
     </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero" id="sobre">
-    <img src="fotoperfil2.jpg" alt="Douglas W. Oliveira">
-    <h2>Especialista em Segurança Privada</h2>
-    <p>Portfólio de habilidades, experiência e competências em gestão de segurança corporativa e operacional.</p>
+    <img src="fotoperfil2.jpg">
+    <h2>Gestor de Segurança Privada</h2>
+    <p>Proteção patrimonial, análise de riscos e gestão estratégica de segurança.</p>
+
+    <a href="https://wa.me/5517982073231" target="_blank">
+        Solicitar Consultoria
+    </a>
 </section>
 
-<section id="habilidades" data-bg="dark">
-    <h2>Habilidades e Especialidades</h2>
-    <div class="cards-container">
-        <div class="card"><h3>Supervisão Operacional</h3><p>Liderança e coordenação de equipes de vigilância.</p></div>
-        <div class="card"><h3>Mapeamento de Riscos</h3><p>Identificação de vulnerabilidades e pontos críticos.</p></div>
-        <div class="card"><h3>Sistemas de Segurança</h3><p>Controle de CFTV, alarmes e acesso inteligente.</p></div>
-        <div class="card"><h3>Planos de Contingência</h3><p>Estratégias de emergência e proteção de patrimônio.</p></div>
+<!-- SERVIÇOS -->
+<section id="servicos">
+    <h2>Serviços</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Consultoria em Segurança</h3>
+            <p>Análise completa da empresa e plano de ação.</p>
+        </div>
+
+        <div class="card">
+            <h3>Análise de Riscos</h3>
+            <p>Identificação de falhas e vulnerabilidades.</p>
+        </div>
+
+        <div class="card">
+            <h3>Gestão de Equipes</h3>
+            <p>Organização e supervisão de vigilantes.</p>
+        </div>
+
+        <div class="card">
+            <h3>Procedimentos</h3>
+            <p>Criação de normas e rotinas de segurança.</p>
+        </div>
+
     </div>
 </section>
 
-<section id="experiencia" data-bg="light">
+<!-- EXPERIÊNCIA -->
+<section id="experiencia">
     <h2>Experiência Profissional</h2>
-    <div class="info-item highlight">
-        <span class="info-label">Grupo Protege</span>
-        <span class="info-value">
-            <strong>Vigilante Líder (2017 - Presente)</strong>: Supervisão e gestão operacional.<br>
-            <strong>Vigilante de Carro Forte (2015 - 2017)</strong>: Transporte seguro de valores.<br>
-            <strong>Vigilante de Base (2014 - 2015)</strong>: Segurança patrimonial.<br>
-        </span>
+
+    <div class="box">
+        <p><strong>Vigilante Bancário</strong><br>
+        Segurança em instituição financeira, controle de acesso e proteção de clientes.</p>
+
+        <br>
+
+        <p><strong>Vigilante de Carro Forte</strong><br>
+        Transporte de valores com alto nível de segurança.</p>
+
+        <br>
+
+        <p><strong>Vigilante Patrimonial</strong><br>
+        Segurança de empresas, controle de acesso e prevenção de riscos.</p>
     </div>
 </section>
 
-<section id="certificacoes" data-bg="dark">
-    <h2>Formação & Certificações</h2>
-    <div class="info-item highlight">
-        <span class="info-label">Formação Acadêmica</span>
-        <span class="info-value">
-            Gestão de Segurança Privada – UNINTER<br>
-            Ciência de Dados – UNINTER
-        </span>
-    </div>
-    <div class="info-item">
-        <span class="info-label">Certificações</span>
-        <span class="info-value">Vigilante Patrimonial, Carro Forte, Supervisor, Armamento e Tiro.</span>
-    </div>
-</section>
-
-<section id="contato" data-bg="dark">
+<!-- CONTATO -->
+<section id="contato" class="contato">
     <h2>Contato</h2>
-    <div class="info-item" style="text-align: center; border: none;">
-        <span class="info-value">São José do Rio Preto • SP • Brasil</span>
-    </div>
-    <div class="social-links">
-        <a href="https://linkedin.com/in/douglas-w-o-5568991bb/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"></a>
-        <a href="https://wa.me/5517982073231" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968841.png" alt="WhatsApp"></a>
-    </div>
+
+    <p>📍 São José do Rio Preto - SP</p>
+
+    <br>
+
+    <a href="https://wa.me/5517982073231" target="_blank">
+        📲 Falar no WhatsApp
+    </a>
 </section>
 
-<footer>
-    <p>© 2026 • Douglas W. Oliveira</p>
-</footer>
+<script>
+function scrollToSection(id){
+    document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+</script>
 
 </body>
 </html>
