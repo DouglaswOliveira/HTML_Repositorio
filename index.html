@@ -219,26 +219,26 @@ nav button:hover {
 <header>
     <h1>ArtClik Marketing</h1>
     <nav>
-        <button>Home</button>
-        <button>Serviços</button>
-        <button>Planos</button>
-        <button>Contato</button>
+        <button onclick="document.getElementById('hero').scrollIntoView({behavior:'smooth'})">Home</button>
+        <button onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Serviços</button>
+        <button onclick="document.getElementById('planos').scrollIntoView({behavior:'smooth'})">Planos</button>
+        <button onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Contato</button>
     </nav>
 </header>
 
-<section class="banner">
+<section class="banner" id="hero">
     <img src="banner.png" alt="Banner WhatsApp que Vende">
 </section>
 
-<section class="hero">
+<section class="hero" id="hero">
     <h1>💬 WhatsApp que Vende Sozinho</h1>
     <p>Eu faço seu WhatsApp responder clientes automaticamente e trazer mais serviços todos os dias.<br>
        Sem perder tempo e sem pagar antes de ver funcionar!</p>
     <a href="https://wa.me/5511999999999?text=Quero%20meu%20WhatsApp%20que%20vende%20sozinho" class="btn">Quero Meu Kit Hoje</a>
 </section>
 
-<h2 class="section-title">Como Funciona</h2>
-<div class="differentials">
+<section class="differentials" id="services">
+    <h2 class="section-title">Como Funciona</h2>
     <div class="diff-item">
         <h4>1️⃣ Cliente Chama</h4>
         <p>Quando alguém envia mensagem, o sistema detecta automaticamente.</p>
@@ -251,10 +251,10 @@ nav button:hover {
         <h4>3️⃣ Você Recebe Organizado</h4>
         <p>Todos os dados chegam prontos para você fechar o serviço sem esforço.</p>
     </div>
-</div>
+</section>
 
-<h2 class="section-title">Oferta Especial</h2>
-<div class="services-plans">
+<section class="services-plans" id="planos">
+    <h2 class="section-title">Oferta Especial</h2>
     <div class="plan full">
         <h4>WhatsApp que Vende</h4>
         <strong>R$150 configuração</strong>
@@ -262,10 +262,10 @@ nav button:hover {
            💥 Eu mostro antes de você pagar!</p>
         <a href="https://wa.me/5511999999999?text=Quero%20meu%20WhatsApp%20que%20vende%20sozinho" class="btn">Montar Agora</a>
     </div>
-</div>
+</section>
 
-<h2 class="section-title">Para Quem Funciona</h2>
-<div class="differentials">
+<section class="differentials" id="contato">
+    <h2 class="section-title">Para Quem Funciona</h2>
     <div class="diff-item">
         <h4>Ar-Condicionado</h4>
         <p>Microempresas que querem mais clientes sem esforço.</p>
@@ -278,7 +278,7 @@ nav button:hover {
         <h4>Elétrica</h4>
         <p>Respostas automáticas e fechamento rápido de serviços.</p>
     </div>
-</div>
+</section>
 
 <a href="https://wa.me/5517982073231?text=Quero%20meu%20WhatsApp%20que%20vende%20sozinho" target="_blank" class="whatsapp-float">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
