@@ -1,266 +1,179 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ArtClik Marketing</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtClik Marketing | Douglas W Oliveira</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* ===== VARIÁVEIS ===== */
+        :root {
+            --bg-dark: #0d1321;
+            --primary: #6a00ff;
+            --primary-dark: #3a00a8;
+            --accent: #00c2ff;
+            --text-main: #ffffff;
+            --light: #f4f6f8;
+            --wp: #25D366;
+            --card-bg: #ffffff;
+        }
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        /* RESET */
+        * {margin:0;padding:0;box-sizing:border-box;}
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: var(--light);
+            color: #333;
+            line-height: 1.6;
+        }
 
-<style>
+        /* ===== HEADER ===== */
+        header {
+            position: fixed; top: 0; left: 0; width: 100%;
+            background: rgba(13, 19, 33, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex; flex-direction: column; align-items: center; gap: 12px;
+        }
 
-/* ===== VARIÁVEIS ===== */
-:root {
-    --bg-dark: #0d1321;
-    --primary: #6a00ff;
-    --primary-dark: #3a00a8;
-    --accent: #00c2ff;
-    --text-main: #ffffff;
-    --light: #f4f6f8;
-    --wp: #25D366;
-}
+        header h1 { font-size: 1.4rem; color: var(--accent); letter-spacing: 1px; }
 
-/* RESET */
-* {margin:0;padding:0;box-sizing:border-box;}
-body {
-    font-family: Arial, sans-serif;
-    background: var(--light);
-}
+        nav { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+        nav button {
+            border: 1px solid var(--accent); background: transparent; color: var(--accent);
+            padding: 6px 12px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.75rem;
+            transition: 0.3s;
+        }
+        nav button:hover { background: var(--accent); color: var(--bg-dark); }
 
-/* ===== HEADER PROFISSIONAL ===== */
-header {
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    width: 100%;
-    background: rgba(13, 19, 33, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 12px 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.5); 
-    z-index: 1000;
+        @media(min-width: 768px) {
+            header { flex-direction: row; justify-content: space-between; padding: 18px 60px; }
+            header h1 { font-size: 1.8rem; }
+            nav { gap: 15px; }
+            nav button { padding: 10px 20px; font-size: 0.9rem; }
+        }
 
-    display: flex; 
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
+        body { padding-top: 140px; }
+        @media(min-width: 768px) { body { padding-top: 100px; } }
 
-header h1 {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--accent);
-}
+        /* ===== HERO ===== */
+        .hero {
+            display: flex; flex-direction: column; align-items: center; text-align: center;
+            padding: 60px 20px;
+            background: radial-gradient(circle, var(--primary), var(--primary-dark));
+            color: var(--text-main);
+        }
 
-/* MENU */
-nav { 
-    display: flex; 
-    gap: 6px; 
-    flex-wrap: wrap; 
-    justify-content: center; 
-}
+        .hero h2 { font-size: 2rem; margin-bottom: 15px; max-width: 800px; line-height: 1.2; }
+        .hero p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 30px; max-width: 600px; }
 
-nav button {
-    border: 1px solid var(--accent); 
-    background: transparent; 
-    color: var(--accent);
-    padding: 6px 10px; 
-    border-radius: 8px; 
-    cursor: pointer; 
-    font-weight: 600;
-    font-size: 0.75rem;
-    transition: 0.3s;
-}
+        .btn {
+            background: var(--accent); color: var(--bg-dark);
+            padding: 16px 35px; border-radius: 50px; text-decoration: none;
+            font-weight: bold; font-size: 1.1rem; transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 194, 255, 0.4);
+        }
+        .btn:hover { transform: scale(1.05); background: #fff; }
 
-nav button:hover {
-    background: var(--accent);
-    color: var(--bg-dark);
-    transform: translateY(-2px);
-}
+        /* ===== SEÇÕES ===== */
+        section { padding: 60px 20px; max-width: 1000px; margin: auto; }
+        h2.section-title { text-align: center; margin-bottom: 40px; font-size: 1.8rem; color: var(--bg-dark); }
 
-/* DESKTOP */
-@media(min-width: 768px) {
-    header {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 18px 40px;
-    }
+        .grid-services {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
 
-    header h1 { font-size: 2.2rem; }
+        .card {
+            background: var(--card-bg); padding: 30px; border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-bottom: 4px solid var(--primary);
+            transition: 0.3s;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
+        .card h3 { margin-bottom: 10px; color: var(--bg-dark); }
 
-    nav { gap: 15px; }
+        /* WHATSAPP */
+        .whatsapp-float {
+            position: fixed; bottom: 25px; right: 25px; background: var(--wp);
+            color: white; width: 65px; height: 65px; border-radius: 50%;
+            display:flex; align-items:center; justify-content:center; font-size:32px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 999;
+        }
 
-    nav button { 
-        padding: 10px 20px; 
-        font-size: 0.95rem; 
-    }
-}
-
-/* AJUSTE BODY */
-body { padding-top: 160px; }
-
-@media(min-width: 768px) {
-    body { padding-top: 110px; }
-}
-
-/* ===== HERO ===== */
-.hero {
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center;
-    text-align: center; 
-    padding: 40px 20px;
-    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-    color: var(--text-main);
-}
-
-.hero img {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-}
-
-.hero h2 {
-    font-size: 1.6rem;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    max-width: 500px;
-    margin-bottom: 20px;
-}
-
-.btn {
-    background: white;
-    color: black;
-    padding: 12px 25px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* ===== SEÇÕES ===== */
-section {
-    padding: 50px 20px;
-    max-width: 900px;
-    margin: auto;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.box {
-    background: white;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.1);
-}
-
-/* WHATSAPP */
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: var(--wp);
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:28px;
-}
-
-/* RESPONSIVO HERO */
-@media(min-width: 768px) {
-    .hero h2 { font-size: 2.2rem; }
-    .hero img {
-        width: 180px;
-        height: 180px;
-    }
-}
-
-</style>
+        footer { text-align: center; padding: 40px; background: #eee; font-size: 0.9rem; }
+    </style>
 </head>
-
 <body>
 
-<a href="https://wa.me/5517982073231" class="whatsapp-float">
-<i class="fab fa-whatsapp"></i>
+<a href="https://wa.me/5517982073231" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
 </a>
 
 <header>
     <h1>ArtClik Marketing</h1>
-
     <nav>
-        <button onclick="scrollToSection('inicio')">Início</button>
-        <button onclick="scrollToSection('servicos')">Serviços</button>
-        <button onclick="scrollToSection('publico')">Para quem</button>
-        <button onclick="scrollToSection('contato')">Contato</button>
+        <button onclick="scrollToSection('inicio')">Solução</button>
+        <button onclick="scrollToSection('servicos')">O Ecossistema</button>
+        <button onclick="scrollToSection('contato')">Consultoria</button>
     </nav>
 </header>
 
 <section class="hero" id="inicio">
-    <img src="logo.png">
-    <h2>Mais clientes todos os dias no seu WhatsApp</h2>
-    <p>Landing page + automação + estrutura pronta pra vender</p>
-
-    <a href="https://wa.me/5517982073231" class="btn">
-        Quero clientes
-    </a>
+    <h2>Transforme sua operação em uma máquina de vendas automática</h2>
+    <p>Não entregamos apenas anúncios. Entregamos um sistema completo de captura, nutrição e fechamento de clientes.</p>
+    <a href="https://wa.me/5517982073231" class="btn">Solicitar Diagnóstico Grátis</a>
 </section>
 
 <section id="servicos">
-    <h2>O que você recebe</h2>
-
-    <div class="box">
-        🔥 Landing Page Profissional<br><br>
-        📲 Atendimento automático<br><br>
-        📊 Funil de vendas simples<br><br>
-        📍 Google Meu Negócio
-    </div>
-</section>
-
-<section id="publico">
-    <h2>Para quem é</h2>
-
-    <div class="box">
-        ✔ Açaíteria<br>
-        ✔ Corretor<br>
-        ✔ Barbearia<br>
-        ✔ Autônomos<br>
+    <h2 class="section-title">Tecnologia de elite para o seu negócio</h2>
+    <div class="grid-services">
+        <div class="card">
+            <i class="fas fa-funnel-dollar"></i>
+            <h3>Funis de Alta Conversão</h3>
+            <p>Páginas ultra-rápidas desenhadas para transformar visitantes em leads qualificados em segundos.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-robot"></i>
+            <h3>IA e Automação</h3>
+            <p>Respostas automáticas no WhatsApp e E-mail. Sua empresa atendendo 24h por dia, sem folga.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-users-cog"></i>
+            <h3>CRM Inteligente</h3>
+            <p>Gerencie todos os seus contatos em um só lugar. Saiba exatamente em que etapa da venda cada cliente está.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-chart-line"></i>
+            <h3>Dashboards Reais</h3>
+            <p>Chega de achismos. Acompanhe o retorno sobre seu investimento com dados precisos de conversão.</p>
+        </div>
     </div>
 </section>
 
 <section id="contato">
-    <h2>Começar agora</h2>
-
-    <div class="box" style="text-align:center;">
-        <p>Plano inicial por apenas <strong>R$150</strong></p>
-
-        <br>
-
-        <a href="https://wa.me/5517982073231" class="btn">
-            Falar no WhatsApp
+    <div style="background: var(--bg-dark); color: white; padding: 50px; border-radius: 20px; text-align: center;">
+        <h2>Pronto para escalar?</h2>
+        <p style="margin-bottom: 30px;">Implementamos toda a estrutura técnica para você focar apenas no que importa: fechar o negócio.</p>
+        <a href="https://wa.me/5517982073231" class="btn" style="background: #fff;">
+            Falar com Douglas W Oliveira
         </a>
     </div>
 </section>
 
-<script>
-function scrollToSection(id){
-    const element = document.getElementById(id);
-    const offset = 100;
-    const top = element.offsetTop - offset;
+<footer>
+    &copy; 2026 ArtClik Marketing - Estratégias Digitais Avançadas.
+</footer>
 
-    window.scrollTo({
-        top: top,
-        behavior: "smooth"
-    });
-}
+<script>
+    function scrollToSection(id){
+        const element = document.getElementById(id);
+        const offset = 110;
+        const top = element.offsetTop - offset;
+        window.scrollTo({ top: top, behavior: "smooth" });
+    }
 </script>
 
 </body>
