@@ -13,6 +13,7 @@
     --card-bg: rgba(255, 255, 255, 0.03);
     --border: rgba(255, 255, 255, 0.1);
     --primary: #8257e5; 
+    --primary-dark: #4b2cbf;
     --accent: #00f2ff; 
     --text-main: #e1e1e6;
     --text-dim: #a8a8b3;
@@ -30,9 +31,8 @@ body {
     background: var(--bg);
     color: var(--text-main);
     line-height: 1.6;
+    scroll-behavior: smooth;
 }
-
-html { scroll-behavior: smooth; }
 
 /* FUNDO */
 body::before {
@@ -53,7 +53,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(5,5,5,0.8);
+    background: rgba(5,5,5,0.85);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
     z-index: 1000;
@@ -61,7 +61,7 @@ header {
 
 .logo {
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--accent);
 }
 
@@ -69,22 +69,29 @@ nav a {
     color: var(--text-dim);
     margin-left: 15px;
     text-decoration: none;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    transition: 0.3s;
 }
 
-nav a:hover { color: var(--accent); }
+nav a:hover { 
+    color: var(--accent); 
+}
 
 /* HERO COM BANNER */
 .hero {
     position: relative;
-    padding: 160px 20px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    padding: 180px 20px 120px;
+    color: var(--text-main);
     background: 
-        linear-gradient(rgba(5,5,5,0.75), rgba(5,5,5,0.85)),
-        url('./banner.png') center/cover no-repeat;
+        linear-gradient(rgba(5,5,5,0.7), rgba(5,5,5,0.85)),
+        url('banner.png') center/cover no-repeat;
 }
 
-/* Efeito degradê final */
 .hero::after {
     content: "";
     position: absolute;
@@ -92,40 +99,43 @@ nav a:hover { color: var(--accent); }
     left: 0;
     width: 100%;
     height: 80px;
-    background: linear-gradient(transparent, #050505);
+    background: linear-gradient(transparent, var(--bg));
 }
 
 .badge {
     display: inline-block;
     background: rgba(255,255,255,0.05);
-    padding: 6px 18px;
-    border-radius: 20px;
+    padding: 8px 22px;
+    border-radius: 25px;
     color: var(--accent);
     margin-bottom: 20px;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
+    font-weight: 500;
 }
 
 .hero h1 {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
     margin-bottom: 20px;
     color: white;
 }
 
 .hero p {
-    max-width: 500px;
+    max-width: 550px;
     margin: auto;
     margin-bottom: 20px;
     color: var(--text-dim);
+    font-size: 1rem;
 }
 
 /* BOTÃO PROFISSIONAL */
 .btn {
     background: linear-gradient(45deg, #00f2ff, #8257e5);
     color: white;
-    padding: 15px 30px;
-    border-radius: 30px;
+    padding: 16px 32px;
+    border-radius: 35px;
     text-decoration: none;
     font-weight: bold;
+    font-size: 1rem;
     box-shadow: 0 0 15px rgba(130,87,229,0.5);
     transition: 0.3s;
 }
@@ -137,31 +147,41 @@ nav a:hover { color: var(--accent); }
 
 /* SEÇÕES */
 section {
-    padding: 60px 20px;
-    max-width: 900px;
+    padding: 70px 20px;
+    max-width: 1000px;
     margin: auto;
 }
 
 h2 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    font-size: 2rem;
 }
 
 .grid {
     display: grid;
-    gap: 20px;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .card {
     background: var(--card-bg);
     padding: 25px;
-    border-radius: 10px;
+    border-radius: 15px;
     border: 1px solid var(--border);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
 .card i {
     color: var(--accent);
-    margin-bottom: 10px;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
 }
 
 /* CTA */
@@ -183,11 +203,14 @@ h2 {
     justify-content: center;
     color: white;
     font-size: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* MOBILE */
+/* RESPONSIVO */
 @media(max-width:600px){
-    .hero h1 { font-size:1.6rem; }
+    .hero h1 { font-size:1.8rem; }
+    .hero p { font-size:0.95rem; }
+    .btn { font-size:0.95rem; padding:14px 28px; }
 }
 </style>
 </head>
@@ -202,7 +225,6 @@ h2 {
 <!-- HEADER -->
 <header>
 <div class="logo">ArtClik Marketing</div>
-
 <nav>
 <a href="#solucoes">Soluções</a>
 <a href="#processo">Como funciona</a>
@@ -212,91 +234,40 @@ h2 {
 
 <!-- HERO -->
 <section class="hero">
-
 <div class="badge">Sistema de Vendas Automatizado</div>
-
 <h1>Mais clientes todos os dias no seu WhatsApp</h1>
-
-<p>
-Eu crio sua página + automação para você vender no automático,
-mesmo começando do zero.
-</p>
-
-<p style="font-size:0.9rem; opacity:0.7;">
-✔ Sem fidelidade • ✔ Resultado rápido • ✔ Funciona no seu negócio
-</p>
-
+<p>Eu crio sua página + automação para você vender no automático, mesmo começando do zero.</p>
+<p style="font-size:0.9rem; opacity:0.7;">✔ Sem fidelidade • ✔ Resultado rápido • ✔ Funciona no seu negócio</p>
 <br>
-
-<a href="https://wa.me/5517982073231" class="btn">
-Quero começar agora
-</a>
-
+<a href="https://wa.me/5517982073231" class="btn">Quero começar agora</a>
 </section>
 
 <!-- SOLUÇÕES -->
 <section id="solucoes">
 <h2>O que você recebe</h2>
-
 <div class="grid">
-
-<div class="card">
-<i class="fas fa-network-wired"></i>
-<h3>Sistema de Clientes</h3>
-<p>Organize seus contatos e aumente suas vendas.</p>
-</div>
-
-<div class="card">
-<i class="fas fa-robot"></i>
-<h3>WhatsApp Automático</h3>
-<p>Respostas automáticas que trabalham por você.</p>
-</div>
-
-<div class="card">
-<i class="fas fa-chart-line"></i>
-<h3>Funil de Vendas</h3>
-<p>Transforme visitantes em clientes no WhatsApp.</p>
-</div>
-
+<div class="card"><i class="fas fa-network-wired"></i><h3>Sistema de Clientes</h3><p>Organize seus contatos e aumente suas vendas.</p></div>
+<div class="card"><i class="fas fa-robot"></i><h3>WhatsApp Automático</h3><p>Respostas automáticas que trabalham por você.</p></div>
+<div class="card"><i class="fas fa-chart-line"></i><h3>Funil de Vendas</h3><p>Transforme visitantes em clientes no WhatsApp.</p></div>
 </div>
 </section>
 
 <!-- PROCESSO -->
 <section id="processo">
 <h2>Como funciona</h2>
-
 <div class="grid">
-
-<div class="card">
-<h3>1. Configuração</h3>
-<p>Montamos tudo para você.</p>
-</div>
-
-<div class="card">
-<h3>2. Ativação</h3>
-<p>Seu sistema começa a rodar.</p>
-</div>
-
-<div class="card">
-<h3>3. Resultado</h3>
-<p>Clientes chegando todos os dias.</p>
-</div>
-
+<div class="card"><h3>1. Configuração</h3><p>Montamos tudo para você.</p></div>
+<div class="card"><h3>2. Ativação</h3><p>Seu sistema começa a rodar.</p></div>
+<div class="card"><h3>3. Resultado</h3><p>Clientes chegando todos os dias.</p></div>
 </div>
 </section>
 
 <!-- CTA FINAL -->
 <section id="contato" class="cta">
 <h2>Comece agora</h2>
-
 <p>Plano inicial por apenas <strong>R$150</strong></p>
-
 <br>
-
-<a href="https://wa.me/5517982073231" class="btn">
-Falar no WhatsApp
-</a>
-
+<a href="https://wa.me/5517982073231" class="btn">Falar no WhatsApp</a>
 </section>
 
 </body>
