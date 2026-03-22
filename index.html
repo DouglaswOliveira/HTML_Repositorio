@@ -1,183 +1,262 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArtClik | Infraestrutura de Vendas</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --bg: #050505;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --border: rgba(255, 255, 255, 0.1);
-            --primary: #8257e5; 
-            --accent: #00f2ff; 
-            --text-main: #e1e1e6;
-            --text-dim: #a8a8b3;
-            --wp: #25D366;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ArtClik Marketing | Máquina de Clientes</title>
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, sans-serif; }
-        body { background: var(--bg); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
-        html { scroll-behavior: smooth; }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-        /* EFEITO DE FUNDO - RADIAL GLOW */
-        body::before {
-            content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% -20%, #1a1a2e 0%, transparent 50%);
-            z-index: -1;
-        }
+<style>
+:root {
+    --bg: #050505;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --border: rgba(255, 255, 255, 0.1);
+    --primary: #8257e5; 
+    --accent: #00f2ff; 
+    --text-main: #e1e1e6;
+    --text-dim: #a8a8b3;
+    --wp: #25D366;
+}
 
-        /* HEADER VIDRO (GLASSMORPHISM) */
-        header {
-            position: fixed; top: 0; width: 100%; padding: 20px 8%;
-            display: flex; justify-content: space-between; align-items: center;
-            background: rgba(5, 5, 5, 0.8); backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border); z-index: 1000;
-        }
-        .logo { font-size: 1.2rem; font-weight: 800; letter-spacing: -1px; background: linear-gradient(90deg, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        nav a { color: var(--text-dim); text-decoration: none; margin-left: 25px; font-size: 0.8rem; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
-        nav a:hover { color: var(--accent); }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+body { background: var(--bg); color: var(--text-main); line-height: 1.6; }
 
-        /* HERO SECTION */
-        .hero {
-            padding: 180px 8% 100px; text-align: center;
-            display: flex; flex-direction: column; align-items: center;
-        }
-        .hero .badge { background: var(--card-bg); border: 1px solid var(--border); padding: 6px 16px; border-radius: 20px; font-size: 0.7rem; color: var(--accent); margin-bottom: 25px; text-transform: uppercase; letter-spacing: 2px; }
-        .hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; line-height: 1.1; margin-bottom: 25px; letter-spacing: -2px; color: #fff; }
-        .hero p { font-size: 1.15rem; color: var(--text-dim); max-width: 700px; margin-bottom: 45px; }
+html { scroll-behavior: smooth; }
 
-        /* BOTÃO HIGH-TECH */
-        .btn {
-            background: #fff; color: #000; padding: 18px 45px; border-radius: 6px;
-            text-decoration: none; font-weight: 700; font-size: 0.95rem;
-            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 0 20px rgba(255,255,255,0.1);
-        }
-        .btn:hover { transform: scale(1.03); box-shadow: 0 0 30px rgba(0, 242, 255, 0.4); background: var(--accent); }
+/* FUNDO */
+body::before {
+    content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 50% -20%, #1a1a2e 0%, transparent 50%);
+    z-index: -1;
+}
 
-        /* GRID DE SOLUÇÕES */
-        section { padding: 100px 8%; max-width: 1400px; margin: auto; }
-        .section-header { margin-bottom: 60px; }
-        .section-header h2 { font-size: 2.2rem; margin-bottom: 12px; color: #fff; letter-spacing: -1px; }
-        .section-header p { color: var(--text-dim); font-size: 1.1rem; }
+/* HEADER */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(5,5,5,0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+}
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card { 
-            background: var(--card-bg); border: 1px solid var(--border); padding: 40px; 
-            border-radius: 12px; transition: 0.4s; position: relative;
-        }
-        .card:hover { border-color: var(--accent); background: rgba(255,255,255,0.05); transform: translateY(-5px); }
-        .card i { font-size: 1.8rem; color: var(--accent); margin-bottom: 25px; }
-        .card h3 { font-size: 1.4rem; margin-bottom: 15px; color: #fff; }
-        .card p { color: var(--text-dim); font-size: 0.95rem; line-height: 1.7; }
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--accent);
+}
 
-        /* WORKFLOW / PROCESSO */
-        .workflow { border-left: 1px solid var(--border); padding-left: 40px; margin-left: 10px; max-width: 800px; }
-        .step { position: relative; margin-bottom: 60px; }
-        .step::before { content: ""; position: absolute; left: -46px; top: 0; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 15px var(--accent); }
-        .step h4 { color: #fff; font-size: 1.2rem; margin-bottom: 10px; }
-        .step p { color: var(--text-dim); }
+nav a {
+    color: var(--text-dim);
+    margin-left: 15px;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
 
-        /* WHATSAPP FLOAT */
-        .whatsapp-float { position: fixed; bottom: 35px; right: 35px; background: var(--wp); width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: #fff; text-decoration: none; z-index: 2000; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: 0.3s; }
-        .whatsapp-float:hover { transform: scale(1.1); }
+nav a:hover { color: var(--accent); }
 
-        footer { border-top: 1px solid var(--border); padding: 60px 8%; text-align: center; color: var(--text-dim); font-size: 0.85rem; }
+/* HERO */
+.hero {
+    padding: 160px 20px 80px;
+    text-align: center;
+}
 
-        @media (max-width: 768px) {
-            header { padding: 20px; flex-direction: column; gap: 15px; }
-            nav a { margin: 0 10px; font-size: 0.7rem; }
-            .hero h1 { font-size: 2.2rem; }
-        }
-    </style>
+.badge {
+    display: inline-block;
+    background: var(--card-bg);
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: var(--accent);
+    margin-bottom: 20px;
+    font-size: 0.7rem;
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.hero p {
+    max-width: 500px;
+    margin: auto;
+    margin-bottom: 25px;
+    color: var(--text-dim);
+}
+
+.btn {
+    background: white;
+    color: black;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: var(--accent);
+}
+
+/* SEÇÕES */
+section {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.grid {
+    display: grid;
+    gap: 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+
+.card i {
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+/* CTA FINAL */
+.cta {
+    text-align: center;
+}
+
+/* WHATSAPP */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--wp);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 25px;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+    .hero h1 { font-size:1.6rem; }
+}
+</style>
 </head>
+
 <body>
 
-<header>
-    <div class="logo">ARTCLIK_MARKETING</div>
-    <nav>
-        <a href="#solucoes">Soluções</a>
-        <a href="#workflow">Metodologia</a>
-        <a href="#contato">Consultoria</a>
-    </nav>
-</header>
-
-<a href="https://wa.me/5517982073231" class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
+<a href="https://wa.me/5517982073231" class="whatsapp-float">
+<i class="fab fa-whatsapp"></i>
 </a>
 
-<main>
-    <section class="hero">
-        <div class="badge">Infraestrutura de Vendas de Próxima Geração</div>
-        <h1>Escalabilidade Comercial via Engenharia de Dados.</h1>
-        <p>Não entregamos apenas "posts". Implementamos ecossistemas robustos de CRM, automação avançada e inteligência de funis para converter tráfego em receita real.</p>
-        <a href="https://wa.me/5517982073231" class="btn">Iniciar Diagnóstico Técnico</a>
-    </section>
+<header>
+<div class="logo">ArtClik Marketing</div>
 
-    <section id="solucoes">
-        <div class="section-header">
-            <h2>Soluções All-in-One</h2>
-            <p>Infraestrutura técnica para empresas que não aceitam perder leads.</p>
-        </div>
-        <div class="grid">
-            <div class="card">
-                <i class="fas fa-network-wired"></i>
-                <h3>Arquitetura de CRM</h3>
-                <p>Pipeline unificado para gerenciar toda a jornada do cliente. Visibilidade total sobre conversões e gargalos comerciais.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-microchip"></i>
-                <h3>Automação de Fluxo</h3>
-                <p>Workflows inteligentes que qualificam, nutrem e agendam leads automaticamente, operando 24/7 sem intervenção manual.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-project-diagram"></i>
-                <h3>Funis de Performance</h3>
-                <p>Estruturas de conversão otimizadas para escala, integrando anúncios direto ao seu ecossistema de atendimento.</p>
-            </div>
-        </div>
-    </section>
+<nav>
+<a href="#solucoes">Soluções</a>
+<a href="#processo">Como funciona</a>
+<a href="#contato">Contato</a>
+</nav>
+</header>
 
-    <section id="workflow">
-        <div class="section-header">
-            <h2>Metodologia de Implementação</h2>
-            <p>Ciclos de alta performance para resultados consistentes.</p>
-        </div>
-        <div class="workflow">
-            <div class="step">
-                <h4>01 Auditoria de Infraestrutura</h4>
-                <p>Mapeamos seu processo atual e desenhamos a arquitetura de dados ideal para o seu modelo de negócio.</p>
-            </div>
-            <div class="step">
-                <h4>02 Setup de Automação</h4>
-                <p>Construção das réguas de relacionamento via WhatsApp e e-mail, integrando APIs e inteligência de resposta.</p>
-            </div>
-            <div class="step">
-                <h4>03 Deployment de Performance</h4>
-                <p>Lançamento das campanhas e funis com rastreamento avançado de ROI e métricas de conversão em tempo real.</p>
-            </div>
-            <div class="step">
-                <h4>04 Otimização Baseada em Dados</h4>
-                <p>Análise de dashboards para ajustes finos, garantindo o menor custo por aquisição (CAC) possível.</p>
-            </div>
-        </div>
-    </section>
+<section class="hero">
+<div class="badge">Sistema de Vendas Automatizado</div>
 
-    <section id="contato" style="text-align: center;">
-        <div style="background: linear-gradient(180deg, var(--card-bg), transparent); padding: 80px 40px; border-radius: 24px; border: 1px solid var(--border);">
-            <h2 style="font-size: 2.2rem; margin-bottom: 20px;">Pronto para a escala?</h2>
-            <p style="margin-bottom: 40px; color: var(--text-dim); max-width: 600px; margin-left: auto; margin-right: auto;">Conecte sua empresa à tecnologia que as agências comuns não dominam. Fale com Douglas W Oliveira.</p>
-            <a href="https://wa.me/5517982073231" class="btn" style="background: var(--accent);">Agendar Call Técnica</a>
-        </div>
-    </section>
-</main>
+<h1>Transforme seu WhatsApp em uma máquina de clientes</h1>
 
-<footer>
-    <p>DOUGLAS W OLIVEIRA &copy; 2026 | ARTCLIK MARKETING SOLUTIONS</p>
-    <p style="margin-top: 12px; opacity: 0.4; letter-spacing: 1px;">SÃO JOSÉ DO RIO PRETO - SP</p>
-</footer>
+<p>
+Landing page + automação + funil pronto para você vender todos os dias,
+mesmo sem experiência.
+</p>
+
+<p style="font-size:0.9rem; opacity:0.7;">
+✔ Sem fidelidade • ✔ Resultado rápido • ✔ Fácil de usar
+</p>
+
+<br>
+
+<a href="https://wa.me/5517982073231" class="btn">
+Quero mais clientes agora
+</a>
+</section>
+
+<section id="solucoes">
+<h2>O que você recebe</h2>
+
+<div class="grid">
+
+<div class="card">
+<i class="fas fa-network-wired"></i>
+<h3>Sistema de Clientes</h3>
+<p>Organize todos os seus contatos e nunca mais perca um cliente.</p>
+</div>
+
+<div class="card">
+<i class="fas fa-robot"></i>
+<h3>WhatsApp Automático</h3>
+<p>Atendimento automático que responde e captura clientes sozinho.</p>
+</div>
+
+<div class="card">
+<i class="fas fa-chart-line"></i>
+<h3>Funil de Vendas</h3>
+<p>Página pronta para transformar visitas em mensagens no WhatsApp.</p>
+</div>
+
+</div>
+</section>
+
+<section id="processo">
+<h2>Como funciona</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>1. Configuração</h3>
+<p>Montamos toda a estrutura para o seu negócio.</p>
+</div>
+
+<div class="card">
+<h3>2. Ativação</h3>
+<p>Seu sistema começa a captar clientes automaticamente.</p>
+</div>
+
+<div class="card">
+<h3>3. Resultado</h3>
+<p>Você começa a receber mensagens todos os dias.</p>
+</div>
+
+</div>
+</section>
+
+<section id="contato" class="cta">
+<h2>Comece agora</h2>
+
+<p>Plano inicial por apenas <strong>R$150</strong></p>
+
+<br>
+
+<a href="https://wa.me/5517982073231" class="btn">
+Falar no WhatsApp
+</a>
+</section>
 
 </body>
 </html>
