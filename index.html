@@ -12,7 +12,7 @@
     --text-dim: #cccccc;
 }
 
-/* ===== HEADER PROFISSIONAL E RESPONSIVO ===== */
+/* ===== HEADER ===== */
 header {
     position: fixed;
     top: 0;
@@ -23,7 +23,6 @@ header {
     padding: 12px 15px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.5);
     z-index: 1000;
-
     display: flex;   
     flex-direction: column;  
     align-items: center;  
@@ -63,44 +62,26 @@ nav button:hover {
     transform: translateY(-2px);
 }
 
-/* ===== DESKTOP ===== */
 @media(min-width: 768px) {
     header {
         flex-direction: row;
         justify-content: space-between;
         padding: 18px 40px;
     }
-
-    header h1 {   
-        font-size: 2.2rem;   
-        text-align: left;  
-    }  
-
-    nav {   
-        gap: 15px;   
-        justify-content: flex-end;  
-    }  
-
-    nav button {   
-        padding: 10px 20px;   
-        font-size: 0.95rem;   
-    }
+    header h1 { font-size: 2.2rem; text-align: left; }
+    nav { gap: 15px; justify-content: flex-end; }
+    nav button { padding: 10px 20px; font-size: 0.95rem; }
 }
 
-/* ===== AJUSTE DO BODY ===== */
+/* ===== BODY ===== */
 body {
     margin: 0;
-    padding-top: 160px; /* espaço para o header fixo mobile */
+    padding-top: 160px;
     background: #0d1321;
     color: var(--text-main);
     font-family: 'Segoe UI', Arial, sans-serif;
 }
-
-@media(min-width: 768px) {
-    body {
-        padding-top: 110px; /* header desktop */
-    }
-}
+@media(min-width: 768px){ body { padding-top: 110px; } }
 
 /* ===== BANNER ===== */
 .banner {
@@ -109,7 +90,6 @@ body {
     justify-content: center;
     margin-bottom: 40px;
 }
-
 .banner img {
     width: 100%;
     max-width: 1200px;
@@ -121,7 +101,6 @@ body {
 
 /* ===== HERO ===== */
 .hero {
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -129,22 +108,11 @@ body {
     text-align: center;
     min-height: 60vh;
     padding: 40px 20px;
-    color: var(--text-main);
 }
+.hero h1 { font-size: 3rem; margin-bottom: 20px; }
+.hero p { max-width: 600px; font-size: 1.1rem; margin-bottom: 25px; color: var(--text-dim); }
 
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    max-width: 600px;
-    font-size: 1.1rem;
-    margin-bottom: 25px;
-    color: var(--text-dim);
-}
-
-/* ===== INFORMAÇÃO DE SERVIÇOS ===== */
+/* ===== SERVIÇOS INFO ===== */
 .services-info {
     margin-top: 30px;
     max-width: 700px;
@@ -153,9 +121,52 @@ body {
     color: var(--text-dim);
     line-height: 1.6;
 }
-.services-info strong {
+.services-info strong { color: var(--accent); }
+
+/* ===== SEÇÃO COMPLETA DE SERVIÇOS ===== */
+.services {
+    background: #0f192b;
+    color: var(--text-main);
+    padding: 80px 20px;
+    text-align: center;
+}
+.services .container { max-width: 1200px; margin: 0 auto; }
+
+.services-hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
     color: var(--accent);
 }
+.services-hero p { font-size: 1.1rem; color: var(--text-dim); margin-bottom: 50px; }
+
+.services-section { margin-bottom: 40px; }
+.services-section h3 { font-size: 1.8rem; color: var(--accent); margin-bottom: 10px; }
+.services-section p,
+.services-section ul { font-size: 1rem; color: var(--text-dim); line-height: 1.6; }
+.services-section ul { list-style: disc; padding-left: 20px; text-align: left; display: inline-block; }
+
+/* ===== PLANOS ===== */
+.services-plans {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+.plan {
+    background: rgba(130,87,229,0.1);
+    border: 1px solid var(--accent);
+    border-radius: 15px;
+    padding: 30px 20px;
+    max-width: 300px;
+    flex: 1 1 280px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+.plan h4 { font-size: 1.5rem; margin-bottom: 10px; color: var(--accent); }
+.plan p { font-size: 1rem; margin-bottom: 8px; color: var(--text-dim); }
+
+/* ===== CTA ===== */
+.services-cta { margin-top: 20px; }
 
 /* ===== BOTÃO ===== */
 .btn {
@@ -169,10 +180,33 @@ body {
     box-shadow: 0 0 15px rgba(130,87,229,0.5);
     transition: 0.3s;
 }
-
 .btn:hover {
     transform: scale(1.05);
     box-shadow: 0 0 25px rgba(0,242,255,0.8);
+}
+
+/* ===== WHATSAPP FLUTUANTE ===== */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.whatsapp-float img { width: 35px; height: 35px; }
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
 }
 
 /* ===== RESPONSIVO ===== */
@@ -181,6 +215,10 @@ body {
     .hero p { font-size:1rem; }
     .btn { font-size:1rem; padding:14px 28px; }
     .services-info { font-size:0.95rem; }
+    .services-hero h2 { font-size:2rem; }
+    .services-section h3 { font-size:1.5rem; }
+    .plan { max-width: 100%; padding:20px; }
+    .services-section ul { text-align: center; padding-left: 0; }
 }
 </style>
 </head>
@@ -203,11 +241,71 @@ body {
     <h1>Bem-vindo à ArtClik Marketing</h1>
     <p>Transformamos seu negócio em uma máquina de clientes com marketing digital profissional.</p>
     <a href="#contato" class="btn">Saiba Mais</a>
-
     <div class="services-info">
         <p>Oferecemos serviços completos de <strong>marketing digital</strong> para impulsionar seu negócio, incluindo gestão de campanhas, automação de vendas, criação de conteúdos estratégicos e acompanhamento personalizado de resultados.</p>
     </div>
 </section>
+
+<!-- SEÇÃO COMPLETA DE SERVIÇOS -->
+<section class="services" id="servicos">
+    <div class="container">
+        <div class="services-hero">
+            <h2>Promessa de clareza comercial e aumento de conversão</h2>
+            <p>Transforme seu negócio em uma máquina de resultados, com processos automatizados e métricas claras.</p>
+        </div>
+
+        <div class="services-section">
+            <h3>A Dor</h3>
+            <p>O custo oculto de usar ferramentas desconectadas que geram retrabalho e perda de oportunidades.</p>
+        </div>
+
+        <div class="services-section">
+            <h3>A Solução</h3>
+            <p>Apresente seu "Ecossistema ArtClik Marketing": todas as ferramentas integradas para gestão, automação e resultados claros.</p>
+        </div>
+
+        <div class="services-section">
+            <h3>Funcionalidades</h3>
+            <ul>
+                <li>Gestão de Leads</li>
+                <li>Agendamentos</li>
+                <li>Automação</li>
+                <li>Dashboard de Métricas</li>
+            </ul>
+        </div>
+
+        <div class="services-section">
+            <h3>Prova Social</h3>
+            <p>“Agora consigo ver de onde vêm meus clientes e otimizar minhas campanhas com segurança.”</p>
+        </div>
+
+        <div class="services-plans">
+            <div class="plan">
+                <h4>Setup Express</h4>
+                <p>CRM + Formulário + Automação Básica</p>
+                <p>Autônomos e pequenos negócios</p>
+            </div>
+            <div class="plan">
+                <h4>Máquina de Agendamento</h4>
+                <p>Calendário + Lembretes + Gestão de Leads</p>
+                <p>Clínicas, consultórios e estéticas</p>
+            </div>
+            <div class="plan">
+                <h4>Ecossistema de Vendas</h4>
+                <p>Tudo acima + Funis + Área de Membros + Tráfego</p>
+            </div>
+        </div>
+
+        <div class="services-cta">
+            <a href="#contato" class="btn">Solicitar Demonstração</a>
+        </div>
+    </div>
+</section>
+
+<!-- WhatsApp Flutuante -->
+<a href="https://wa.me/5517982073231" class="whatsapp-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+</a>
 
 </body>
 </html>
