@@ -3,217 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArtClik Marketing | Douglas W Oliveira - Ecossistema de Vendas Digital</title>
-    
+    <title>ArtClik Marketing | Douglas W Oliveira</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
     <style>
-        /* ===== VARIÁVEIS ===== */
+        /* ===== VARIÁVEIS DE DESIGN FUTURISTA ===== */
         :root {
-            --bg-dark: #0d1321;
-            --primary: #6a00ff;
-            --primary-dark: #3a00a8;
-            --accent: #00c2ff;
-            --accent-hover: #008fcc;
-            --text-main: #ffffff;
-            --text-dark: #1a1a1a;
-            --light: #f4f6f8;
-            --wp: #25D366;
-            --card-bg: #ffffff;
-            --transition: 0.3s ease;
+            --bg-deep: #050810;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --accent-cyan: #00f2ff;
+            --accent-purple: #7000ff;
+            --text-silver: #e0e0e0;
+            --white: #ffffff;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
-        /* RESET & BASE */
-        html {
-            scroll-behavior: smooth; /* Rolagem suave nativa */
-            font-size: 16px;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* EFEITO DE FUNDO DINÂMICO */
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--light);
-            color: #333;
+            background: var(--bg-deep);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(112, 0, 255, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 242, 255, 0.1) 0%, transparent 40%);
+            color: var(--text-silver);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
             line-height: 1.6;
+            overflow-x: hidden;
         }
-        h1, h2, h3 { color: var(--text-dark); }
-        ul { list-style: none; }
 
-        /* ===== HEADER MODERNIZADO ===== */
+        /* HEADER GLASS */
         header {
-            position: fixed; top: 0; left: 0; width: 100%;
-            background: rgba(13, 19, 33, 0.98);
-            backdrop-filter: blur(8px);
-            padding: 15px 10%;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            position: fixed; top: 0; width: 100%;
+            background: rgba(5, 8, 16, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--glass-border);
             z-index: 1000;
-            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 0;
         }
-
-        .logo-text { font-size: 1.6rem; color: var(--accent); letter-spacing: 1px; }
-
-        nav ul { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
-        nav a {
-            text-decoration: none;
-            color: var(--accent);
-            padding: 8px 16px; border-radius: 6px; border: 1px solid var(--accent);
-            cursor: pointer; font-weight: 600; font-size: 0.85rem;
-            transition: var(--transition);
+        .nav-container {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center; padding: 0 40px;
         }
-        nav a:hover { background: var(--accent); color: var(--bg-dark); }
-
-        @media(max-width: 768px) {
-            header { flex-direction: column; gap: 10px; padding: 15px; }
-            .logo-text { font-size: 1.3rem; }
-            nav a { padding: 6px 12px; font-size: 0.75rem; }
+        .logo { 
+            font-size: 1.5rem; font-weight: 800; color: var(--white); 
+            letter-spacing: -1px; text-transform: lowercase;
         }
+        .logo span { color: var(--accent-cyan); }
 
-        /* AJUSTE BODY */
-        body { padding-top: 140px; }
-        @media(min-width: 768px) { body { padding-top: 100px; } }
+        nav button {
+            background: transparent; border: 1px solid var(--glass-border);
+            color: var(--text-silver); padding: 8px 18px; border-radius: 50px;
+            cursor: pointer; transition: var(--transition); font-size: 0.85rem;
+            margin-left: 10px;
+        }
+        nav button:hover { border-color: var(--accent-cyan); color: var(--white); background: rgba(0, 242, 255, 0.05); }
 
-        /* ===== HERO SECTION ===== */
+        /* HERO SECTION */
         .hero {
-            display: flex; flex-direction: column; align-items: center; text-align: center;
-            padding: 80px 20px;
-            background: radial-gradient(circle, var(--primary), var(--primary-dark));
-            color: var(--text-main);
+            height: 90vh; display: flex; flex-direction: column; 
+            justify-content: center; align-items: center; text-align: center;
+            padding: 0 20px;
         }
-        .hero h1 { font-size: 2.2rem; margin-bottom: 20px; max-width: 850px; line-height: 1.2; color: #fff; }
-        .hero p { font-size: 1.2rem; opacity: 0.95; margin-bottom: 40px; max-width: 650px; }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--accent); color: var(--bg-dark);
-            padding: 16px 35px; border-radius: 50px; text-decoration: none;
-            font-weight: bold; font-size: 1.1rem; transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(0, 194, 255, 0.4);
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 200;
+            color: var(--white); margin-bottom: 20px; letter-spacing: -2px;
         }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0, 194, 255, 0.6); background-color: #fff; }
+        .hero h1 b { font-weight: 800; background: linear-gradient(90deg, #fff, var(--accent-cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { max-width: 600px; font-size: 1.1rem; opacity: 0.6; margin-bottom: 40px; }
 
-        /* ===== SEÇÕES ===== */
-        section { padding: 80px 10% 50px; max-width: 1200px; margin: auto; }
-        h2.section-title { text-align: center; margin-bottom: 50px; font-size: 2rem; color: var(--bg-dark); }
+        /* BOTÃO PRINCIPAL ESTILO NEON */
+        .cta-main {
+            background: linear-gradient(45deg, var(--accent-purple), var(--accent-cyan));
+            color: var(--white); padding: 18px 45px; border-radius: 100px;
+            text-decoration: none; font-weight: 700; font-size: 1rem;
+            box-shadow: 0 10px 40px rgba(112, 0, 255, 0.3);
+            transition: var(--transition);
+        }
+        .cta-main:hover { transform: translateY(-5px); box-shadow: 0 15px 50px rgba(112, 0, 255, 0.5); }
+
+        /* GRID DE SERVIÇOS "TRANSPARENTE" */
+        section { padding: 100px 40px; max-width: 1100px; margin: 0 auto; }
         .grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;
         }
-
-        /* CARDS */
-        .card {
-            background-color: var(--card-bg); padding: 35px; border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-bottom: 5px solid var(--primary);
+        .glass-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            padding: 40px; border-radius: 24px;
             transition: var(--transition);
         }
-        .card:hover { transform: translateY(-7px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
-        .card i { font-size: 2.8rem; color: var(--primary); margin-bottom: 20px; }
-        .card h3 { margin-bottom: 15px; color: var(--text-dark); font-size: 1.4rem; }
-        .card p { color: #555; }
-
-        /* SEÇÃO "PARA QUEM É" - MELHORADA */
-        #publico ul.checklist { display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin: 0 auto; text-align: left; }
-        #publico ul.checklist li { display: flex; align-items: start; gap: 10px; padding: 10px; }
-        #publico ul.checklist li i { color: var(--accent); font-size: 1.2rem; margin-top: 4px; }
-        #publico ul.checklist li strong { color: var(--text-dark); }
-
-        /* ===== WHATSAPP FLOAT ===== */
-        .whatsapp-float {
-            position: fixed; bottom: 30px; right: 30px; background: var(--wp);
-            color: white; width: 68px; height: 68px; border-radius: 50%;
-            display:flex; align-items:center; justify-content:center; font-size:34px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3); z-index: 999;
-            transition: var(--transition);
-            text-decoration: none;
+        .glass-card:hover { 
+            background: rgba(255, 255, 255, 0.05); 
+            border-color: var(--accent-cyan);
+            transform: scale(1.02);
         }
-        .whatsapp-float:hover { transform: scale(1.1) rotate(5deg); }
-
-        /* ===== FOOTER ===== */
-        footer {
-            text-align: center; padding: 60px 20px; background: var(--bg-dark); color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
+        .glass-card i { 
+            font-size: 2rem; color: var(--accent-cyan); margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(0, 242, 255, 0.5));
         }
-        footer .footer-logo { font-size: 1.8rem; color: var(--accent); margin-bottom: 10px; }
-        footer p { margin-bottom: 10px; }
-        footer .cnpj { font-size: 0.8rem; opacity: 0.5; }
+        .glass-card h3 { color: var(--white); margin-bottom: 15px; font-weight: 600; }
+        .glass-card p { font-size: 0.95rem; opacity: 0.6; margin: 0; }
+
+        /* WHATSAPP FLOAT */
+        .wp-float {
+            position: fixed; bottom: 30px; right: 30px;
+            width: 60px; height: 60px; background: #25d366;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 1.8rem; text-decoration: none;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3); z-index: 1000;
+        }
+
+        footer { text-align: center; padding: 60px; opacity: 0.4; font-size: 0.8rem; border-top: 1px solid var(--glass-border); }
+
+        @media (max-width: 768px) {
+            .nav-container { padding: 0 20px; }
+            nav { display: none; } /* Mobile simplificado */
+        }
     </style>
 </head>
 <body>
 
-    <a href="https://wa.me/5517982073231" class="whatsapp-float" target="_blank" aria-label="Falar conosco no WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <header>
-        <div class="logo-text">ArtClik Marketing</div>
+<header>
+    <div class="nav-container">
+        <div class="logo">artclik<span>marketing</span></div>
         <nav>
-            <ul>
-                <li><a href="#inicio">Solução</a></li>
-                <li><a href="#servicos">Seu Ecossistema</a></li>
-                <li><a href="#publico">Pra Quem É</a></li>
-                <li><a href="#contato">Consultoria</a></li>
-            </ul>
+            <button onclick="document.getElementById('solucao').scrollIntoView()">Solução</button>
+            <button onclick="document.getElementById('contato').scrollIntoView()">Contato</button>
         </nav>
-    </header>
+    </div>
+</header>
 
-    <main>
-        <section class="hero" id="inicio">
-            <h1>Coloque sua operação de vendas no piloto automático</h1>
-            <p>Implementamos um sistema digital completo de captura, nutrição e fechamento de clientes. Saia da dependência de anúncios soltos.</p>
-            <a href="https://wa.me/5517982073231" class="btn">Solicitar Diagnóstico de Vendas Grátis</a>
-        </section>
+<section class="hero">
+    <h1>Escalamos sua <b>Operação</b> com Tecnologia</h1>
+    <p>Ecossistema inteligente de vendas: Funis, CRM e Automação de elite para negócios que buscam o próximo nível.</p>
+    <a href="https://wa.me/5517982073231" class="cta-main">Solicitar Diagnóstico</a>
+</section>
 
-        <section id="servicos">
-            <h2 class="section-title">Tecnologia de elite para o seu negócio</h2>
-            <div class="grid">
-                <article class="card">
-                    <i class="fas fa-funnel-dollar"></i>
-                    <h3>Funis de Alta Conversão</h3>
-                    <p>Páginas de vendas e opt-ins desenhadas para transformar visitantes em leads qualificados em segundos.</p>
-                </article>
-                <article class="card">
-                    <i class="fas fa-robot"></i>
-                    <h3>Automação Inteligente</h3>
-                    <p>Seja notificado e inicie conversas automáticas no WhatsApp e E-mail, garantindo atendimento 24h.</p>
-                </article>
-                <article class="card">
-                    <i class="fas fa-users-cog"></i>
-                    <h3>Centralização de CRM</h3>
-                    <p>Tenha controle total. Saiba exatamente onde cada lead está na sua jornada de compra, eliminando o caos.</p>
-                </article>
-                <article class="card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Dashboards de Desempenho</h3>
-                    <p>Relatórios visuais e precisos sobre o retorno do seu investimento (ROI) e taxa de conversão.</p>
-                </article>
-            </div>
-        </section>
+<section id="solucao">
+    <div class="grid">
+        <div class="glass-card">
+            <i class="fas fa-microchip"></i>
+            <h3>Automação de Leads</h3>
+            <p>Seu atendimento funcionando 24/7 com fluxos inteligentes de conversão.</p>
+        </div>
+        <div class="glass-card">
+            <i class="fas fa-layer-group"></i>
+            <h3>Funis de Elite</h3>
+            <p>Estruturas de alta conversão focadas em transformar tráfego em lucro real.</p>
+        </div>
+        <div class="glass-card">
+            <i class="fas fa-chart-pie"></i>
+            <h3>Gestão de Dados</h3>
+            <p>Dashboards completos para você visualizar cada centavo do seu ROI.</p>
+        </div>
+    </div>
+</section>
 
-        <section id="publico">
-            <h2 class="section-title">Resultados escaláveis para:</h2>
-            <ul class="checklist">
-                <li><i class="fas fa-check-circle"></i> <strong>Açaíterias e delivery:</strong> Automatize pedidos e fidelize clientes.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Corretores e Imobiliárias:</strong> Capture leads qualificados e controle seu funil de vendas.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Barbearias e Serviços:</strong> Agendamento online automático e integrado ao CRM.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Autônomos e Consultores:</strong> Profissionalize seu atendimento e feche mais contratos.</li>
-            </ul>
-        </section>
+<section id="contato" style="text-align: center;">
+    <div class="glass-card" style="max-width: 700px; margin: 0 auto; background: linear-gradient(180deg, rgba(112,0,255,0.05) 0%, transparent 100%);">
+        <h2 style="color: #fff; font-weight: 200; font-size: 2rem;">Pronto para o <b>Futuro?</b></h2>
+        <p style="margin-bottom: 40px;">Fale com Douglas W Oliveira e descubra como automatizar sua liberdade.</p>
+        <a href="https://wa.me/5517982073231" class="cta-main" style="box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);">Iniciar Conversa</a>
+    </div>
+</section>
 
-        <section id="contato">
-            <div style="background-color: var(--primary); color: white; padding: 60px 10%; border-radius: 20px; text-align: center;">
-                <h2 style="color: white; margin-bottom: 20px;">Fale diretamente com o especialista</h2>
-                <p style="margin-bottom: 40px; font-size: 1.1rem; opacity: 0.95;">Pare de adivinhar e comece a escalar. Agende uma conversa para entender como podemos implementar seu ecossistema de vendas digital.</p>
-                <a href="https://wa.me/5517982073231" class="btn" style="background-color: white;">
-                    Falar com Douglas W Oliveira
-                </a>
-            </div>
-        </section>
-    </main>
+<a href="https://wa.me/5517982073231" class="wp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
 
-    <footer>
-        <div class="footer-logo">ArtClik Marketing</div>
-        <p>&copy; 2026 ArtClik Marketing | Estratégias Digitais Avançadas.</p>
-        <p>Consultoria e Implementação por Douglas W Oliveira.</p>
-        <p class="cnpj">CNPJ: [Substitua pelo seu CNPJ]</p>
-    </footer>
+<footer>
+    &copy; 2026 ArtClik Marketing | Digital Systems by Douglas W Oliveira
+</footer>
 
 </body>
 </html>
