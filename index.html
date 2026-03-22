@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ArtClik Marketing | Máquina de Clientes</title>
+<title>Máquina de Clientes | ArtClik Marketing</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <style>
@@ -21,7 +21,13 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
 
-body { background: var(--bg); color: var(--text-main); line-height: 1.6; scroll-behavior: smooth; }
+body { 
+    background: var(--bg); 
+    color: var(--text-main); 
+    line-height: 1.6; 
+    scroll-behavior: smooth; 
+    padding-top: 120px; /* espaço para o header */
+}
 
 /* FUNDO */
 body::before {
@@ -38,7 +44,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 20px;
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,7 +54,10 @@ header {
     z-index: 1000;
 }
 
-.logo img { height: 50px; object-fit: contain; }
+.logo img {
+    height: 60px;
+    object-fit: contain;
+}
 
 nav a {
     color: var(--text-dim);
@@ -67,7 +76,7 @@ nav a:hover { color: var(--accent); }
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 180px 20px 120px;
+    padding: 200px 20px 120px;
     color: var(--text-main);
     background: linear-gradient(rgba(5,5,5,0.7), rgba(5,5,5,0.85)),
                 url('banner.png') center/cover no-repeat;
@@ -83,13 +92,32 @@ nav a:hover { color: var(--accent); }
     background: linear-gradient(transparent, var(--bg));
 }
 
-.badge { display: inline-block; background: rgba(255,255,255,0.05); padding: 8px 22px; border-radius: 25px; color: var(--accent); margin-bottom: 20px; font-size: 0.8rem; font-weight: 500; }
+.badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.05);
+    padding: 8px 22px;
+    border-radius: 25px;
+    color: var(--accent);
+    margin-bottom: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
 
 .hero h1 { font-size: 2.6rem; margin-bottom: 20px; color: white; }
 
 .hero p { max-width: 550px; margin: auto; margin-bottom: 20px; color: var(--text-dim); font-size: 1rem; }
 
-.btn { background: linear-gradient(45deg, #00f2ff, #8257e5); color: white; padding: 16px 32px; border-radius: 35px; text-decoration: none; font-weight: bold; font-size: 1rem; box-shadow: 0 0 15px rgba(130,87,229,0.5); transition: 0.3s; }
+.btn { 
+    background: linear-gradient(45deg, #00f2ff, #8257e5); 
+    color: white; 
+    padding: 16px 32px; 
+    border-radius: 35px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    font-size: 1rem; 
+    box-shadow: 0 0 15px rgba(130,87,229,0.5); 
+    transition: 0.3s; 
+}
 .btn:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(0,242,255,0.8); }
 
 /* SEÇÕES */
@@ -125,10 +153,12 @@ footer { text-align: center; padding: 30px 20px; color: var(--text-dim); border-
     .hero h1 { font-size:1.8rem; }
     .hero p { font-size:0.95rem; }
     .btn { font-size:0.95rem; padding:14px 28px; }
-    .logo img { height: 40px; }
+    .logo img { height: 45px; }
+    .hero { padding-top: 160px; }
 }
 </style>
 </head>
+
 <body>
 
 <!-- BOTÃO WHATSAPP -->
@@ -136,7 +166,7 @@ footer { text-align: center; padding: 30px 20px; color: var(--text-dim); border-
 
 <!-- HEADER -->
 <header>
-    <div class="logo"><img src="logo.png" alt="ArtClik Marketing"></div>
+    <div class="logo"><img src="logo.png" alt="Logo"></div>
     <nav>
         <a href="#solucoes">Soluções</a>
         <a href="#processo">Como funciona</a>
