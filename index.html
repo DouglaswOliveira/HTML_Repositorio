@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArtClik Marketing | Ecossistema de Vendas Inteligente</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <title>ArtClik Marketing | Ecossistema de Vendas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -12,275 +12,218 @@
             --accent: #8257e5;
             --text-main: #ffffff;
             --text-dim: #cccccc;
-            --gradient: linear-gradient(45deg, #00f2ff, #8257e5);
+            --gradient: linear-gradient(135deg, #00f2ff 0%, #8257e5 100%);
         }
 
-        /* ===== HEADER E LOGO ===== */
+        /* ===== HEADER ===== */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(13, 19, 33, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            background: rgba(13, 19, 33, 0.98);
+            backdrop-filter: blur(12px);
+            padding: 20px;
             z-index: 1000;
             display: flex;   
             flex-direction: column;  
             align-items: center;  
             gap: 15px;
+            border-bottom: 1px solid rgba(130, 87, 229, 0.2);
         }
 
         header h1 {
-            font-family: 'Orbitron', sans-serif; /* FONTE MODERNA NO TOPO */
+            font-family: 'Montserrat', sans-serif; 
             font-size: 1.8rem;
             margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: #fff;
         }
 
-        nav {
-            display: flex;
-            gap: 10px;
-        }
+        header h1 span { color: #00f2ff; }
+
+        nav { display: flex; gap: 10px; }
 
         nav button {
-            border: 1px solid var(--accent);
-            background: transparent;
+            border: none;
+            background: rgba(130, 87, 229, 0.1);
             color: var(--text-main);
-            padding: 8px 15px;
-            border-radius: 8px;
+            padding: 8px 16px;
+            border-radius: 6px;
             cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
             font-weight: 600;
-            font-size: 0.8rem;
             transition: 0.3s;
         }
 
-        nav button:hover {
-            background: var(--accent);
-            transform: translateY(-2px);
-        }
+        nav button:hover { background: var(--accent); }
 
         @media(min-width: 768px) {
-            header { flex-direction: row; justify-content: space-between; padding: 20px 60px; }
-            header h1 { font-size: 2.2rem; }
-            nav button { font-size: 0.9rem; }
+            header { flex-direction: row; justify-content: space-between; padding: 20px 80px; }
+            header h1 { font-size: 2.4rem; }
         }
 
         /* ===== GERAL ===== */
         body {
             margin: 0;
-            padding-top: 160px;
+            padding-top: 180px;
             background: var(--bg-dark);
             color: var(--text-main);
-            font-family: 'Inter', sans-serif; /* FONTE PROFISSIONAL NO CORPO */
-            line-height: 1.6;
+            font-family: 'Open Sans', sans-serif;
         }
         @media(min-width: 768px){ body { padding-top: 110px; } }
 
-        /* ===== HERO SECTION ===== */
+        /* ===== BANNER PRINCIPAL ===== */
+        .main-banner {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+        }
+        .main-banner img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        /* ===== HERO ===== */
         .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             text-align: center;
-            padding: 60px 20px;
-            max-width: 1000px;
+            padding: 40px 20px 80px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .hero h2 { 
-            font-size: 3rem; 
-            margin-bottom: 20px; 
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.2rem; 
+            margin-bottom: 25px; 
             line-height: 1.1;
-            font-weight: 700;
         }
 
         .hero p { 
-            max-width: 700px; 
-            font-size: 1.2rem; 
-            margin-bottom: 35px; 
+            font-size: 1.25rem; 
+            margin-bottom: 40px; 
             color: var(--text-dim); 
         }
 
-        /* ===== SERVIÇOS (FISGAR CLIENTE) ===== */
+        /* ===== SERVIÇOS E CARDS ===== */
         .services {
-            background: #0f192b;
+            background: #111a2e;
             padding: 100px 20px;
-            text-align: center;
         }
         
-        .container { max-width: 1100px; margin: 0 auto; }
-
-        .section-title {
-            color: var(--accent);
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
+        .container { max-width: 1100px; margin: 0 auto; text-align: center; }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 25px;
             margin-top: 50px;
         }
 
-        .service-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(130, 87, 229, 0.2);
-            padding: 40px 25px;
-            border-radius: 20px;
-            transition: 0.3s;
+        .card {
+            background: #0d1321;
+            padding: 40px;
+            border-radius: 15px;
             text-align: left;
-        }
-
-        .service-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-10px);
-            background: rgba(130, 87, 229, 0.05);
-        }
-
-        .service-card h3 { color: var(--accent); margin-bottom: 15px; font-size: 1.4rem; }
-        .service-card p { color: var(--text-dim); font-size: 0.95rem; }
-
-        /* ===== PLANOS ===== */
-        .plans-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px;
-            margin-top: 60px;
-        }
-
-        .plan {
-            background: #161d2f;
-            border: 2px solid #252d44;
-            border-radius: 20px;
-            padding: 40px 30px;
-            width: 300px;
+            border-bottom: 4px solid transparent;
             transition: 0.3s;
         }
 
-        .plan.featured { border-color: var(--accent); transform: scale(1.05); box-shadow: 0 10px 30px rgba(130,87,229,0.2); }
-        .plan h4 { font-size: 1.6rem; color: var(--accent); margin-bottom: 10px; }
-        .plan .price-info { font-size: 0.9rem; color: var(--text-dim); margin-bottom: 20px; border-bottom: 1px solid #252d44; padding-bottom: 20px; }
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #00f2ff;
+        }
+
+        .card h3 { font-family: 'Montserrat', sans-serif; color: #00f2ff; margin-bottom: 15px; }
 
         /* ===== BOTÕES ===== */
-        .btn {
+        .btn-main {
             background: var(--gradient);
             color: white;
-            padding: 18px 40px;
-            border-radius: 50px;
+            padding: 20px 45px;
+            border-radius: 12px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
             font-size: 1.1rem;
             display: inline-block;
-            transition: 0.4s;
-            box-shadow: 0 5px 15px rgba(0, 242, 255, 0.3);
+            transition: 0.3s;
+            text-transform: uppercase;
         }
 
-        .btn:hover {
-            transform: scale(1.05) translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 242, 255, 0.5);
+        .btn-main:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 242, 255, 0.4);
         }
 
         /* WHATSAPP */
-        .whatsapp-float {
+        .whatsapp-btn {
             position: fixed;
-            width: 65px;
-            height: 65px;
             bottom: 30px;
             right: 30px;
             background: #25d366;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 1000;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            z-index: 2000;
         }
-        .whatsapp-float img { width: 35px; }
+        .whatsapp-btn img { width: 35px; }
 
         @media(max-width: 768px) {
             .hero h2 { font-size: 2.2rem; }
-            .hero p { font-size: 1rem; }
-            .plan.featured { transform: scale(1); }
+            .main-banner img { height: 200px; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>ArtClik Marketing</h1>
+    <h1>ArtClik <span>Marketing</span></h1>
     <nav>
-        <button onclick="location.href='#servicos'">Serviços</button>
-        <button onclick="location.href='#planos'">Planos</button>
-        <button onclick="window.open('https://wa.me/5517982073231')">Contato</button>
+        <button onclick="location.href='#solucoes'">Soluções</button>
+        <button onclick="window.open('https://wa.me/5517982073231')">Consultoria</button>
     </nav>
 </header>
 
+<div class="main-banner">
+    <img src="[attachment_0](attachment)" alt="Marketing Digital Hub">
+</div>
+
 <section class="hero">
-    <h2>Pare de Perder Clientes por falta de Processo Digital.</h2>
-    <p>Centralizamos seu Marketing, CRM e Vendas em um único ecossistema inteligente. Menos ferramentas, mais lucro e total clareza dos seus resultados.</p>
-    <a href="https://wa.me/5517982073231" class="btn">Quero uma Demonstração Gratuita</a>
+    <h2>Sua Operação Comercial no Piloto Automático.</h2>
+    <p>Elimine ferramentas caras e desconectadas. Integramos todo o seu marketing e vendas em um ecossistema único focado em ROI real.</p>
+    <a href="https://wa.me/5517982073231" class="btn-main">Ativar Minha Máquina de Vendas</a>
 </section>
 
-<section class="services" id="servicos">
+<section class="services" id="solucoes">
     <div class="container">
-        <h2 class="section-title">O Fim do Caos Tecnológico</h2>
-        <p>Você não precisa de mais ferramentas. Você precisa de um <strong>Motor de Vendas</strong> que funcione sozinho.</p>
-        
         <div class="services-grid">
-            <div class="service-card">
-                <h3>Atendimento 24/7</h3>
-                <p>Nossos robôs qualificam leads no WhatsApp e agendam reuniões enquanto você dorme. Resposta em menos de 30 segundos.</p>
+            <div class="card">
+                <h3>Recuperação de Leads</h3>
+                <p>Nossa inteligência aborda automaticamente quem não finalizou o agendamento, aumentando sua conversão em até 40%.</p>
             </div>
-            <div class="service-card">
-                <h3>CRM & Pipeline</h3>
-                <p>Saiba exatamente em que fase cada cliente está. Nunca mais esqueça de dar um "follow-up" e perca uma venda certa.</p>
+            <div class="card">
+                <h3>Agendamento Inteligente</h3>
+                <p>Sincronize sua agenda e deixe que o sistema gerencie horários e envie lembretes para evitar faltas.</p>
             </div>
-            <div class="service-card">
-                <h3>Dashboard de Dono</h3>
-                <p>Acompanhe seu ROI em tempo real. Saiba cada centavo investido em tráfego e quanto ele retornou em vendas.</p>
+            <div class="card">
+                <h3>Gestão de Reputação</h3>
+                <p>Transforme cada cliente satisfeito em uma avaliação 5 estrelas no Google automaticamente.</p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="services" id="planos" style="background: transparent;">
-    <div class="container">
-        <h2 class="section-title">Nossas Soluções</h2>
-        <div class="plans-container">
-            <div class="plan">
-                <h4>Essencial</h4>
-                <p class="price-info">CRM + Automação de Leads</p>
-                <p>Ideal para organizar o fluxo de entrada e parar de perder contatos.</p>
-            </div>
-            <div class="plan featured">
-                <h4>Acelerador</h4>
-                <p class="price-info">Agendamento + Recuperação</p>
-                <p>Sistema completo de calendário inteligente para clínicas e serviços. Reduz faltas em até 80%.</p>
-            </div>
-            <div class="plan">
-                <h4>Escala Full</h4>
-                <p class="price-info">Ecossistema Completo</p>
-                <p>Funis de venda, Área de Membros e Gestão de Tráfego de Alta Performance.</p>
-            </div>
-        </div>
-        
-        <div style="margin-top: 50px;">
-            <a href="https://wa.me/5517982073231" class="btn">Falar com um Especialista Agora</a>
-            <p style="margin-top: 15px; font-size: 0.8rem; color: var(--text-dim);">*Vagas limitadas para implementação estratégica este mês.</p>
-        </div>
-    </div>
-</section>
-
-<a href="https://wa.me/5517982073231" class="whatsapp-float" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+<a href="https://wa.me/5517982073231" class="whatsapp-btn" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Contato WhatsApp" />
 </a>
 
 </body>
