@@ -4,8 +4,8 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(13, 19, 33, 0.95); /* leve transparência */
-    backdrop-filter: blur(10px); /* efeito moderno */
+    background: rgba(13, 19, 33, 0.95);
+    backdrop-filter: blur(10px);
     padding: 12px 15px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.5);
     z-index: 1000;
@@ -86,39 +86,72 @@ body {
     }
 }
 
-/* ===== HERO AJUSTADO ===== */
+/* ===== HERO COM BANNER ===== */
 .hero {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 30px 20px;
-    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    min-height: 80vh; /* ocupa a maior parte da tela */
+    padding: 0 20px;
     color: var(--text-main);
+    background: 
+        linear-gradient(rgba(5,5,5,0.35), rgba(5,5,5,0.6)),
+        url('banner.png') center/cover no-repeat;
 }
 
-.hero img {
-    width: 160px;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid var(--accent);
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(transparent, var(--bg));
+    z-index: 1;
+}
+
+.hero > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== TEXTO HERO ===== */
+.hero h1 {
+    font-size: 3rem;
     margin-bottom: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 
-.hero h2 {
-    font-size: 1.6rem;
+.hero p {
+    max-width: 600px;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: var(--text-dim);
 }
 
-@media(min-width: 768px) {
-    .hero h2 {
-        font-size: 2.2rem;
-    }
+/* ===== BOTÃO ===== */
+.btn {
+    background: linear-gradient(45deg, #00f2ff, #8257e5);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 35px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 0 15px rgba(130,87,229,0.5);
+    transition: 0.3s;
+}
 
-    .hero img {  
-        width: 180px;  
-        height: 180px;  
-    }
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0,242,255,0.8);
+}
+
+/* RESPONSIVO */
+@media(max-width:768px){
+    .hero h1 { font-size:2rem; }
+    .hero p { font-size:1rem; }
+    .btn { font-size:1rem; padding:14px 28px; }
 }
