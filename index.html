@@ -169,24 +169,40 @@ body {
     gap: 20px;
     margin-top: 20px;
 }
+
 .diff-item {
     background: rgba(130,87,229,0.1);
     border: 1px solid var(--accent);
     border-radius: 15px;
-    padding: 20px;
+    padding: 25px 20px;
     max-width: 250px;
-    flex: 1 1 200px;
+    flex: 1 1 220px;
     text-align: center;
-    transition: transform 0.3s;
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
 }
+
 .diff-item:hover {
     transform: translateY(-5px);
     background: rgba(130,87,229,0.2);
+    box-shadow: 0 8px 25px rgba(130,87,229,0.3);
 }
+
 .diff-item .icon {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 10px;
     display: block;
+}
+
+.diff-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: var(--accent);
+}
+
+.diff-item p {
+    font-size: 1rem;
+    color: var(--text-dim);
+    line-height: 1.5;
 }
 
 /* ===== PLANOS ===== */
@@ -273,6 +289,7 @@ body {
     .services-hero h2 { font-size:2rem; }
     .services-section h3 { font-size:1.5rem; }
     .plan { max-width: 100%; padding:20px; }
+    .differentials { flex-direction: column; }
 }
 </style>
 </head>
@@ -317,28 +334,29 @@ body {
             <p>Substituímos o caos por um motor de vendas robusto. Um único ambiente para gerir, atender e fechar negócios com velocidade recorde.</p>
         </div>
 
+        <!-- Diferenciais Estratégicos -->
         <div class="services-section">
             <h3>Diferenciais Estratégicos</h3>
             <div class="differentials">
                 <div class="diff-item">
-                    <span class="icon">⏰</span>
-                    <strong>Atendimento 24h:</strong>
-                    <p>Automação que qualifica o lead instantaneamente.</p>
+                    <div class="icon">⏰</div>
+                    <h4>Atendimento 24h</h4>
+                    <p>Automação que qualifica o lead instantaneamente, garantindo resposta imediata.</p>
                 </div>
                 <div class="diff-item">
-                    <span class="icon">📅</span>
-                    <strong>Agenda Inteligente:</strong>
-                    <p>Sistema que marca reuniões sozinho para você.</p>
+                    <div class="icon">📅</div>
+                    <h4>Agenda Inteligente</h4>
+                    <p>O sistema marca reuniões sozinho, evitando conflitos e esquecimentos.</p>
                 </div>
                 <div class="diff-item">
-                    <span class="icon">📊</span>
-                    <strong>Dashboard Real:</strong>
-                    <p>Saiba exatamente de onde vem cada centavo de lucro.</p>
+                    <div class="icon">📊</div>
+                    <h4>Dashboard Real</h4>
+                    <p>Visualize exatamente de onde vem cada centavo de lucro da sua operação.</p>
                 </div>
                 <div class="diff-item">
-                    <span class="icon">⭐</span>
-                    <strong>Reputação Automática:</strong>
-                    <p>Google Meu Negócio sempre atualizado com avaliações.</p>
+                    <div class="icon">⭐</div>
+                    <h4>Reputação Automática</h4>
+                    <p>Google Meu Negócio sempre atualizado, com avaliações e feedbacks visíveis.</p>
                 </div>
             </div>
         </div>
