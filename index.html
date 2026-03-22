@@ -1,54 +1,194 @@
-<section id="solucao">
-    <div style="text-align: center; margin-bottom: 60px;">
-        <h2 style="color: var(--white); font-weight: 200; font-size: 2.5rem;">Serviços <b>Full-Stack</b></h2>
-        <p style="opacity: 0.6;">Sua operação comercial centralizada em uma única inteligência.</p>
-    </div>
-    <div class="grid">
-        <div class="glass-card">
-            <i class="fas fa-bullseye"></i>
-            <h3>Tráfego de Performance</h3>
-            <p>Gestão técnica de anúncios em Google e Meta Ads focada em ROI real, não apenas métricas de vaidade.</p>
-        </div>
-        <div class="glass-card">
-            <i class="fas fa-sitemap"></i>
-            <h3>Arquitetura de CRM</h3>
-            <p>Centralizamos todos os seus canais (WhatsApp, Instagram, E-mail) em um único fluxo de vendas organizado.</p>
-        </div>
-        <div class="glass-card">
-            <i class="fas fa-envelope-open-text"></i>
-            <h3>Nutrição Automática</h3>
-            <p>Régua de relacionamento via SMS e E-mail Marketing para recuperar leads e aumentar o LTV do seu cliente.</p>
-        </div>
-        <div class="glass-card">
-            <i class="fas fa-calendar-check"></i>
-            <h3>Agendamento Online</h3>
-            <p>Sistemas de reserva e calendários automáticos que eliminam o trabalho manual da sua equipe.</p>
-        </div>
-        <div class="glass-card">
-            <i class="fas fa-code"></i>
-            <h3>Páginas de Alta Conversão</h3>
-            <p>Landing Pages ultra-velozes desenhadas para transformar visitantes em clientes em segundos.</p>
-        </div>
-        <div class="glass-card">
-            <i class="fas fa-robot"></i>
-            <h3>IA & Automação</h3>
-            <p>Integração de inteligência artificial para triagem de leads e respostas instantâneas 24 horas por dia.</p>
-        </div>
-    </div>
-</section>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtClik Marketing | Douglas W Oliveira</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #0d1321;
+            --primary: #6a00ff;
+            --primary-dark: #3a00a8;
+            --accent: #00c2ff;
+            --text-main: #ffffff;
+            --light: #f4f6f8;
+            --wp: #25D366;
+            --transition: 0.3s ease;
+        }
 
-<section style="background: rgba(112, 0, 255, 0.02); border-radius: 50px; margin-bottom: 100px;">
-    <div style="max-width: 900px; margin: 0 auto;">
-        <h2 style="color: var(--white); text-align: center; margin-bottom: 50px; font-weight: 200;">A Vantagem <b>ArtClik</b></h2>
-        <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
-            <div style="flex: 1; min-width: 250px; border-left: 2px solid var(--accent-cyan); padding-left: 20px;">
-                <h4 style="color: var(--accent-cyan); margin: 0;">Sem Gabiarra</h4>
-                <p style="font-size: 0.9rem; opacity: 0.7;">Substituímos mais de 10 ferramentas isoladas por um ecossistema único e fluido.</p>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background: var(--light); color: #333; line-height: 1.6; }
+        html { scroll-behavior: smooth; }
+
+        /* HEADER */
+        header {
+            position: fixed; top: 0; width: 100%; background: rgba(13, 19, 33, 0.98);
+            padding: 15px 5%; display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .logo { font-size: 1.5rem; color: var(--accent); font-weight: bold; }
+        nav a { color: #fff; text-decoration: none; margin-left: 20px; font-size: 0.9rem; font-weight: 500; }
+
+        /* HERO */
+        .hero {
+            padding: 120px 5% 80px; text-align: center;
+            background: linear-gradient(135deg, var(--bg-dark), var(--primary-dark)); color: #fff;
+        }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; opacity: 0.9; }
+
+        /* SEÇÕES GERAIS */
+        section { padding: 80px 5%; max-width: 1100px; margin: auto; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.2rem; color: var(--bg-dark); }
+        .section-title p { color: #666; margin-top: 10px; }
+
+        /* GRID DE SERVIÇOS */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+        .card { background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: var(--transition); text-align: center; }
+        .card:hover { transform: translateY(-10px); }
+        .card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
+
+        /* PROCESSO (NOVO) */
+        .process-steps { display: flex; flex-direction: column; gap: 30px; margin-top: 40px; }
+        .step { display: flex; align-items: center; gap: 20px; background: #fff; padding: 20px; border-radius: 12px; border-left: 5px solid var(--accent); }
+        .step-num { background: var(--accent); color: var(--bg-dark); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; }
+
+        /* FAQ (NOVO) */
+        .faq-container { max-width: 800px; margin: auto; }
+        details { background: #fff; margin-bottom: 15px; padding: 15px; border-radius: 8px; cursor: pointer; }
+        summary { font-weight: bold; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        summary::after { content: '+'; color: var(--primary); font-size: 1.5rem; }
+        details[open] summary::after { content: '-'; }
+
+        /* BOTÕES */
+        .btn { background: var(--accent); color: var(--bg-dark); padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: var(--transition); display: inline-block; }
+        .btn:hover { background: #fff; transform: scale(1.05); }
+
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: var(--wp); color: #fff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1000; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 10px; }
+            .hero h1 { font-size: 1.8rem; }
+            nav a { margin: 0 10px; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">ArtClik</div>
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#servicos">Soluções</a>
+        <a href="#processo">Como funciona</a>
+        <a href="#contato">Falar com Especialista</a>
+    </nav>
+</header>
+
+<a href="https://wa.me/5517982073231" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+
+<main>
+    <section class="hero" id="inicio">
+        <h1>Sua operação de vendas inteligente e 100% conectada</h1>
+        <p>Implementamos o ecossistema digital que sua empresa precisa: CRM, Funis e Automação de WhatsApp em uma única estrutura profissional.</p>
+        <a href="https://wa.me/5517982073231" class="btn">Solicitar Diagnóstico de Vendas</a>
+    </section>
+
+    <section id="servicos">
+        <div class="section-title">
+            <h2>Tecnologia que gera lucro</h2>
+            <p>Mais que marketing, entregamos infraestrutura de crescimento.</p>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-layer-group"></i>
+                <h3>CRM Centralizado</h3>
+                <p>Pare de perder leads em conversas perdidas. Gerencie todos os seus contatos em um pipeline visual e organizado.</p>
             </div>
-            <div style="flex: 1; min-width: 250px; border-left: 2px solid var(--accent-purple); padding-left: 20px;">
-                <h4 style="color: var(--accent-purple); margin: 0;">Dados em Tempo Real</h4>
-                <p style="font-size: 0.9rem; opacity: 0.7;">Você visualiza o custo por aquisição e a saúde do seu funil em um clique.</p>
+            <div class="card">
+                <i class="fas fa-magic"></i>
+                <h3>Automação 24h</h3>
+                <p>Robôs inteligentes que qualificam seus leads e agendam reuniões enquanto você dorme.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-bullseye"></i>
+                <h3>Funis de Conversão</h3>
+                <p>Páginas de alta performance focadas em uma única ação: converter o visitante em cliente.</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <section id="processo" style="background: #eef1f6; border-radius: 30px;">
+        <div class="section-title">
+            <h2>Nosso Processo de Implementação</h2>
+            <p>Como transformamos sua empresa em 4 etapas rápidas.</p>
+        </div>
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <div>
+                    <h4>Diagnóstico Estratégico</h4>
+                    <p>Analisamos seu processo atual e identificamos os gargalos onde você está perdendo dinheiro.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <div>
+                    <h4>Montagem da Estrutura</h4>
+                    <p>Configuramos seu CRM, Funis de Vendas e os canais de comunicação (WhatsApp/E-mail).</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <div>
+                    <h4>Automação e IA</h4>
+                    <p>Criamos as regras de atendimento automático para que nenhum cliente fique sem resposta.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">4</div>
+                <div>
+                    <h4>Entrega e Treinamento</h4>
+                    <p>Você recebe as chaves da sua nova máquina de vendas com um dashboard pronto para escalar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-title">
+            <h2>Dúvidas Frequentes</h2>
+        </div>
+        <div class="faq-container">
+            <details>
+                <summary>Eu já faço anúncios, por que preciso disso?</summary>
+                <p style="padding-top:10px;">Anúncios trazem pessoas, nossa solução garante que essas pessoas virem clientes através de organização e automação.</p>
+            </details>
+            <details>
+                <summary>Serve para o meu tipo de negócio?</summary>
+                <p style="padding-top:10px;">Se você vende um produto ou serviço e atende via WhatsApp, essa solução é ideal para você escalar sua operação.</p>
+            </details>
+            <details>
+                <summary>Quanto tempo demora a implementação?</summary>
+                <p style="padding-top:10px;">Em média, em 7 a 15 dias sua estrutura completa já estará rodando e captando leads.</p>
+            </details>
+        </div>
+    </section>
+
+    <section id="contato" style="text-align: center;">
+        <div style="background: var(--bg-dark); color: #fff; padding: 60px 5%; border-radius: 20px;">
+            <h2>Pronto para profissionalizar sua empresa?</h2>
+            <p style="margin: 20px 0 30px;">Fale agora com Douglas W Oliveira e descubra o potencial de escala do seu negócio.</p>
+            <a href="https://wa.me/5517982073231" class="btn">Chamar no WhatsApp agora</a>
+        </div>
+    </section>
+</main>
+
+<footer style="text-align: center; padding: 40px; font-size: 0.8rem; color: #999;">
+    &copy; 2026 ArtClik Marketing | Douglas W Oliveira - Estratégias Digitais Avançadas.
+</footer>
+
+</body>
+</html>
