@@ -29,7 +29,13 @@ header h1 {
     font-size: 1.6rem;
     font-weight: 700;
     letter-spacing: 1px;
-    color: var(--accent);
+    color: #ffffff; /* texto branco */
+
+    /* efeito 3D */
+    text-shadow: 
+        2px 2px 0 #8257e5,   /* sombra roxa */
+        4px 4px 0 rgba(0,0,0,0.5), /* sombra escura */
+        6px 6px 5px rgba(0,0,0,0.3); /* sombra difusa */
 }
 
 nav {
@@ -68,6 +74,10 @@ nav button:hover {
     header h1 {   
         font-size: 2.2rem;   
         text-align: left;  
+        text-shadow: 
+            3px 3px 0 #8257e5,
+            5px 5px 0 rgba(0,0,0,0.5),
+            7px 7px 5px rgba(0,0,0,0.3);
     }  
 
     nav {   
@@ -176,6 +186,7 @@ body {
     .btn { font-size:1rem; padding:14px 28px; }
     .services-info { font-size:0.95rem; }
 }
+
 /* ===== WHATSAPP FLUTUANTE ===== */
 .whatsapp-float {
     position: fixed;
