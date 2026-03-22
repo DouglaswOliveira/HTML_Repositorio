@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ArtClik Marketing | Máquina de Clientes</title>
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <style>
@@ -12,27 +11,17 @@
     --bg: #050505;
     --card-bg: rgba(255, 255, 255, 0.03);
     --border: rgba(255, 255, 255, 0.1);
-    --primary: #8257e5; 
+    --primary: #8257e5;
     --primary-dark: #4b2cbf;
-    --accent: #00f2ff; 
+    --accent: #00f2ff;
     --text-main: #e1e1e6;
     --text-dim: #a8a8b3;
     --wp: #25D366;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
 
-body {
-    background: var(--bg);
-    color: var(--text-main);
-    line-height: 1.6;
-    scroll-behavior: smooth;
-}
+body { background: var(--bg); color: var(--text-main); line-height: 1.6; scroll-behavior: smooth; }
 
 /* FUNDO */
 body::before {
@@ -59,11 +48,7 @@ header {
     z-index: 1000;
 }
 
-.logo {
-    font-weight: bold;
-    font-size: 1.3rem;
-    color: var(--accent);
-}
+.logo img { height: 50px; object-fit: contain; }
 
 nav a {
     color: var(--text-dim);
@@ -72,10 +57,7 @@ nav a {
     font-size: 0.9rem;
     transition: 0.3s;
 }
-
-nav a:hover { 
-    color: var(--accent); 
-}
+nav a:hover { color: var(--accent); }
 
 /* HERO COM BANNER */
 .hero {
@@ -87,9 +69,8 @@ nav a:hover {
     text-align: center;
     padding: 180px 20px 120px;
     color: var(--text-main);
-    background: 
-        linear-gradient(rgba(5,5,5,0.7), rgba(5,5,5,0.85)),
-        url('banner.png') center/cover no-repeat;
+    background: linear-gradient(rgba(5,5,5,0.7), rgba(5,5,5,0.85)),
+                url('banner.png') center/cover no-repeat;
 }
 
 .hero::after {
@@ -102,144 +83,81 @@ nav a:hover {
     background: linear-gradient(transparent, var(--bg));
 }
 
-.badge {
-    display: inline-block;
-    background: rgba(255,255,255,0.05);
-    padding: 8px 22px;
-    border-radius: 25px;
-    color: var(--accent);
-    margin-bottom: 20px;
-    font-size: 0.8rem;
-    font-weight: 500;
-}
+.badge { display: inline-block; background: rgba(255,255,255,0.05); padding: 8px 22px; border-radius: 25px; color: var(--accent); margin-bottom: 20px; font-size: 0.8rem; font-weight: 500; }
 
-.hero h1 {
-    font-size: 2.6rem;
-    margin-bottom: 20px;
-    color: white;
-}
+.hero h1 { font-size: 2.6rem; margin-bottom: 20px; color: white; }
 
-.hero p {
-    max-width: 550px;
-    margin: auto;
-    margin-bottom: 20px;
-    color: var(--text-dim);
-    font-size: 1rem;
-}
+.hero p { max-width: 550px; margin: auto; margin-bottom: 20px; color: var(--text-dim); font-size: 1rem; }
 
-/* BOTÃO PROFISSIONAL */
-.btn {
-    background: linear-gradient(45deg, #00f2ff, #8257e5);
-    color: white;
-    padding: 16px 32px;
-    border-radius: 35px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1rem;
-    box-shadow: 0 0 15px rgba(130,87,229,0.5);
-    transition: 0.3s;
-}
-
-.btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(0,242,255,0.8);
-}
+.btn { background: linear-gradient(45deg, #00f2ff, #8257e5); color: white; padding: 16px 32px; border-radius: 35px; text-decoration: none; font-weight: bold; font-size: 1rem; box-shadow: 0 0 15px rgba(130,87,229,0.5); transition: 0.3s; }
+.btn:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(0,242,255,0.8); }
 
 /* SEÇÕES */
-section {
-    padding: 70px 20px;
-    max-width: 1000px;
-    margin: auto;
-}
+section { padding: 70px 20px; max-width: 1000px; margin: auto; }
 
-h2 {
+h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; }
+
+.grid { display: grid; gap: 25px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+
+.card { background: var(--card-bg); padding: 25px; border-radius: 15px; border: 1px solid var(--border); text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
+.card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+.card i { color: var(--accent); font-size: 1.5rem; margin-bottom: 12px; }
+
+/* SEÇÃO SOBRE */
+.about {
     text-align: center;
-    margin-bottom: 40px;
-    font-size: 2rem;
+    max-width: 700px;
+    margin: 50px auto;
 }
-
-.grid {
-    display: grid;
-    gap: 25px;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.card {
-    background: var(--card-bg);
-    padding: 25px;
-    border-radius: 15px;
-    border: 1px solid var(--border);
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-}
-
-.card i {
-    color: var(--accent);
-    font-size: 1.5rem;
-    margin-bottom: 12px;
-}
+.about p { font-size: 1rem; color: var(--text-dim); line-height: 1.8; }
 
 /* CTA */
-.cta {
-    text-align: center;
-}
+.cta { text-align: center; }
 
 /* WHATSAPP FLOAT */
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: var(--wp);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 25px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
+.whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: var(--wp); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+
+/* RODAPÉ */
+footer { text-align: center; padding: 30px 20px; color: var(--text-dim); border-top: 1px solid var(--border); font-size: 0.85rem; }
 
 /* RESPONSIVO */
 @media(max-width:600px){
     .hero h1 { font-size:1.8rem; }
     .hero p { font-size:0.95rem; }
     .btn { font-size:0.95rem; padding:14px 28px; }
+    .logo img { height: 40px; }
 }
 </style>
 </head>
-
 <body>
 
 <!-- BOTÃO WHATSAPP -->
-<a href="https://wa.me/5517982073231" class="whatsapp-float">
-<i class="fab fa-whatsapp"></i>
-</a>
+<a href="https://wa.me/5517982073231" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
 
 <!-- HEADER -->
 <header>
-<div class="logo">ArtClik Marketing</div>
-<nav>
-<a href="#solucoes">Soluções</a>
-<a href="#processo">Como funciona</a>
-<a href="#contato">Contato</a>
-</nav>
+    <div class="logo"><img src="logo.png" alt="ArtClik Marketing"></div>
+    <nav>
+        <a href="#solucoes">Soluções</a>
+        <a href="#processo">Como funciona</a>
+        <a href="#contato">Contato</a>
+    </nav>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-<div class="badge">Sistema de Vendas Automatizado</div>
-<h1>Mais clientes todos os dias no seu WhatsApp</h1>
-<p>Eu crio sua página + automação para você vender no automático, mesmo começando do zero.</p>
-<p style="font-size:0.9rem; opacity:0.7;">✔ Sem fidelidade • ✔ Resultado rápido • ✔ Funciona no seu negócio</p>
-<br>
-<a href="https://wa.me/5517982073231" class="btn">Quero começar agora</a>
+    <div class="badge">Sistema de Vendas Automatizado</div>
+    <h1>Mais clientes todos os dias no seu WhatsApp</h1>
+    <p>Eu crio sua página + automação para você vender no automático, mesmo começando do zero.</p>
+    <p style="font-size:0.9rem; opacity:0.7;">✔ Sem fidelidade • ✔ Resultado rápido • ✔ Funciona no seu negócio</p>
+    <br>
+    <a href="https://wa.me/5517982073231" class="btn">Quero começar agora</a>
+</section>
+
+<!-- SOBRE -->
+<section class="about">
+    <h2>Sobre a ArtClik Marketing</h2>
+    <p>Somos especialistas em marketing digital e automação de vendas via WhatsApp. Ajudamos microempreendedores e empresas a conquistarem mais clientes de forma prática e rápida, com resultados reais e sem fidelidade.</p>
 </section>
 
 <!-- SOLUÇÕES -->
@@ -269,6 +187,12 @@ h2 {
 <br>
 <a href="https://wa.me/5517982073231" class="btn">Falar no WhatsApp</a>
 </section>
+
+<!-- RODAPÉ -->
+<footer>
+&copy; 2026 ArtClik Marketing. Todos os direitos reservados. <br>
+Desenvolvido por Douglas W. Oliveira
+</footer>
 
 </body>
 </html>
