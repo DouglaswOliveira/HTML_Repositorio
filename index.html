@@ -2,7 +2,432 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imob'Clik | Clique. Escolha. Realize.</title>
+    
+    <meta name="description" content="Imob'Clik - Vitrine de Imóveis em Rio Preto e São Paulo.">
+    <meta property="og:title" content="Imob'Clik | Especialista Douglas W Oliveira">
+    <meta property="og:image" content="imagens/logo.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #e91e63;
+            --gold: #c5a059;
+            --sp-blue: #1e3a8a;
+            --whatsapp: #25D366;
+            --bg-body: #f8fafc;
+            --gradient-lux: linear-gradient(135deg, #1e293b, #0f172a);
+            --gradient-action: linear-gradient(135deg, #00bcd4, #9c27b0, #e91e63);
+            --shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-body); color: #334155; line-height: 1.6; }
+
+        /* --- HEADER --- */
+        header {
+            background: rgba(15, 23, 42, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 0 8%;
+            height: 85px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo { position: relative; height: 100%; display: flex; align-items: center; }
+        .logo img { 
+            height: 220px; 
+            position: absolute; 
+            top: -65px; 
+            left: 0; 
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3)); 
+        }
+
+        nav { display: flex; align-items: center; gap: 20px; }
+        nav a { color: #cbd5e1; text-decoration: none; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; }
+        nav a:hover { color: var(--accent); }
+
+        .btn-anunciar { background: var(--accent); color: white !important; padding: 10px 20px; border-radius: 50px; }
+
+        /* --- HERO & SEARCH --- */
+        .hero {
+            height: 65vh;
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), 
+                        url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1400&q=80') center/cover;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; color: white; padding: 0 20px;
+        }
+
+        .search-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            padding: 15px;
+            border-radius: 15px;
+            display: flex;
+            width: 100%;
+            max-width: 850px;
+            gap: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 30px;
+        }
+        .search-container input, .search-container select {
+            flex: 1; padding: 15px; border: none; border-radius: 10px; outline: none; font-size: 1rem;
+        }
+        .btn-search { 
+            background: var(--gradient-action); 
+            color: white; padding: 0 30px; border: none; border-radius: 10px; 
+            font-weight: 800; cursor: pointer; transition: 0.3s;
+        }
+
+        /* --- SEÇÕES --- */
+        .container { padding: 60px 8%; max-width: 1400px; margin: auto; }
+        .section-header { margin-bottom: 40px; border-left: 6px solid var(--accent); padding-left: 20px; }
+        .section-header h2 { font-size: 2rem; font-weight: 800; color: var(--primary); }
+        .section-header.lux h2 { color: var(--gold); border-color: var(--gold); }
+        .section-header.sp h2 { color: var(--sp-blue); border-color: var(--sp-blue); }
+
+        /* --- GRID E CARDS --- */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 40px; }
+        .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); transition: 0.4s; position: relative; }
+        .card:hover { transform: translateY(-10px); }
+        
+        .card-img { height: 240px; background-size: cover; background-position: center; }
+        .card-content { padding: 25px; }
+        .price { font-size: 1.6rem; font-weight: 800; color: var(--accent); margin-bottom: 10px; }
+        
+        .badge { 
+            position: absolute; top: 15px; left: 15px; padding: 5px 15px; border-radius: 50px; 
+            font-size: 0.7rem; font-weight: 800; color: white; z-index: 10;
+        }
+
+        .btn-lead { 
+            background: var(--whatsapp); color: white; text-decoration: none; 
+            display: flex; justify-content: center; align-items: center; gap: 10px;
+            padding: 14px; border-radius: 12px; font-weight: 700; margin-top: 15px;
+        }
+
+        .btn-view-all {
+            text-decoration: none;
+            font-weight: 800;
+            padding: 12px 35px;
+            border-radius: 50px;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        /* --- PLANOS --- */
+        .grid-planos { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 50px; margin-bottom: 80px; }
+        .card-plano {
+            background: white; border-radius: 20px; padding: 40px; box-shadow: var(--shadow);
+            text-align: center; width: 100%; max-width: 350px; position: relative; border: 1px solid #e2e8f0;
+        }
+        .badge-recomendado {
+            position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+            background: var(--gradient-action); color: white; padding: 5px 20px; border-radius: 50px; font-size: 0.8rem; font-weight: 800;
+        }
+
+        /* --- FORMULÁRIO --- */
+        .contato-box {
+            background: white; padding: 50px; border-radius: 30px; box-shadow: var(--shadow);
+            display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;
+        }
+        .form-group { display: flex; flex-direction: column; gap: 15px; }
+        .form-group input, .form-group textarea { padding: 15px; border: 1px solid #e2e8f0; border-radius: 10px; outline: none; }
+        .btn-submit { background: var(--whatsapp); color: white; border: none; padding: 18px; border-radius: 10px; font-weight: 800; cursor: pointer; }
+
+        /* --- FOOTER & FLOAT --- */
+        footer { background: var(--primary); color: white; padding: 60px 8%; text-align: center; }
+        .float-wa { 
+            position: fixed; bottom: 30px; right: 30px; background: var(--whatsapp); 
+            width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; 
+            justify-content: center; color: white; font-size: 32px; z-index: 1000; 
+            text-decoration: none; box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* ANIMAÇÃO PULSE (BALÃO) */
+        @keyframes pulse { 
+            0% {transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);} 
+            70% {transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);} 
+            100% {transform: scale(1);} 
+        }
+        .pulse { animation: pulse 2s infinite; }
+
+        @media (max-width: 900px) { 
+            .contato-box { grid-template-columns: 1fr; } 
+            nav { display: none; }
+            .search-container { flex-direction: column; background: none; border: none; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo"><img src="imagens/logo.png" alt="Imob'Clik"></div>
+        <nav>
+            <a href="#alto-padrao">Alto Padrão</a>
+            <a href="#padrao">Padrão</a>
+            <a href="#sao-paulo">São Paulo</a>
+            <a href="#planos">Anunciar</a>
+            <a href="#contato" class="btn-anunciar">Fale Conosco</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1 style="font-size: 3.5rem; font-weight: 800;">Clique. Escolha. Realize.</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9;">A vitrine que mais cresce em Rio Preto e Região.</p>
+        
+        <div class="search-container">
+            <input type="text" placeholder="Bairro ou Condomínio...">
+            <select>
+                <option disabled selected>Tipo de Imóvel</option>
+                <option>Casa em Condomínio</option>
+                <option>Apartamento Luxo</option>
+                <option>Terreno</option>
+            </select>
+            <button class="btn-search">BUSCAR AGORA</button>
+        </div>
+    </section>
+
+    <main class="container">
+
+        <section id="alto-padrao" style="margin-bottom: 100px;">
+            <div class="section-header lux">
+                <h2><i class="fas fa-crown"></i> Alto Padrão</h2>
+                <p>Exclusividade nos melhores endereços.</p>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <div class="badge" style="background: var(--gold);">EXCLUSIVO</div>
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="card-content">
+                        <div class="price">R$ 2.850.000</div>
+                        <h4>Mansão Moderna - Damha IV</h4>
+                        <p style="font-size: 0.85rem; color: #64748b;"><i class="fas fa-expand"></i> 480m² | <i class="fas fa-bed"></i> 4 Suítes</p>
+                        <a href="https://wa.me/5517982073231?text=Olá Douglas, quero detalhes da Mansão no Damha IV." class="btn-lead pulse">
+                            <i class="fab fa-whatsapp"></i> AGENDAR VISITA VIP
+                        </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="badge" style="background: var(--gold);">NOVO</div>
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="card-content">
+                        <div class="price">R$ 3.100.000</div>
+                        <h4>Villa Toscana - Quinta do Golfe</h4>
+                        <p style="font-size: 0.85rem; color: #64748b;"><i class="fas fa-expand"></i> 520m² | <i class="fas fa-bed"></i> 5 Suítes</p>
+                        <a href="https://wa.me/5517982073231?text=Olá Douglas, quero detalhes da casa no Quinta do Golfe." class="btn-lead pulse">
+                            <i class="fab fa-whatsapp"></i> AGENDAR VISITA VIP
+                        </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="badge" style="background: var(--gold);">PREMIUM</div>
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="card-content">
+                        <div class="price">R$ 2.450.000</div>
+                        <h4>Casa Conceito - Gaivota II</h4>
+                        <p style="font-size: 0.85rem; color: #64748b;"><i class="fas fa-expand"></i> 410m² | <i class="fas fa-bed"></i> 4 Suítes</p>
+                        <a href="https://wa.me/5517982073231?text=Olá Douglas, quero detalhes da casa no Gaivota II." class="btn-lead pulse">
+                            <i class="fab fa-whatsapp"></i> AGENDAR VISITA VIP
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <a href="#contato" class="btn-view-all" style="color: var(--gold); border: 2px solid var(--gold);">VER TODOS ALTO PADRÃO</a>
+            </div>
+        </section>
+
+        <section id="padrao" style="margin-bottom: 100px;">
+            <div class="section-header">
+                <h2><i class="fas fa-home"></i> Imóveis Padrão</h2>
+                <p>Praticidade e conforto para você.</p>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="card-content">
+                        <div class="price">R$ 450.000</div>
+                        <h4>Casa Moderna - Região Norte</h4>
+                        <p style="font-size: 0.85rem; color: #64748b;"><i class="fas fa-bed"></i> 3 Dorms | <i class="fas fa-car"></i> 2 Vagas</p>
+                        <a href="https://wa.me/5517982073231?text=Olá Douglas, interesse no imóvel da Região Norte." class="btn-lead pulse">
+                            <i class="fab fa-whatsapp"></i> TENHO INTERESSE
+                        </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="card-content">
+                        <div class="price">R$ 580.000</div>
+                        <h4>Sobrado Familiar - Jd. Vivendas</h4>
+                        <p style="font-size: 0.85rem; color: #64748b;"><i class="fas fa-bed"></i> 3 Dorms | <i class="fas fa-swimmer"></i> Lazer</p>
+                        <a href="https://wa.me/5517982073231?text=Olá Douglas, interesse no sobrado no Jd. Vivendas." class="btn-lead pulse">
+                            <i class="fab fa-whatsapp"></i> TENHO INTERESSE
+                        </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="card-content">
+                        <div class="price">R$ 390.000</div>
+                        <h4>Casa Geminada - City Plot</h4>
+                        <p style="font-size: 0.85rem; color: #64748b;"><i class="fas fa-bed"></i> 2 Dorms | Garden Privativo</p>
+                        <a href="https://wa.me/5517982073231?text=Olá Douglas, interesse na casa em City Plot." class="btn-lead pulse">
+                            <i class="fab fa-whatsapp"></i> TENHO INTERESSE
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <a href="#contato" class="btn-view-all" style="color: var(--primary); border: 2px solid var(--primary);">VER TODOS PADRÃO</a>
+            </div>
+        </section>
+
+        <section id="sao-paulo" style="margin-bottom: 100px;">
+            <div class="section-header sp">
+                <h2><i class="fas fa-city"></i> Invista ou More em SP</h2>
+                <p>As melhores oportunidades na capital.</p>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <div class="badge" style="background: var(--sp-blue);">CAPITAL</div>
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1541336318489-08390bb96890?auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="card-content">
+                        <div class="price">A partir de R$ 890k</div>
+                        <h4>Studio Design - Itaim Bibi</h4>
+                        <p style="font-size: 0.85rem; color: #64748b;"><i class="fas fa-chart-line"></i> Alta Rentabilidade</p>
+                        <a href="https://wa.me/5517982073231?text=Olá Douglas, quero investir no Itaim Bibi." class="btn-lead pulse">
+                            <i class="fab fa-whatsapp"></i> CONSULTAR OPÇÕES
+                        </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="badge" style="background: var(--sp-blue);">CAPITAL</div>
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="card-content">
+                        <div class="price">Sob Consulta</div>
+                        <h4>Luxury Penthouse - Pinheiros</h4>
+                        <p style="font-size: 0.85rem; color: #64748b;"><i class="fas fa-star"></i> Alto Padrão em SP</p>
+                        <a href="https://wa.me/5517982073231?text=Olá Douglas, quero saber sobre a cobertura em Pinheiros." class="btn-lead pulse">
+                            <i class="fab fa-whatsapp"></i> CONSULTAR OPÇÕES
+                        </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="badge" style="background: var(--sp-blue);">CAPITAL</div>
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="card-content">
+                        <div class="price">R$ 1.200.000</div>
+                        <h4>Apartamento Moderno - Moema</h4>
+                        <p style="font-size: 0.85rem; color: #64748b;"><i class="fas fa-tree"></i> Próximo ao Ibirapuera</p>
+                        <a href="https://wa.me/5517982073231?text=Olá Douglas, quero morar em Moema." class="btn-lead pulse">
+                            <i class="fab fa-whatsapp"></i> CONSULTAR OPÇÕES
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <a href="#contato" class="btn-view-all" style="color: var(--sp-blue); border: 2px solid var(--sp-blue);">VER TODOS SP</a>
+            </div>
+        </section>
+
+        <section id="planos">
+            <div class="section-header">
+                <h2><i class="fas fa-bullhorn" style="color: var(--accent);"></i> Divulgue seu Imóvel</h2>
+                <p>Anuncie na vitrine que mais cresce em Rio Preto e Região.</p>
+            </div>
+            
+            <div class="grid-planos">
+                <div class="card-plano">
+                    <h3 style="color: var(--primary);">Plano Básico</h3>
+                    <div class="price" style="margin: 20px 0; color: #64748b; font-size: 1.8rem;">Grátis</div>
+                    <ul style="list-style: none; text-align: left; margin-bottom: 25px; line-height: 2;">
+                        <li><i class="fas fa-check" style="color: var(--whatsapp);"></i> 1 Imóvel listado</li>
+                        <li><i class="fas fa-check" style="color: var(--whatsapp);"></i> Fotos e 1 Video</li>
+                        <li><i class="fas fa-check" style="color: var(--whatsapp);"></i> Contato Corretor</li>
+                    </ul>
+                    <a href="https://wa.me/5517982073231?text=Olá Douglas, quero anunciar meu imóvel no Plano Básico." 
+                       class="btn-lead pulse" style="margin-top: 0; background-color: var(--primary);">
+                         COMEÇAR AGORA
+                    </a>
+                </div>
+
+                <div class="card-plano" style="border: 2px solid var(--accent);">
+                    <div class="badge-recomendado">RECOMENDADO</div>
+                    <h3 style="color: var(--primary);">Plano POWER</h3>
+                    <div class="price" style="margin: 20px 0; color: var(--accent); font-size: 1.8rem;">EM BREVE</div>
+                    <ul style="list-style: none; text-align: left; margin-bottom: 25px; line-height: 2;">
+                        <li><i class="fas fa-rocket" style="color: var(--accent);"></i> <strong>Destaque no Topo</strong></li>
+                        <li><i class="fas fa-camera-retro" style="color: var(--accent);"></i> Fotos Profissionais</li>
+                        <li><i class="fas fa-ad" style="color: var(--accent);"></i> Tráfego Pago Incluso</li>
+                    </ul>
+                    <a href="https://wa.me/5517982073231?text=Olá Douglas, tenho interesse no Plano POWER quando estiver disponível." 
+                       class="btn-lead pulse" style="margin-top: 0;">
+                         SAIBA MAIS
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="contato-box">
+            <div>
+                <h2 style="font-size: 2.5rem; color: var(--primary);">Fale Comigo</h2>
+                <p style="margin: 15px 0;">Estou pronto para te ajudar a fazer o melhor negócio. Preencha o formulário e eu te retorno imediatamente.</p>
+                <div style="font-size: 1.2rem; font-weight: 700;">
+                    <i class="fas fa-phone-alt"></i> (17) 98207-3231
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" id="nome" placeholder="Seu Nome Completo">
+                <input type="tel" id="tel" placeholder="Seu WhatsApp">
+                <textarea id="msg" rows="3" placeholder="Em que posso te ajudar?"></textarea>
+                <button class="btn-submit" onclick="enviarWhatsApp()">ENVIAR PARA WHATSAPP</button>
+            </div>
+        </section>
+
+    </main>
+ <footer>
+        <img src="imagens/logo.png" alt="Imob'Clik" style="height: 150px; filter: brightness(0) invert(10); margin-bottom: 20px;">
+        <p>Rio Preto - SP | São Paulo - SP</p>
+        <p style="font-size: 0.8rem; opacity: 0.6;">Douglas W Oliveira - Especialista Imobiliário</p>
+        <p style="font-size: 0.7rem; margin-top: 20px;">© 2026 Imob'Clik por ArtClik Marketing</p>
+    </footer>
+
+    <a href="https://wa.me/5517982073231" class="float-wa pulse" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        function enviarWhatsApp() {
+            const nome = document.getElementById('nome').value;
+            const tel = document.getElementById('tel').value;
+            const msg = document.getElementById('msg').value;
+            const meuNumero = "5517982073231";
+            
+            if(!nome || !tel) { alert("Por favor, preencha nome e telefone."); return; }
+
+            const texto = `Olá Douglas! Meu nome é ${nome}. \nWhatsApp: ${tel}. \nAssunto: ${msg}`;
+            window.open(`https://wa.me/${meuNumero}?text=${encodeURIComponent(texto)}`, '_blank');
+        }
+    </script>
+
+</body>
+</html>
 <title>WhatsApp que Vende Sozinho | ArtClik Marketing</title>
 <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
 <style>
