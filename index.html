@@ -8,7 +8,7 @@
     
     <meta name="description" content="Imob'Clik - Vitrine de Imóveis em Rio Preto e São Paulo.">
     <meta property="og:title" content="Imob'Clik | Especialista Douglas W Oliveira">
-    <meta property="og:image" content="logo.png">
+    <meta property="og:image" content="imagens/logo.png">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -172,7 +172,7 @@
 <body>
 
     <header>
-        <div class="logo"><img src="logo.png" alt="Imob'Clik"></div>
+        <div class="logo"><img src="imagens/logo.png" alt="Imob'Clik"></div>
         <nav>
             <a href="#alto-padrao">Alto Padrão</a>
             <a href="#padrao">Padrão</a>
@@ -381,26 +381,36 @@
             </div>
         </section>
 
-        <section id="contato" class="contato-box">
-            <div>
-                <h2 style="font-size: 2.5rem; color: var(--primary);">Fale Comigo</h2>
-                <p style="margin: 15px 0;">Estou pronto para te ajudar a fazer o melhor negócio. Preencha o formulário e eu te retorno imediatamente.</p>
-                <div style="font-size: 1.2rem; font-weight: 700;">
-                    <i class="fas fa-phone-alt"></i> (17) 98207-3231
-                </div>
-            </div>
-            <div class="form-group">
-                <input type="text" id="nome" placeholder="Seu Nome Completo">
-                <input type="tel" id="tel" placeholder="Seu WhatsApp">
-                <textarea id="msg" rows="3" placeholder="Em que posso te ajudar?"></textarea>
-                <button class="btn-submit" onclick="enviarWhatsApp()">ENVIAR PARA WHATSAPP</button>
-            </div>
-        </section>
+       <section id="contato" class="contato-box" style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center; justify-content: center; padding: 40px 20px;">
+    
+    <div style="flex: 1; min-width: 300px; text-align: center;">
+        <img src="imagens/sua_foto.jpg" alt="Foto do Corretor" style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid var(--primary); margin-bottom: 20px;">
+        
+        <h2 style="font-size: 2.2rem; color: var(--primary); margin-bottom: 5px;">Fale Comigo</h2>
+        <p style="font-size: 1.2rem; font-weight: 600; color: #555; margin-bottom: 15px;">Seu corretor de imóveis</p>
+        
+        <p style="margin: 15px 0; line-height: 1.6;">Estou pronto para te ajudar a fazer o melhor negócio. Preencha o formulário e eu te retorno imediatamente.</p>
+        
+        <div style="font-size: 1.3rem; font-weight: 700; color: var(--primary);">
+            <i class="fas fa-phone-alt"></i> (17) 98207-3231
+        </div>
+    </div>
+
+    <div class="form-group" style="flex: 1; min-width: 300px; background: #f9f9f9; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+        <input type="text" id="nome" placeholder="Seu Nome Completo" style="width: 100%; margin-bottom: 15px; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
+        <input type="tel" id="tel" placeholder="Seu WhatsApp" style="width: 100%; margin-bottom: 15px; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
+        <textarea id="msg" rows="3" placeholder="Em que posso te ajudar?" style="width: 100%; margin-bottom: 15px; padding: 12px; border: 1px solid #ddd; border-radius: 8px; resize: none;"></textarea>
+        <button class="btn-submit" onclick="enviarWhatsApp()" style="width: 100%; background-color: var(--primary); color: white; padding: 15px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s;">
+            ENVIAR PARA WHATSAPP
+        </button>
+    </div>
+
+</section>
 
     </main>
 
     <footer>
-        <img src="logo.png" alt="Imob'Clik" style="height: 150px; filter: brightness(0) invert(10); margin-bottom: 20px;">
+        <img src="imagens/logo.png" alt="Imob'Clik" style="height: 150px; filter: brightness(0) invert(10); margin-bottom: 20px;">
         <p>Rio Preto - SP | São Paulo - SP</p>
         <p style="font-size: 0.8rem; opacity: 0.6;">Douglas W Oliveira - Especialista Imobiliário</p>
         <p style="font-size: 0.7rem; margin-top: 20px;">© 2026 Imob'Clik por ArtClik Marketing</p>
