@@ -145,6 +145,61 @@
         .form-group input, .form-group textarea { padding: 15px; border: 1px solid #e2e8f0; border-radius: 10px; outline: none; }
         .btn-submit { background: var(--whatsapp); color: white; border: none; padding: 18px; border-radius: 10px; font-weight: 800; cursor: pointer; }
 
+        /* --- MODAL DE BUSCA --- */
+        .modal-search {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-content {
+            background: white;
+            margin: 10% auto;
+            padding: 40px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .modal-content i.fa-search-plus {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .close-modal {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #94a3b8;
+            cursor: pointer;
+        }
+
+        .btn-modal-wa {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--whatsapp);
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: 800;
+            margin-top: 25px;
+        }
+
         /* --- FOOTER & FLOAT --- */
         footer { background: var(--primary); color: white; padding: 60px 8%; text-align: center; }
         .float-wa { 
@@ -381,33 +436,43 @@
             </div>
         </section>
 
-       <section id="contato" class="contato-box" style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center; justify-content: center; padding: 40px 20px;">
-    
-    <div style="flex: 1; min-width: 300px; text-align: center;">
-        <img src="sua_foto.jpg" alt="Foto do Corretor" style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid var(--primary); margin-bottom: 20px;">
-        
-        <h2 style="font-size: 2.2rem; color: var(--primary); margin-bottom: 5px;">Fale Comigo</h2>
-        <p style="font-size: 1.2rem; font-weight: 600; color: #555; margin-bottom: 15px;">Seu corretor de imóveis</p>
-        
-        <p style="margin: 15px 0; line-height: 1.6;">Estou pronto para te ajudar a fazer o melhor negócio. Preencha o formulário e eu te retorno imediatamente.</p>
-        
-        <div style="font-size: 1.3rem; font-weight: 700; color: var(--primary);">
-            <i class="fas fa-phone-alt"></i> (17) 98207-3231
-        </div>
-    </div>
+        <section id="contato" class="contato-box" style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center; justify-content: center; padding: 40px 20px;">
+            <div style="flex: 1; min-width: 300px; text-align: center;">
+                <img src="sua_foto.jpg" alt="Foto do Corretor" style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid var(--primary); margin-bottom: 20px;">
+                <h2 style="font-size: 2.2rem; color: var(--primary); margin-bottom: 5px;">Fale Comigo</h2>
+                <p style="font-size: 1.2rem; font-weight: 600; color: #555; margin-bottom: 15px;">Seu corretor de imóveis</p>
+                <p style="margin: 15px 0; line-height: 1.6;">Estou pronto para te ajudar a fazer o melhor negócio. Preencha o formulário e eu te retorno imediatamente.</p>
+                <div style="font-size: 1.3rem; font-weight: 700; color: var(--primary);">
+                    <i class="fas fa-phone-alt"></i> (17) 98207-3231
+                </div>
+            </div>
 
-    <div class="form-group" style="flex: 1; min-width: 300px; background: #f9f9f9; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-        <input type="text" id="nome" placeholder="Seu Nome Completo" style="width: 100%; margin-bottom: 15px; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
-        <input type="tel" id="tel" placeholder="Seu WhatsApp" style="width: 100%; margin-bottom: 15px; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
-        <textarea id="msg" rows="3" placeholder="Em que posso te ajudar?" style="width: 100%; margin-bottom: 15px; padding: 12px; border: 1px solid #ddd; border-radius: 8px; resize: none;"></textarea>
-        <button class="btn-submit" onclick="enviarWhatsApp()" style="width: 100%; background-color: var(--primary); color: white; padding: 15px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s;">
-            ENVIAR PARA WHATSAPP
-        </button>
-    </div>
-
-</section>
+            <div class="form-group" style="flex: 1; min-width: 300px; background: #f9f9f9; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                <input type="text" id="nome" placeholder="Seu Nome Completo" style="width: 100%; margin-bottom: 15px; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
+                <input type="tel" id="tel" placeholder="Seu WhatsApp" style="width: 100%; margin-bottom: 15px; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
+                <textarea id="msg" rows="3" placeholder="Em que posso te ajudar?" style="width: 100%; margin-bottom: 15px; padding: 12px; border: 1px solid #ddd; border-radius: 8px; resize: none;"></textarea>
+                <button class="btn-submit" onclick="enviarWhatsApp()" style="width: 100%; background-color: var(--primary); color: white; padding: 15px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s;">
+                    ENVIAR PARA WHATSAPP
+                </button>
+            </div>
+        </section>
 
     </main>
+
+    <div id="searchModal" class="modal-search">
+        <div class="modal-content">
+            <span class="close-modal" onclick="fecharModal()">&times;</span>
+            <i class="fas fa-search-plus"></i>
+            <h3>Temos Opções Exclusivas!</h3>
+            <p>Devido à alta rotatividade e exclusividade de nossos imóveis em <strong>Rio Preto e SP</strong>, muitos não estão listados no site.</p>
+            <p style="margin-top:10px;">Diga-me o que você busca e eu farei uma curadoria personalizada para você.</p>
+            
+            <a href="https://wa.me/5517982073231?text=Olá Douglas, usei o campo de busca do site. Quero ajuda para encontrar um imóvel específico." 
+               class="btn-modal-wa">
+                <i class="fab fa-whatsapp"></i> CONSULTORIA PERSONALIZADA
+            </a>
+        </div>
+    </div>
 
     <footer>
         <img src="logo.png" alt="Imob'Clik" style="height: 150px; filter: brightness(0) invert(10); margin-bottom: 20px;">
@@ -432,6 +497,39 @@
             const texto = `Olá Douglas! Meu nome é ${nome}. \nWhatsApp: ${tel}. \nAssunto: ${msg}`;
             window.open(`https://wa.me/${meuNumero}?text=${encodeURIComponent(texto)}`, '_blank');
         }
+
+        function abrirBusca() {
+            document.getElementById('searchModal').style.display = "block";
+        }
+
+        function fecharModal() {
+            document.getElementById('searchModal').style.display = "none";
+        }
+
+        // Fechar modal ao clicar fora dele
+        window.onclick = function(event) {
+            const modal = document.getElementById('searchModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const btnBusca = document.querySelector('.btn-search');
+            const inputBusca = document.querySelector('.search-container input');
+
+            if(btnBusca) {
+                btnBusca.addEventListener('click', abrirBusca);
+            }
+
+            if(inputBusca) {
+                inputBusca.addEventListener('keypress', function (e) {
+                    if (e.key === 'Enter') {
+                        abrirBusca();
+                    }
+                });
+            }
+        });
     </script>
 
 </body>
